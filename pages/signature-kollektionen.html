@@ -27,11 +27,11 @@
     <style>
         /* Signature Kollektionen spezifische Styles */
         .signature-hero {
-            background: linear-gradient(135deg, rgba(44, 85, 48, 0.95), rgba(26, 51, 32, 0.95)),
-                        url('../images/restaurant/hero-bg.svg') center/cover;
+            background: linear-gradient(135deg, rgba(44, 85, 48, 0.95), rgba(26, 51, 32, 0.95));
             padding: 120px 20px 80px;
             text-align: center;
             color: white;
+            margin-top: -1px;
         }
         
         .signature-hero h1 {
@@ -82,21 +82,17 @@
             border-radius: 12px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.15);
             transition: transform 0.3s ease;
-            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
             height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         
         .signature-collection__image:hover {
             transform: scale(1.02);
         }
         
-        .signature-collection__image::before {
-            content: '🍽️';
-            font-size: 4rem;
-            opacity: 0.3;
+        .signature-collection__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .signature-collection__badge {

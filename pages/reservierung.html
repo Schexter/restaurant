@@ -1,64 +1,56 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <!-- 
-        Restaurant Website - Tischreservierung
-        Erstellt von Hans Hahn - Alle Rechte vorbehalten
-        Datum: 11.08.2025
-    -->
+    <!-- Erstellt von Hans Hahn - Alle Rechte vorbehalten -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Reservieren Sie Ihren Tisch im Zum Goldenen Löffel - Einfach, schnell und unkompliziert online">
+    <meta name="description" content="Reservieren Sie Ihren Tisch im Restaurant Goldener Löffel - Einfach, schnell und unkompliziert online">
     <meta name="keywords" content="Reservierung, Tisch buchen, Restaurant, Online-Reservierung">
     <meta name="author" content="Hans Hahn">
     
-    <title>Tischreservierung | Zum Goldenen Löffel</title>
+    <title>Tischreservierung - Restaurant Goldener Löffel</title>
     
-    <!-- CSS-Dateien -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS-Dateien -->
+    <link rel="stylesheet" href="../css/global-layout.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <body>
-    <!-- Header mit Navigation -->
-    <header class="header">
-        <div class="container">
-            <div class="header__wrapper">
-                <div class="header__logo">
-                    <h1 class="header__title">Zum Goldenen Löffel</h1>
-                    <span class="header__subtitle">Exklusive Kulinarik seit 1995</span>
+    <!-- EINHEITLICHER HEADER -->
+    <header class="global-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo">
+                <img src="../images/logo.svg" alt="Restaurant Goldener Löffel Logo">
+                <div class="header-logo-text">
+                    <span class="header-logo-title">Goldener Löffel</span>
+                    <span class="header-logo-subtitle">Exklusive Kulinarik seit 1995</span>
                 </div>
-                
-                <nav class="header__nav" role="navigation" aria-label="Hauptnavigation">
-                    <button class="header__mobile-toggle" aria-label="Menü öffnen">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <ul class="header__nav-list">
-                        <li class="header__nav-item">
-                            <a href="index.html" class="header__nav-link">Start</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a href="chefkoechin.html" class="header__nav-link">Unsere Chefköchin</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a href="speisekarte.html" class="header__nav-link">Speisekarte</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a href="reservierung.html" class="header__nav-link header__nav-link--active">Reservierung</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a href="rezepte.html" class="header__nav-link">Rezepte-Blog</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            </a>
+            
+            <nav class="header-nav">
+                <button class="mobile-menu-btn" aria-label="Menü öffnen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="header-menu">
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="speisekarte.html">Speisekarte</a></li>
+                    <li><a href="chefkoechin.html">Chefköchin</a></li>
+                    <li><a href="signature-kollektionen.html">Signature</a></li>
+                    <li><a href="reservierung.html" class="active">Reservierung</a></li>
+                    <li><a href="rezepte.html">Rezepte</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
@@ -130,11 +122,6 @@
                                 <label for="time" class="form__label">Uhrzeit *</label>
                                 <select id="time" name="time" class="form__select" required>
                                     <option value="">Bitte wählen</option>
-                                    <option value="12:00">12:00 Uhr</option>
-                                    <option value="12:30">12:30 Uhr</option>
-                                    <option value="13:00">13:00 Uhr</option>
-                                    <option value="13:30">13:30 Uhr</option>
-                                    <option value="14:00">14:00 Uhr</option>
                                     <option value="18:00">18:00 Uhr</option>
                                     <option value="18:30">18:30 Uhr</option>
                                     <option value="19:00">19:00 Uhr</option>
@@ -216,10 +203,10 @@
                     <div class="info-card">
                         <h3 class="info-card__title">Öffnungszeiten</h3>
                         <dl class="info-card__list">
-                            <dt>Montag - Freitag</dt>
-                            <dd>12:00 - 14:30 Uhr<br>18:00 - 23:00 Uhr</dd>
-                            <dt>Samstag - Sonntag</dt>
-                            <dd>12:00 - 23:00 Uhr durchgehend</dd>
+                            <dt>Dienstag - Samstag</dt>
+                            <dd>18:00 - 23:00 Uhr</dd>
+                            <dt>Sonntag & Montag</dt>
+                            <dd>Ruhetag</dd>
                         </dl>
                     </div>
                     
@@ -293,21 +280,26 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__content">
-                <div class="footer__section">
-                    <h3 class="footer__title">Zum Goldenen Löffel</h3>
-                    <p class="footer__description">
+    <!-- EINHEITLICHER FOOTER -->
+    <footer class="global-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Restaurant Goldener Löffel</h3>
+                    <p>
                         Exklusive Kulinarik und Event-Catering auf höchstem Niveau. 
                         Seit 1995 Ihr Partner für unvergessliche Gaumenfreuden.
                     </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
                 </div>
                 
-                <div class="footer__section">
-                    <h4 class="footer__subtitle">Kontakt</h4>
-                    <address class="footer__address">
+                <div class="footer-column">
+                    <h4>Kontakt</h4>
+                    <address>
                         Gourmetstraße 42<br>
                         12345 Feinschmeckerhausen<br>
                         Tel: <a href="tel:+4912345678900">0123 456 789 00</a><br>
@@ -315,30 +307,15 @@
                     </address>
                 </div>
                 
-                <div class="footer__section">
-                    <h4 class="footer__subtitle">Öffnungszeiten</h4>
-                    <dl class="footer__hours">
-                        <dt>Montag - Freitag:</dt>
-                        <dd>12:00 - 14:30 Uhr | 18:00 - 23:00 Uhr</dd>
-                        <dt>Samstag - Sonntag:</dt>
-                        <dd>12:00 - 23:00 Uhr</dd>
-                    </dl>
+                <div class="footer-column">
+                    <h4>Öffnungszeiten</h4>
+                    <p>
+                        <strong>Dienstag - Samstag:</strong><br>
+                        18:00 - 23:00 Uhr<br><br>
+                        <strong>Sonntag & Montag:</strong><br>
+                        Ruhetag
+                    </p>
                 </div>
-                
-                <div class="footer__section">
-                    <h4 class="footer__subtitle">Folgen Sie uns</h4>
-                    <div class="footer__social">
-                        <a href="#" aria-label="Facebook" class="footer__social-link">Facebook</a>
-                        <a href="#" aria-label="Instagram" class="footer__social-link">Instagram</a>
-                        <a href="#" aria-label="LinkedIn" class="footer__social-link">LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer__bottom">
-                <p class="footer__copyright">
-                    &copy; 2025 Zum Goldenen Löffel. Erstellt von Hans Hahn - Alle Rechte vorbehalten.
-                </p>
                 
                 <div class="footer-column">
                     <h4>Schnelllinks</h4>
@@ -346,7 +323,7 @@
                         <li><a href="speisekarte.html">Speisekarte</a></li>
                         <li><a href="signature-kollektionen.html">Signature Gerichte</a></li>
                         <li><a href="reservierung.html">Tisch reservieren</a></li>
-                        <li><a href="../index.html#catering-pakete">Event-Catering</a></li>
+                        <li><a href="index.html#catering-pakete">Event-Catering</a></li>
                     </ul>
                 </div>
             </div>
@@ -362,18 +339,26 @@
     <style>
         /* Zusätzliche Styles für die Reservierungsseite */
         .reservation-hero {
-            background: linear-gradient(135deg, #2C5530 0%, #1a3320 100%);
+            background: linear-gradient(135deg, rgba(44, 85, 48, 0.95), rgba(26, 51, 32, 0.95));
             color: white;
-            padding: 3rem 0;
+            padding: 120px 20px 80px;
             text-align: center;
+            margin-top: -1px;
         }
 
         .reservation-hero .section__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
             color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .reservation-hero .section__subtitle {
+            font-size: 1.2rem;
             color: #D4AF37;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .reservation-section {
@@ -384,6 +369,8 @@
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .reservation-form-wrapper {
@@ -394,9 +381,75 @@
         }
 
         .form__title {
+            font-family: 'Playfair Display', serif;
             font-size: 1.75rem;
             color: #2C5530;
             margin-bottom: 2rem;
+        }
+
+        .form__row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form__group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form__label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2C5530;
+            font-weight: 600;
+        }
+
+        .form__input,
+        .form__select,
+        .form__textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form__input:focus,
+        .form__select:focus,
+        .form__textarea:focus {
+            outline: none;
+            border-color: #D4AF37;
+        }
+
+        .form__textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form__checkbox-wrapper {
+            display: flex;
+            align-items: start;
+            gap: 0.5rem;
+        }
+
+        .form__checkbox {
+            margin-top: 0.25rem;
+        }
+
+        .form__error {
+            color: #d32f2f;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: block;
+        }
+
+        .form__help {
+            color: #666;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: block;
         }
 
         .form__actions {
@@ -409,6 +462,24 @@
             margin-top: 1rem;
             font-size: 0.875rem;
             color: #666;
+        }
+
+        .alert {
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+        }
+
+        .alert--success {
+            background-color: #e8f5e9;
+            border: 1px solid #4caf50;
+            color: #2e7d32;
+        }
+
+        .alert--error {
+            background-color: #ffebee;
+            border: 1px solid #f44336;
+            color: #c62828;
         }
 
         .info-card {
@@ -428,6 +499,7 @@
             color: #2C5530;
             font-size: 1.25rem;
             margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
         }
 
         .info-card__text {
@@ -482,6 +554,8 @@
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             margin-top: 3rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
         }
 
         .map-placeholder {
@@ -500,6 +574,7 @@
         .location-info h3 {
             color: #2C5530;
             margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
         }
 
         .transport-option {
@@ -514,12 +589,31 @@
             margin-bottom: 0.5rem;
         }
 
+        .btn--secondary {
+            background: #2C5530;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn--secondary:hover {
+            background: #1a3320;
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 1024px) {
             .reservation-grid {
                 grid-template-columns: 1fr;
             }
 
             .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form__row {
                 grid-template-columns: 1fr;
             }
         }
@@ -556,8 +650,7 @@
                 }
             });
             
-            // Formular-Validierung bleibt bestehen
-        document.addEventListener('DOMContentLoaded', function() {
+            // Formular-Validierung
             // Setze minimales Datum auf heute
             const dateInput = document.getElementById('date');
             const today = new Date().toISOString().split('T')[0];
@@ -612,6 +705,7 @@
                 if (isValid) {
                     successMessage.style.display = 'block';
                     form.reset();
+                    dateInput.min = today; // Reset min date
                     // Scroll to success message
                     successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 } else {

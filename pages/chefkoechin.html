@@ -25,18 +25,26 @@
     <link rel="stylesheet" href="../css/responsive.css">
     
     <style>
-        /* Chefköchin-spezifische Styles */
+        /* Reset für diese Seite */
+        body {
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Hero Section */
         .chef-hero {
-            background: linear-gradient(135deg, rgba(44, 85, 48, 0.95), rgba(26, 51, 32, 0.95)),
-                        url('../images/restaurant/hero-bg.svg') center/cover;
+            background: linear-gradient(135deg, rgba(44, 85, 48, 0.95), rgba(26, 51, 32, 0.95));
             padding: 120px 20px 80px;
             text-align: center;
             color: white;
+            margin-top: -1px;
         }
 
         .chef-hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
+            color: #ffffff;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
@@ -49,190 +57,369 @@
             margin: 0 auto;
         }
 
+        /* Chef Profile - Professionelles Layout */
         .chef-profile {
-            padding: 80px 20px;
-            background: white;
+            padding: 100px 20px;
+            background: #ffffff;
         }
 
-        .chef-grid {
-            max-width: 1200px;
+        .chef-container {
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 60px;
+            grid-template-columns: 400px 1fr;
+            gap: 80px;
             align-items: start;
         }
 
-        .chef-image-wrapper {
+        /* Bild-Bereich */
+        .chef-image-section {
             position: relative;
         }
 
-        .chef-image {
+        .chef-portrait {
             width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            max-width: 400px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
         }
 
-        .chef-badge {
+        .michelin-badge {
             position: absolute;
-            bottom: 20px;
-            right: 20px;
+            bottom: 30px;
+            left: -20px;
             background: #D4AF37;
             color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
+            padding: 15px 30px;
+            border-radius: 50px;
             font-weight: 600;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .chef-bio h2 {
+        /* Info-Bereich */
+        .chef-info {
+            padding-top: 20px;
+        }
+
+        .chef-name {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: #2C5530;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            font-weight: 700;
         }
 
-        .chef-subtitle {
+        .chef-title {
             color: #D4AF37;
-            font-size: 1.2rem;
-            font-style: italic;
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .chef-description {
+            color: #666;
+            line-height: 1.9;
+            font-size: 1.05rem;
             margin-bottom: 30px;
         }
 
-        .chef-bio p {
-            line-height: 1.8;
-            margin-bottom: 20px;
-            color: #666;
-        }
-
-        .chef-awards {
+        .chef-quote {
             background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 30px;
+            padding: 30px;
+            border-left: 4px solid #D4AF37;
+            margin: 40px 0;
+            position: relative;
         }
 
-        .chef-awards h3 {
+        .chef-quote p {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
             color: #2C5530;
-            margin-bottom: 15px;
+            font-style: italic;
+            line-height: 1.8;
+            margin: 0;
         }
 
-        .chef-awards ul {
-            list-style: none;
-            padding: 0;
+        /* Auszeichnungen Section */
+        .awards-section {
+            margin-top: 60px;
         }
 
-        .chef-awards li {
-            padding: 10px 0;
-            border-bottom: 1px solid #e0e0e0;
+        .awards-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #2C5530;
+            margin-bottom: 40px;
+        }
+
+        .awards-grid {
+            display: grid;
+            gap: 25px;
+        }
+
+        .award-item {
             display: flex;
             align-items: center;
+            gap: 20px;
+            padding: 15px 0;
+            border-bottom: 1px solid #e8e8e8;
         }
 
-        .chef-awards li::before {
-            content: '🏆';
-            margin-right: 10px;
-            font-size: 1.2rem;
+        .award-icon {
+            font-size: 1.8rem;
         }
 
+        .award-text {
+            flex: 1;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        /* Philosophy Section */
         .philosophy-section {
-            background: linear-gradient(135deg, #FFF8E7 0%, #fff 100%);
-            padding: 80px 20px;
+            background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+            padding: 100px 20px;
         }
 
-        .philosophy-content {
-            max-width: 900px;
+        .philosophy-container {
+            max-width: 1000px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .philosophy-quote {
+        .philosophy-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             color: #2C5530;
-            font-style: italic;
-            margin: 40px 0;
-            position: relative;
-            padding: 0 40px;
+            margin-bottom: 50px;
         }
 
-        .philosophy-quote::before,
-        .philosophy-quote::after {
-            content: '"';
+        .philosophy-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .philosophy-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .philosophy-icon {
             font-size: 3rem;
             color: #D4AF37;
-            position: absolute;
+            margin-bottom: 20px;
         }
 
-        .philosophy-quote::before {
-            left: 0;
-            top: -10px;
+        .philosophy-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2C5530;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
         }
 
-        .philosophy-quote::after {
-            right: 0;
-            bottom: -30px;
+        .philosophy-card p {
+            color: #666;
+            line-height: 1.8;
         }
 
+        /* Gallery Section */
         .gallery-section {
-            padding: 80px 20px;
+            padding: 100px 20px;
             background: white;
+        }
+
+        .gallery-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #2C5530;
+            text-align: center;
+            margin-bottom: 60px;
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            max-width: 1200px;
-            margin: 40px auto 0;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            background: #f5f5f5;
+            aspect-ratio: 1;
+            cursor: pointer;
             transition: transform 0.3s ease;
         }
 
         .gallery-item:hover {
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
 
         .gallery-item img {
             width: 100%;
-            height: 300px;
+            height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
         }
 
-        .gallery-caption {
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
             color: white;
             padding: 20px;
             transform: translateY(100%);
             transition: transform 0.3s ease;
         }
 
-        .gallery-item:hover .gallery-caption {
+        .gallery-item:hover .gallery-overlay {
             transform: translateY(0);
         }
 
-        @media (max-width: 968px) {
-            .chef-grid {
+        .gallery-overlay h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Team Section */
+        .team-section {
+            background: #f9f9f9;
+            padding: 100px 20px;
+        }
+
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .team-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #2C5530;
+            margin-bottom: 20px;
+        }
+
+        .team-subtitle {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 60px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .team-member {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .team-member-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #999;
+        }
+
+        .team-member h4 {
+            color: #2C5530;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            color: #D4AF37;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .chef-container {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
 
+            .chef-portrait {
+                margin: 0 auto;
+            }
+
+            .michelin-badge {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
             .chef-hero h1 {
                 font-size: 2.5rem;
             }
 
-            .philosophy-quote {
-                font-size: 1.4rem;
+            .chef-name {
+                font-size: 2rem;
+            }
+
+            .philosophy-content {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .awards-grid {
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -275,119 +462,192 @@
 
     <!-- Chef Profile -->
     <section class="chef-profile">
-        <div class="chef-grid">
-            <div class="chef-image-wrapper">
-                <img src="../images/chef/anna-schmidt-portrait.jpg" alt="Chefköchin Anna Schmidt" class="chef-image">
-                <span class="chef-badge">Michelin ⭐⭐</span>
+        <div class="chef-container">
+            <!-- Bild-Bereich -->
+            <div class="chef-image-section">
+                <img src="../images/chef/anna-schmidt-portrait.jpg" alt="Chefköchin Anna Schmidt" class="chef-portrait">
+                <div class="michelin-badge">
+                    ⭐⭐ Michelin
+                </div>
             </div>
             
-            <div class="chef-bio">
-                <h2>Anna Schmidt</h2>
-                <p class="chef-subtitle">Executive Chef & Culinary Director</p>
+            <!-- Info-Bereich -->
+            <div class="chef-info">
+                <h2 class="chef-name">Anna Schmidt</h2>
+                <p class="chef-title">Executive Chef & Culinary Director</p>
                 
-                <p>
+                <p class="chef-description">
                     Mit über 20 Jahren Erfahrung in der gehobenen Gastronomie hat Anna Schmidt 
                     das Restaurant Goldener Löffel zu einer der Top-Adressen für Fine Dining entwickelt. 
                     Ihre kulinarische Reise begann in den renommiertesten Küchen Europas, wo sie 
                     ihr Handwerk bei Meistern wie Alain Ducasse und Thomas Keller perfektionierte.
                 </p>
                 
-                <p>
+                <p class="chef-description">
                     Anna's Kochphilosophie verbindet traditionelle Techniken mit innovativen Ansätzen. 
                     Sie legt besonderen Wert auf regionale, saisonale Zutaten von höchster Qualität 
-                    und arbeitet eng mit lokalen Produzenten zusammen. Ihre Signature-Gerichte 
-                    erzählen Geschichten und schaffen unvergessliche Geschmackserlebnisse.
+                    und arbeitet eng mit lokalen Produzenten zusammen.
                 </p>
                 
-                <p>
-                    "Kochen ist für mich mehr als nur die Zubereitung von Speisen. Es ist eine 
-                    Kunstform, bei der jeder Teller eine Leinwand ist und jede Zutat ihre eigene 
-                    Geschichte erzählt. Mein Ziel ist es, unseren Gästen nicht nur ein Essen, 
-                    sondern ein unvergessliches Erlebnis zu bieten."
-                </p>
+                <div class="chef-quote">
+                    <p>
+                        "Kochen ist für mich mehr als nur die Zubereitung von Speisen. Es ist eine Kunstform, 
+                        bei der jeder Teller eine Leinwand ist und jede Zutat ihre eigene Geschichte erzählt. 
+                        Mein Ziel ist es, unseren Gästen nicht nur ein Essen, sondern ein unvergessliches 
+                        Erlebnis zu bieten."
+                    </p>
+                </div>
                 
-                <div class="chef-awards">
-                    <h3>Auszeichnungen & Erfolge</h3>
-                    <ul>
-                        <li>2 Michelin-Sterne (seit 2019)</li>
-                        <li>Köchin des Jahres 2022 - Gault&Millau</li>
-                        <li>19 Punkte im Gault&Millau Guide</li>
-                        <li>Best Female Chef Award 2021</li>
-                        <li>Mitglied der Jeunes Restaurateurs d'Europe</li>
-                    </ul>
+                <!-- Auszeichnungen -->
+                <div class="awards-section">
+                    <h3 class="awards-title">Auszeichnungen & Erfolge</h3>
+                    <div class="awards-grid">
+                        <div class="award-item">
+                            <span class="award-icon">🏆</span>
+                            <span class="award-text">2 Michelin-Sterne (seit 2019)</span>
+                        </div>
+                        <div class="award-item">
+                            <span class="award-icon">🏆</span>
+                            <span class="award-text">Köchin des Jahres 2022 - Gault&Millau</span>
+                        </div>
+                        <div class="award-item">
+                            <span class="award-icon">🏆</span>
+                            <span class="award-text">19 Punkte im Gault&Millau Guide</span>
+                        </div>
+                        <div class="award-item">
+                            <span class="award-icon">🏆</span>
+                            <span class="award-text">Best Female Chef Award 2021</span>
+                        </div>
+                        <div class="award-item">
+                            <span class="award-icon">🏆</span>
+                            <span class="award-text">Mitglied der Jeunes Restaurateurs d'Europe</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Philosophy -->
+    <!-- Philosophy Section -->
     <section class="philosophy-section">
-        <div class="philosophy-content">
-            <h2 class="section__title">Kulinarische Philosophie</h2>
-            <p class="philosophy-quote">
-                Die beste Küche ist die, die Tradition ehrt, 
-                während sie mutig neue Wege beschreitet
-            </p>
-            <p>
-                Anna Schmidt's Küche ist geprägt von Respekt vor dem Produkt, 
-                handwerklicher Perfektion und kreativer Innovation. Jedes Gericht 
-                wird mit Liebe zum Detail komponiert und präsentiert - ein Fest 
-                für alle Sinne.
-            </p>
+        <div class="philosophy-container">
+            <h2 class="philosophy-title">Kulinarische Philosophie</h2>
+            
+            <div class="philosophy-content">
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">🌿</div>
+                    <h3>Regionalität</h3>
+                    <p>
+                        Wir arbeiten ausschließlich mit ausgewählten regionalen Produzenten 
+                        zusammen, die unsere Leidenschaft für Qualität teilen.
+                    </p>
+                </div>
+                
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">🔥</div>
+                    <h3>Handwerk</h3>
+                    <p>
+                        Traditionelle Techniken treffen auf moderne Interpretation. 
+                        Jedes Gericht wird mit Präzision und Liebe zum Detail zubereitet.
+                    </p>
+                </div>
+                
+                <div class="philosophy-card">
+                    <div class="philosophy-icon">✨</div>
+                    <h3>Innovation</h3>
+                    <p>
+                        Kreativität und Innovation prägen unsere Küche. 
+                        Wir überraschen mit neuen Geschmackskombinationen und Präsentationen.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Gallery -->
+    <!-- Gallery Section -->
     <section class="gallery-section">
-        <div class="container">
-            <h2 class="section__title">Meisterwerke aus unserer Küche</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="../images/chef/dish-1.jpg" alt="Gourmet Kreation 1">
-                    <div class="gallery-caption">
-                        <h4>Jakobsmuscheln Variation</h4>
-                        <p>Mit Kaviar und Champagnerschaum</p>
-                    </div>
+        <h2 class="gallery-title">Meisterwerke aus unserer Küche</h2>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="../images/chef/dish-1.jpg" alt="Jakobsmuscheln Variation">
+                <div class="gallery-overlay">
+                    <h4>Jakobsmuscheln Variation</h4>
+                    <p>Mit Kaviar und Champagnerschaum</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="../images/chef/dish-2.jpg" alt="Wagyu Beef Tataki">
+                <div class="gallery-overlay">
+                    <h4>Wagyu Beef Tataki</h4>
+                    <p>Mit Trüffel und Ponzu-Sauce</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="../images/chef/dish-3.jpg" alt="Hummer Thermidor">
+                <div class="gallery-overlay">
+                    <h4>Hummer Thermidor</h4>
+                    <p>Klassisch französisch interpretiert</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="../images/chef/dish-4.jpg" alt="Schokoladen Symphony">
+                <div class="gallery-overlay">
+                    <h4>Schokoladen Symphony</h4>
+                    <p>Valrhona Schokolade mit Gold</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="../images/chef/dish-5.jpg" alt="Foie Gras Terrine">
+                <div class="gallery-overlay">
+                    <h4>Foie Gras Terrine</h4>
+                    <p>Mit Brioche und Portweingelee</p>
+                </div>
+            </div>
+            
+            <div class="gallery-item">
+                <img src="../images/chef/dish-6.jpg" alt="Kaiserschmarrn Deluxe">
+                <div class="gallery-overlay">
+                    <h4>Kaiserschmarrn Deluxe</h4>
+                    <p>Modern interpretierter Klassiker</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="team-container">
+            <h2 class="team-title">Unser Küchenteam</h2>
+            <p class="team-subtitle">Leidenschaftliche Profis, die täglich Höchstleistungen erbringen</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-member-image">👨‍🍳</div>
+                    <h4>Marcus Weber</h4>
+                    <p>Sous Chef</p>
                 </div>
                 
-                <div class="gallery-item">
-                    <img src="../images/chef/dish-2.jpg" alt="Gourmet Kreation 2">
-                    <div class="gallery-caption">
-                        <h4>Wagyu Beef Tataki</h4>
-                        <p>Mit Trüffel und Ponzu-Sauce</p>
-                    </div>
+                <div class="team-member">
+                    <div class="team-member-image">👩‍🍳</div>
+                    <h4>Sarah Klein</h4>
+                    <p>Chef de Partie</p>
                 </div>
                 
-                <div class="gallery-item">
-                    <img src="../images/chef/dish-3.jpg" alt="Gourmet Kreation 3">
-                    <div class="gallery-caption">
-                        <h4>Hummer Thermidor</h4>
-                        <p>Klassisch französisch interpretiert</p>
-                    </div>
+                <div class="team-member">
+                    <div class="team-member-image">👨‍🍳</div>
+                    <h4>Thomas Müller</h4>
+                    <p>Pâtissier</p>
                 </div>
                 
-                <div class="gallery-item">
-                    <img src="../images/chef/dish-4.jpg" alt="Gourmet Kreation 4">
-                    <div class="gallery-caption">
-                        <h4>Schokoladen Symphony</h4>
-                        <p>Valrhona Schokolade mit Gold</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="../images/chef/dish-5.jpg" alt="Gourmet Kreation 5">
-                    <div class="gallery-caption">
-                        <h4>Foie Gras Terrine</h4>
-                        <p>Mit Brioche und Portweingelee</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="../images/chef/dish-6.jpg" alt="Gourmet Kreation 6">
-                    <div class="gallery-caption">
-                        <h4>Kaiserschmarrn Deluxe</h4>
-                        <p>Modern interpretierter Klassiker</p>
-                    </div>
+                <div class="team-member">
+                    <div class="team-member-image">👩‍🍳</div>
+                    <h4>Lisa Fischer</h4>
+                    <p>Chef de Partie</p>
                 </div>
             </div>
         </div>

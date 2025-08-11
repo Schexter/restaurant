@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>TEST - Header-Farben</title>
+    <style>
+        body { margin: 0; padding: 20px; font-family: Arial; }
+        .test-box { padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .green-gradient { background: linear-gradient(135deg, rgba(44, 85, 48, 0.95), rgba(26, 51, 32, 0.95)); }
+        .text-white { color: #ffffff; }
+        .text-gold { color: #D4AF37; }
+        .info { background: #f0f0f0; padding: 10px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Header-Farben Test</h1>
+    
+    <div class="info">
+        <h2>Soll-Farben:</h2>
+        <ul>
+            <li>Hintergrund: Grüner Gradient (rgba(44, 85, 48, 0.95) zu rgba(26, 51, 32, 0.95))</li>
+            <li>Logo-Titel: Weiß (#ffffff)</li>
+            <li>Logo-Untertitel: Gold (#D4AF37)</li>
+            <li>Menü-Links: Weiß (#ffffff)</li>
+            <li>Aktive/Hover Links: Gold (#D4AF37)</li>
+        </ul>
+    </div>
+    
+    <div class="test-box green-gradient">
+        <h2 class="text-white">Restaurant Name (sollte weiß sein)</h2>
+        <p class="text-gold">Untertitel (sollte gold sein)</p>
+        <p class="text-white">Menü-Link (sollte weiß sein)</p>
+    </div>
+    
+    <div class="info">
+        <p><strong>RGB-Werte:</strong></p>
+        <ul>
+            <li>Dunkelgrün: RGB(44, 85, 48) = #2C5530</li>
+            <li>Noch dunkler: RGB(26, 51, 32) = #1A3320</li>
+            <li>Gold: #D4AF37</li>
+            <li>Weiß: #FFFFFF</li>
+        </ul>
+    </div>
+    
+    <p>Wenn der Text "Chefköchin" grün statt gold erscheint, liegt es wahrscheinlich an:</p>
+    <ol>
+        <li>Falscher CSS-Klasse beim Menü-Link</li>
+        <li>Fehlende active-Klasse</li>
+        <li>Überschreibende lokale Styles</li>
+    </ol>
+</body>
+</html>
