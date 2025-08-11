@@ -1,0 +1,179 @@
+/* ==============================================
+   BILD-TEXT ÜBERLAGERUNGEN - VERBESSERTE LESBARKEIT
+   Erstellt von Hans Hahn - Alle Rechte vorbehalten
+   ============================================== */
+
+/* Basis-Stil für Bildüberlagerungen */
+.image-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-overlay__text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, 
+        rgba(0, 0, 0, 0.9) 0%, 
+        rgba(0, 0, 0, 0.7) 50%, 
+        rgba(0, 0, 0, 0) 100%);
+    color: white;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+/* Verbesserte Lesbarkeit mit Schatten und Hintergrund */
+.gallery__item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery__item:hover img {
+    transform: scale(1.1);
+}
+
+/* Text-Overlay mit verbesserter Lesbarkeit */
+.gallery__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 20px 20px;
+    background: linear-gradient(to top, 
+        rgba(0, 0, 0, 0.95) 0%, 
+        rgba(0, 0, 0, 0.8) 60%, 
+        rgba(0, 0, 0, 0) 100%);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery__item:hover .gallery__overlay {
+    transform: translateY(0);
+}
+
+/* Titel mit Schatten für bessere Lesbarkeit */
+.gallery__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 8px 0;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+}
+
+/* Beschreibung mit Schatten */
+.gallery__description {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #F0F0F0;
+    margin: 0;
+    line-height: 1.4;
+    text-shadow: 
+        1px 1px 3px rgba(0, 0, 0, 0.8),
+        0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Alternative: Permanent sichtbarer Text mit dunklem Hintergrund */
+.gallery__item--always-visible .gallery__overlay {
+    transform: translateY(0);
+    background: linear-gradient(to top, 
+        rgba(0, 0, 0, 0.9) 0%, 
+        rgba(0, 0, 0, 0.7) 40%, 
+        rgba(0, 0, 0, 0) 100%);
+}
+
+/* Für Karten-Stil mit Text über Bild */
+.card-image-overlay {
+    position: relative;
+}
+
+.card-image-overlay__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px 20px 20px;
+    background: linear-gradient(to top,
+        rgba(44, 85, 48, 0.95) 0%,
+        rgba(44, 85, 48, 0.8) 50%,
+        transparent 100%);
+}
+
+.card-image-overlay__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 10px 0;
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.7),
+        0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.card-image-overlay__subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: #D4AF37;
+    margin: 0;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+}
+
+/* Mobile Anpassungen */
+@media (max-width: 768px) {
+    .gallery__overlay {
+        /* Auf Mobile immer sichtbar */
+        transform: translateY(0);
+        padding: 15px;
+        background: linear-gradient(to top, 
+            rgba(0, 0, 0, 0.9) 0%, 
+            rgba(0, 0, 0, 0.7) 50%, 
+            rgba(0, 0, 0, 0) 100%);
+    }
+    
+    .gallery__title {
+        font-size: 1.2rem;
+    }
+    
+    .gallery__description {
+        font-size: 0.85rem;
+    }
+}
+
+/* Spezielle Anpassung für die Chef-Galerie */
+.chef-gallery .gallery__item .gallery__overlay {
+    background: linear-gradient(to top,
+        rgba(44, 85, 48, 0.98) 0%,
+        rgba(44, 85, 48, 0.85) 40%,
+        rgba(44, 85, 48, 0.4) 70%,
+        transparent 100%);
+    padding: 30px 20px 20px;
+}
+
+.chef-gallery .gallery__title {
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    text-transform: none;
+    letter-spacing: 0.5px;
+}
+
+.chef-gallery .gallery__description {
+    color: #D4AF37;
+    font-weight: 500;
+    font-size: 1rem;
+}

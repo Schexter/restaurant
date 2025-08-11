@@ -1,0 +1,138 @@
+<!-- HEADER TEMPLATE FÜR PAGES-ORDNER -->
+<!-- Alle Pfade sind relativ angepasst (../) -->
+<!-- Erstellt von Hans Hahn - Alle Rechte vorbehalten -->
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TITEL UND META ANPASSEN -->
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS - WICHTIG: ../ da im pages-Ordner -->
+    <link rel="stylesheet" href="../css/global-layout.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- EINHEITLICHER HEADER -->
+    <header class="global-header">
+        <div class="header-container">
+            <a href="../index.html" class="header-logo">
+                <img src="../images/logo.svg" alt="Restaurant Goldener Löffel Logo">
+                <div class="header-logo-text">
+                    <span class="header-logo-title">Goldener Löffel</span>
+                    <span class="header-logo-subtitle">Exklusive Kulinarik seit 1995</span>
+                </div>
+            </a>
+            
+            <nav class="header-nav">
+                <button class="mobile-menu-btn" aria-label="Menü öffnen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="header-menu">
+                    <li><a href="../index.html">Start</a></li>
+                    <li><a href="speisekarte.html" class="[ACTIVE-MENU]">Speisekarte</a></li>
+                    <li><a href="chefkoechin.html" class="[ACTIVE-CHEF]">Chefköchin</a></li>
+                    <li><a href="signature-kollektionen.html" class="[ACTIVE-SIGNATURE]">Signature</a></li>
+                    <li><a href="reservierung.html" class="[ACTIVE-RESERVATION]">Reservierung</a></li>
+                    <li><a href="rezepte.html" class="[ACTIVE-RECIPES]">Rezepte</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENT HIER -->
+
+    <!-- EINHEITLICHER FOOTER -->
+    <footer class="global-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Restaurant Goldener Löffel</h3>
+                    <p>
+                        Exklusive Kulinarik und Event-Catering auf höchstem Niveau. 
+                        Seit 1995 Ihr Partner für unvergessliche Gaumenfreuden.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Kontakt</h4>
+                    <address>
+                        Gourmetstraße 42<br>
+                        12345 Feinschmeckerhausen<br>
+                        Tel: <a href="tel:+4912345678900">0123 456 789 00</a><br>
+                        E-Mail: <a href="mailto:info@goldener-loeffel.de">info@goldener-loeffel.de</a>
+                    </address>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Öffnungszeiten</h4>
+                    <p>
+                        <strong>Dienstag - Samstag:</strong><br>
+                        18:00 - 23:00 Uhr<br><br>
+                        <strong>Sonntag & Montag:</strong><br>
+                        Ruhetag
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Schnelllinks</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="speisekarte.html">Speisekarte</a></li>
+                        <li><a href="signature-kollektionen.html">Signature Gerichte</a></li>
+                        <li><a href="reservierung.html">Tisch reservieren</a></li>
+                        <li><a href="../index.html#catering-pakete">Event-Catering</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Restaurant Goldener Löffel. Erstellt von Hans Hahn - Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const headerMenu = document.querySelector('.header-menu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    headerMenu.classList.toggle('active');
+                });
+            }
+            
+            // Schließe Menü beim Klick außerhalb
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.header-nav')) {
+                    mobileMenuBtn?.classList.remove('active');
+                    headerMenu?.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

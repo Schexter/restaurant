@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Erstellt von Hans Hahn - Alle Rechte vorbehalten -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurant Goldener Löffel - Exklusives Event-Catering und gehobene Küche">
+    <meta name="keywords" content="Restaurant, Catering, Event, Hochzeit, Fine Dining, Gourmet">
+    <meta name="author" content="Hans Hahn">
+    
+    <title>Restaurant Goldener Löffel - Exklusives Event-Catering</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/global-layout.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- EINHEITLICHER HEADER -->
+    <header class="global-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo">
+                <img src="../images/logo.svg" alt="Restaurant Goldener Löffel Logo">
+                <div class="header-logo-text">
+                    <span class="header-logo-title">Goldener Löffel</span>
+                    <span class="header-logo-subtitle">Exklusive Kulinarik seit 1995</span>
+                </div>
+            </a>
+            
+            <nav class="header-nav">
+                <button class="mobile-menu-btn" aria-label="Menü öffnen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="header-menu">
+                    <li><a href="index.html" class="active">Start</a></li>
+                    <li><a href="speisekarte.html">Speisekarte</a></li>
+                    <li><a href="chefkoechin.html">Chefköchin</a></li>
+                    <li><a href="signature-kollektionen.html">Signature</a></li>
+                    <li><a href="reservierung.html">Reservierung</a></li>
+                    <li><a href="rezepte.html">Rezepte</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero__background">
+            <div class="hero__overlay"></div>
+        </div>
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">Unvergessliche Momente</h1>
+                <p class="hero__subtitle">Exklusives Event-Catering für Ihre besonderen Anlässe</p>
+                <p class="hero__description">
+                    Verwandeln Sie Ihre Feier in ein kulinarisches Erlebnis. 
+                    Ob elegante Hochzeit, stilvolle Firmenfeier oder privates Dinner - 
+                    wir kreieren unvergessliche Gaumenfreuden für Sie und Ihre Gäste.
+                </p>
+                <a href="#catering-pakete" class="btn btn--primary btn--large">Entdecken Sie unsere Catering-Pakete</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering-Pakete Section -->
+    <section id="catering-pakete" class="catering">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Unsere Catering-Pakete</h2>
+                <p class="section__subtitle">Maßgeschneiderte Kulinarik für jeden Anlass</p>
+            </div>
+            
+            <div class="catering__grid">
+                <!-- Paket 1: Gala Dinner -->
+                <article class="card catering__card">
+                    <div class="card__image">
+                        <img src="../images/catering/gala-dinner.jpg" alt="Gala Dinner">
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">Gala Dinner</h3>
+                        <p class="card__description">
+                            Das ultimative Erlebnis für besondere Anlässe. 
+                            5-Gänge-Menü mit erlesenen Weinen, professionellem Service 
+                            und exquisiter Tischdekoration.
+                        </p>
+                        <ul class="card__features">
+                            <li>5-Gänge-Menü nach Wahl</li>
+                            <li>Weinbegleitung inklusive</li>
+                            <li>Professioneller Service</li>
+                            <li>Premium Tischdekoration</li>
+                        </ul>
+                        <p class="card__price">ab 125€ pro Person</p>
+                        <button class="btn btn--secondary">Mehr erfahren</button>
+                    </div>
+                </article>
+
+                <!-- Paket 2: Flying Buffet -->
+                <article class="card catering__card">
+                    <div class="card__image">
+                        <img src="../images/catering/flying-buffet.jpg" alt="Flying Buffet">
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">Flying Buffet</h3>
+                        <p class="card__description">
+                            Perfekt für Stehempfänge und lockere Veranstaltungen. 
+                            Vielfältige Fingerfood-Kreationen, die Ihre Gäste begeistern werden.
+                        </p>
+                        <ul class="card__features">
+                            <li>20+ Fingerfood-Variationen</li>
+                            <li>Live-Cooking-Station</li>
+                            <li>Getränke-Flatrate möglich</li>
+                            <li>Flexibler Service</li>
+                        </ul>
+                        <p class="card__price">ab 65€ pro Person</p>
+                        <button class="btn btn--secondary">Mehr erfahren</button>
+                    </div>
+                </article>
+
+                <!-- Paket 3: Business Lunch -->
+                <article class="card catering__card">
+                    <div class="card__image">
+                        <img src="../images/catering/business-lunch.jpg" alt="Business Lunch">
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">Business Lunch</h3>
+                        <p class="card__description">
+                            Effizient und stilvoll. Ideal für Geschäftstreffen, 
+                            Konferenzen und Seminare mit kulinarischem Anspruch.
+                        </p>
+                        <ul class="card__features">
+                            <li>3-Gänge-Business-Menü</li>
+                            <li>Schneller, diskreter Service</li>
+                            <li>Vegetarische Optionen</li>
+                            <li>Kaffee & Gebäck</li>
+                        </ul>
+                        <p class="card__price">ab 45€ pro Person</p>
+                        <button class="btn btn--secondary">Mehr erfahren</button>
+                    </div>
+                </article>
+
+                <!-- Paket 4: Hochzeits-Special -->
+                <article class="card catering__card">
+                    <div class="card__image">
+                        <img src="../images/catering/hochzeit.jpg" alt="Hochzeits-Special">
+                    </div>
+                    <div class="card__content">
+                        <h3 class="card__title">Hochzeits-Special</h3>
+                        <p class="card__description">
+                            Der schönste Tag verdient die beste Kulinarik. 
+                            Individuell abgestimmtes Menü, Hochzeitstorte und 
+                            Rundum-Betreuung für Ihren perfekten Tag.
+                        </p>
+                        <ul class="card__features">
+                            <li>Individuelles Menü</li>
+                            <li>Hochzeitstorte inklusive</li>
+                            <li>Candy Bar & Mitternachtssnack</li>
+                            <li>Komplette Event-Planung</li>
+                        </ul>
+                        <p class="card__price">ab 145€ pro Person</p>
+                        <button class="btn btn--secondary">Mehr erfahren</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta__content">
+                <h2 class="cta__title">Bereit für Ihr unvergessliches Event?</h2>
+                <p class="cta__description">
+                    Lassen Sie uns gemeinsam Ihre Veranstaltung zu einem kulinarischen Highlight machen. 
+                    Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch.
+                </p>
+                <div class="cta__buttons">
+                    <a href="reservierung.html" class="btn btn--primary btn--large">Jetzt unverbindlich anfragen</a>
+                    <a href="tel:+4912345678900" class="btn btn--outline btn--large">Direkt anrufen: 0123 456 789 00</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section__title">Was unsere Gäste sagen</h2>
+            <div class="testimonials__grid">
+                <blockquote class="testimonial">
+                    <p class="testimonial__text">
+                        "Das Catering für unsere Hochzeit war einfach perfekt. 
+                        Jeder Gang war ein Kunstwerk und unsere Gäste schwärmen noch heute davon."
+                    </p>
+                    <footer class="testimonial__author">
+                        <cite>- Sarah & Michael K., Hochzeit im Juni 2024</cite>
+                    </footer>
+                </blockquote>
+                
+                <blockquote class="testimonial">
+                    <p class="testimonial__text">
+                        "Professionell, kreativ und unglaublich lecker. 
+                        Das Team hat unsere Firmenfeier zu einem unvergesslichen Ereignis gemacht."
+                    </p>
+                    <footer class="testimonial__author">
+                        <cite>- Dr. Thomas Weber, CEO TechVision GmbH</cite>
+                    </footer>
+                </blockquote>
+                
+                <blockquote class="testimonial">
+                    <p class="testimonial__text">
+                        "Die Flexibilität und Kreativität des Teams ist beeindruckend. 
+                        Auch spezielle Ernährungswünsche wurden perfekt umgesetzt."
+                    </p>
+                    <footer class="testimonial__author">
+                        <cite>- Maria Gonzalez, Event-Managerin</cite>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- EINHEITLICHER FOOTER -->
+    <footer class="global-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Restaurant Goldener Löffel</h3>
+                    <p>
+                        Exklusive Kulinarik und Event-Catering auf höchstem Niveau. 
+                        Seit 1995 Ihr Partner für unvergessliche Gaumenfreuden.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Kontakt</h4>
+                    <address>
+                        Gourmetstraße 42<br>
+                        12345 Feinschmeckerhausen<br>
+                        Tel: <a href="tel:+4912345678900">0123 456 789 00</a><br>
+                        E-Mail: <a href="mailto:info@goldener-loeffel.de">info@goldener-loeffel.de</a>
+                    </address>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Öffnungszeiten</h4>
+                    <p>
+                        <strong>Dienstag - Samstag:</strong><br>
+                        18:00 - 23:00 Uhr<br><br>
+                        <strong>Sonntag & Montag:</strong><br>
+                        Ruhetag
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Schnelllinks</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="speisekarte.html">Speisekarte</a></li>
+                        <li><a href="signature-kollektionen.html">Signature Gerichte</a></li>
+                        <li><a href="reservierung.html">Tisch reservieren</a></li>
+                        <li><a href="#catering-pakete">Event-Catering</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Restaurant Goldener Löffel. Erstellt von Hans Hahn - Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const headerMenu = document.querySelector('.header-menu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    headerMenu.classList.toggle('active');
+                });
+            }
+            
+            // Schließe Menü beim Klick außerhalb
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.header-nav')) {
+                    mobileMenuBtn?.classList.remove('active');
+                    headerMenu?.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

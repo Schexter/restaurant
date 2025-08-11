@@ -1,0 +1,67 @@
+# Git Ignore für Restaurant Website
+# Erstellt von Hans Hahn - Alle Rechte vorbehalten
+
+# System-Dateien
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor-Dateien
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporäre Dateien
+*.tmp
+*.temp
+*.log
+*.cache
+.sass-cache/
+
+# Node.js (falls später verwendet)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Build-Ordner
+dist/
+build/
+out/
+
+# Backup-Dateien
+*.bak
+*.backup
+*~
+
+# Originale Bilder (große Dateien)
+images/original/
+images/raw/
+
+# Persönliche Notizen
+personal-notes.txt
+TODO-personal.txt
+
+# Umgebungsvariablen
+.env
+.env.local
+
+# OS generierte Dateien
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Komprimierte Dateien
+*.zip
+*.rar
+*.7z
+
+# Test-Dateien
+test/
+tests/
+*.test.html
+
+# Dokumentation Build
+docs/_build/

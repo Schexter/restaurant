@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Erstellt von Hans Hahn - Alle Rechte vorbehalten -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entdecken Sie die Geschichten hinter unseren Signature-Gerichten - Restaurant Goldener Löffel">
+    <meta name="keywords" content="Signature Gerichte, Gourmet, Fine Dining, Kulinarische Geschichten">
+    <meta name="author" content="Hans Hahn">
+    
+    <title>Signature Kollektionen - Restaurant Goldener Löffel</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/global-layout.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <style>
+        /* Signature Kollektionen spezifische Styles */
+        .signature-hero {
+            background: linear-gradient(135deg, rgba(44, 85, 48, 0.95), rgba(26, 51, 32, 0.95)),
+                        url('../images/restaurant/hero-bg.svg') center/cover;
+            padding: 120px 20px 80px;
+            text-align: center;
+            color: white;
+        }
+        
+        .signature-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .signature-hero p {
+            font-size: 1.2rem;
+            color: #D4AF37;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .signature-collection {
+            padding: 80px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .signature-collection:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .signature-collection__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .signature-collection--reversed .signature-collection__container {
+            direction: rtl;
+        }
+        
+        .signature-collection--reversed .signature-collection__content {
+            direction: ltr;
+        }
+        
+        .signature-collection__image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .signature-collection__image:hover {
+            transform: scale(1.02);
+        }
+        
+        .signature-collection__image::before {
+            content: '🍽️';
+            font-size: 4rem;
+            opacity: 0.3;
+        }
+        
+        .signature-collection__badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #D4AF37;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .signature-collection__content {
+            padding: 20px;
+        }
+        
+        .signature-collection__number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background: #D4AF37;
+            color: white;
+            border-radius: 50%;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .signature-collection__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #2C5530;
+            margin-bottom: 15px;
+        }
+        
+        .signature-collection__subtitle {
+            font-size: 1.1rem;
+            color: #D4AF37;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        
+        .signature-collection__story {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        
+        .signature-collection__story p {
+            margin-bottom: 20px;
+        }
+        
+        .signature-collection__details {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #D4AF37;
+            margin: 30px 0;
+        }
+        
+        .signature-collection__details h4 {
+            font-family: 'Playfair Display', serif;
+            color: #2C5530;
+            margin-bottom: 15px;
+        }
+        
+        .signature-collection__ingredients {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .ingredient-tag {
+            background: #f0f0f0;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .ingredient-tag--special {
+            background: #D4AF37;
+            color: white;
+        }
+        
+        .signature-collection__wine {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .wine-icon {
+            font-size: 2rem;
+        }
+        
+        .wine-recommendation {
+            flex: 1;
+        }
+        
+        .wine-recommendation h5 {
+            color: #8B0000;
+            margin-bottom: 5px;
+        }
+        
+        .wine-recommendation p {
+            font-size: 0.95rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        @media (max-width: 968px) {
+            .signature-collection__container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .signature-collection--reversed .signature-collection__container {
+                direction: ltr;
+            }
+            
+            .signature-collection__image {
+                order: -1;
+                height: 300px;
+            }
+            
+            .signature-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .signature-collection__title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- EINHEITLICHER HEADER -->
+    <header class="global-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo">
+                <img src="../images/logo.svg" alt="Restaurant Goldener Löffel Logo">
+                <div class="header-logo-text">
+                    <span class="header-logo-title">Goldener Löffel</span>
+                    <span class="header-logo-subtitle">Exklusive Kulinarik seit 1995</span>
+                </div>
+            </a>
+            
+            <nav class="header-nav">
+                <button class="mobile-menu-btn" aria-label="Menü öffnen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="header-menu">
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="speisekarte.html">Speisekarte</a></li>
+                    <li><a href="chefkoechin.html">Chefköchin</a></li>
+                    <li><a href="signature-kollektionen.html" class="active">Signature</a></li>
+                    <li><a href="reservierung.html">Reservierung</a></li>
+                    <li><a href="rezepte.html">Rezepte</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="signature-hero">
+        <h1>Signature Kollektionen</h1>
+        <p>Jedes Gericht erzählt eine Geschichte. Entdecken Sie die Inspiration und Leidenschaft hinter unseren kulinarischen Meisterwerken.</p>
+    </section>
+
+    <!-- Signature Collection 1: Jakobsmuscheln -->
+    <section class="signature-collection" id="jakobsmuscheln">
+        <div class="signature-collection__container">
+            <div class="signature-collection__image">
+                <img src="../images/chef/dish-1.jpg" alt="Jakobsmuscheln auf Blumenkohlpüree" style="width: 100%; height: 100%; object-fit: cover;">
+                <span class="signature-collection__badge">Signature</span>
+            </div>
+            <div class="signature-collection__content">
+                <span class="signature-collection__number">1</span>
+                <h2 class="signature-collection__title">Jakobsmuscheln</h2>
+                <p class="signature-collection__subtitle">Die Perfektion des Meeres</p>
+                
+                <div class="signature-collection__story">
+                    <p>
+                        Die Inspiration für dieses Gericht kam während einer Reise an die bretonische Küste. 
+                        An einem nebligen Morgen beobachtete ich die Fischer, wie sie mit ihren Booten ausfuhren, 
+                        um die kostbaren Jakobsmuscheln zu ernten. Die Hingabe und der Respekt, mit dem sie 
+                        diese Schätze des Meeres behandelten, berührte mich zutiefst.
+                    </p>
+                    <p>
+                        Zurück in der Küche wollte ich diese Ehrfurcht vor dem Produkt in einem Gericht einfangen. 
+                        Die Jakobsmuscheln werden nur kurz angebraten, um ihre zarte Textur zu bewahren. 
+                        Das seidige Blumenkohlpüree bildet die perfekte Leinwand, während der Kaviar eine 
+                        salzige Note hinzufügt, die an die Gischt des Meeres erinnert.
+                    </p>
+                </div>
+                
+                <div class="signature-collection__details">
+                    <h4>Die Hauptzutaten</h4>
+                    <div class="signature-collection__ingredients">
+                        <span class="ingredient-tag ingredient-tag--special">Bretonische Jakobsmuscheln</span>
+                        <span class="ingredient-tag">Bio-Blumenkohl</span>
+                        <span class="ingredient-tag">Osietra Kaviar</span>
+                        <span class="ingredient-tag">Microgreens</span>
+                        <span class="ingredient-tag">Champagnerschaum</span>
+                    </div>
+                </div>
+                
+                <div class="signature-collection__wine">
+                    <span class="wine-icon">🍷</span>
+                    <div class="wine-recommendation">
+                        <h5>Weinempfehlung</h5>
+                        <p>Chablis Premier Cru - Die mineralische Frische ergänzt perfekt die Süße der Muscheln</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Collection 2: Wagyu Beef -->
+    <section class="signature-collection signature-collection--reversed" id="wagyu-beef">
+        <div class="signature-collection__container">
+            <div class="signature-collection__image">
+                <img src="../images/chef/dish-2.jpg" alt="Wagyu-Beef mit Trüffel" style="width: 100%; height: 100%; object-fit: cover;">
+                <span class="signature-collection__badge">Bestseller</span>
+            </div>
+            <div class="signature-collection__content">
+                <span class="signature-collection__number">2</span>
+                <h2 class="signature-collection__title">Wagyu-Beef</h2>
+                <p class="signature-collection__subtitle">Eine Symphonie der Aromen</p>
+                
+                <div class="signature-collection__story">
+                    <p>
+                        Während meiner Zeit in Japan hatte ich das Privileg, eine Wagyu-Farm in Kobe zu besuchen. 
+                        Die Art und Weise, wie die Tiere dort behandelt werden - mit klassischer Musik, 
+                        täglichen Massagen und einer speziellen Diät - ist mehr als nur Tradition; 
+                        es ist eine Kunstform.
+                    </p>
+                    <p>
+                        Dieses Gericht ist meine Hommage an diese außergewöhnliche Hingabe. Das Wagyu-Beef 
+                        wird bei exakt 56°C sous-vide gegart und dann kurz scharf angebraten. 
+                        Der schwarze Périgord-Trüffel aus Frankreich und die samtige Rotwein-Jus 
+                        vereinen sich zu einem unvergesslichen Geschmackserlebnis.
+                    </p>
+                </div>
+                
+                <div class="signature-collection__details">
+                    <h4>Die Hauptzutaten</h4>
+                    <div class="signature-collection__ingredients">
+                        <span class="ingredient-tag ingredient-tag--special">A5 Wagyu aus Kobe</span>
+                        <span class="ingredient-tag ingredient-tag--special">Schwarzer Périgord-Trüffel</span>
+                        <span class="ingredient-tag">Rotwein-Jus</span>
+                        <span class="ingredient-tag">Kartoffel-Mousseline</span>
+                        <span class="ingredient-tag">Glasierte Karotten</span>
+                    </div>
+                </div>
+                
+                <div class="signature-collection__wine">
+                    <span class="wine-icon">🍷</span>
+                    <div class="wine-recommendation">
+                        <h5>Weinempfehlung</h5>
+                        <p>Barolo DOCG Riserva - Ein kraftvoller Begleiter für dieses majestätische Fleisch</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Collection 3: Hummer -->
+    <section class="signature-collection" id="hummer">
+        <div class="signature-collection__container">
+            <div class="signature-collection__image">
+                <img src="../images/chef/dish-3.jpg" alt="Bretonischer Hummer" style="width: 100%; height: 100%; object-fit: cover;">
+                <span class="signature-collection__badge">Luxus</span>
+            </div>
+            <div class="signature-collection__content">
+                <span class="signature-collection__number">3</span>
+                <h2 class="signature-collection__title">Bretonischer Hummer</h2>
+                <p class="signature-collection__subtitle">Das Juwel der Bretagne</p>
+                
+                <div class="signature-collection__story">
+                    <p>
+                        Die Bretagne ist bekannt für ihre spektakulären Hummer. Bei einem Besuch in einem 
+                        kleinen Fischerdorf lernte ich einen alten Fischer kennen, der mir das Geheimnis 
+                        verriet: "Der Hummer muss glücklich sein, bevor er gefangen wird."
+                    </p>
+                    <p>
+                        Diese Philosophie prägt unsere Zubereitung. Der Hummer wird schonend pochiert und 
+                        mit einer Safran-Bisque serviert, die stundenlang köchelt. Jeder Löffel dieser 
+                        Bisque enthält die Essenz des Meeres, verfeinert mit dem goldenen Gewürz der Könige.
+                    </p>
+                </div>
+                
+                <div class="signature-collection__details">
+                    <h4>Die Hauptzutaten</h4>
+                    <div class="signature-collection__ingredients">
+                        <span class="ingredient-tag ingredient-tag--special">Bretonischer Hummer</span>
+                        <span class="ingredient-tag ingredient-tag--special">Safran aus La Mancha</span>
+                        <span class="ingredient-tag">Hausgemachte Bisque</span>
+                        <span class="ingredient-tag">Fenchel</span>
+                        <span class="ingredient-tag">Estragon-Öl</span>
+                    </div>
+                </div>
+                
+                <div class="signature-collection__wine">
+                    <span class="wine-icon">🍷</span>
+                    <div class="wine-recommendation">
+                        <h5>Weinempfehlung</h5>
+                        <p>Chassagne-Montrachet - Ein eleganter Weißwein mit der nötigen Komplexität</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Collection 4: Dessert -->
+    <section class="signature-collection signature-collection--reversed" id="valrhona">
+        <div class="signature-collection__container">
+            <div class="signature-collection__image">
+                <img src="../images/chef/dish-4.jpg" alt="Valrhona Schokolade" style="width: 100%; height: 100%; object-fit: cover;">
+                <span class="signature-collection__badge">Süße Verführung</span>
+            </div>
+            <div class="signature-collection__content">
+                <span class="signature-collection__number">4</span>
+                <h2 class="signature-collection__title">Valrhona Schokolade</h2>
+                <p class="signature-collection__subtitle">Die dunkle Versuchung</p>
+                
+                <div class="signature-collection__story">
+                    <p>
+                        Bei einem Besuch in der Valrhona-Manufaktur in Frankreich entdeckte ich die 
+                        wahre Kunst der Schokoladenherstellung. Die Leidenschaft der Chocolatiers und 
+                        ihre Hingabe zur Perfektion inspirierten mich zu dieser Kreation.
+                    </p>
+                    <p>
+                        Drei verschiedene Valrhona-Schokoladen verschmelzen zu einem harmonischen Ganzen. 
+                        Die Passionsfrucht bringt eine säuerliche Frische, während das essbare Blattgold 
+                        dem Dessert eine königliche Note verleiht. Es ist mehr als ein Dessert - 
+                        es ist eine Reise durch die Welt der Aromen.
+                    </p>
+                </div>
+                
+                <div class="signature-collection__details">
+                    <h4>Die Hauptzutaten</h4>
+                    <div class="signature-collection__ingredients">
+                        <span class="ingredient-tag ingredient-tag--special">Valrhona Guanaja 70%</span>
+                        <span class="ingredient-tag ingredient-tag--special">Passionsfrucht aus Madagaskar</span>
+                        <span class="ingredient-tag">23 Karat Blattgold</span>
+                        <span class="ingredient-tag">Tahiti-Vanille</span>
+                        <span class="ingredient-tag">Fleur de Sel</span>
+                    </div>
+                </div>
+                
+                <div class="signature-collection__wine">
+                    <span class="wine-icon">🍷</span>
+                    <div class="wine-recommendation">
+                        <h5>Weinempfehlung</h5>
+                        <p>Banyuls Rimage - Ein süßer Rotwein, der perfekt mit der Schokolade harmoniert</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Collection 5: Vegetarisch -->
+    <section class="signature-collection" id="gemuese">
+        <div class="signature-collection__container">
+            <div class="signature-collection__image">
+                <img src="../images/chef/dish-5.jpg" alt="Gemüse-Symphony" style="width: 100%; height: 100%; object-fit: cover;">
+                <span class="signature-collection__badge">Vegetarisch</span>
+            </div>
+            <div class="signature-collection__content">
+                <span class="signature-collection__number">5</span>
+                <h2 class="signature-collection__title">Gemüse-Symphony</h2>
+                <p class="signature-collection__subtitle">Die Kunst der pflanzlichen Küche</p>
+                
+                <div class="signature-collection__story">
+                    <p>
+                        Jeden Morgen besuche ich persönlich unseren Bio-Bauern auf dem Wochenmarkt. 
+                        Die Vielfalt und Frische des saisonalen Gemüses ist eine endlose Quelle der 
+                        Inspiration. Dieses Gericht ist eine Ode an die Natur und ihre Gaben.
+                    </p>
+                    <p>
+                        Jedes Gemüse wird individuell zubereitet, um seine einzigartige Textur und 
+                        seinen Geschmack zu bewahren. Die kunstvolle Anrichtung spiegelt die Schönheit 
+                        eines Gemüsegartens wider, während die hausgemachten Kräuteröle und Pürees 
+                        für geschmackliche Tiefe sorgen.
+                    </p>
+                </div>
+                
+                <div class="signature-collection__details">
+                    <h4>Die Hauptzutaten</h4>
+                    <div class="signature-collection__ingredients">
+                        <span class="ingredient-tag ingredient-tag--special">Bio-Marktgemüse der Saison</span>
+                        <span class="ingredient-tag">Quinoa aus Peru</span>
+                        <span class="ingredient-tag">Hausgemachtes Kräuteröl</span>
+                        <span class="ingredient-tag">Geröstete Nüsse</span>
+                        <span class="ingredient-tag">Tahini-Dressing</span>
+                        <span class="ingredient-tag">Essbare Blüten</span>
+                    </div>
+                </div>
+                
+                <div class="signature-collection__wine">
+                    <span class="wine-icon">🍷</span>
+                    <div class="wine-recommendation">
+                        <h5>Weinempfehlung</h5>
+                        <p>Grüner Veltliner Smaragd - Frisch und lebendig wie das Gemüse selbst</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Collection 6: Steinbutt -->
+    <section class="signature-collection signature-collection--reversed" id="steinbutt">
+        <div class="signature-collection__container">
+            <div class="signature-collection__image">
+                <img src="../images/chef/dish-6.jpg" alt="Steinbutt" style="width: 100%; height: 100%; object-fit: cover;">
+                <span class="signature-collection__badge">Meeresdelikatesse</span>
+            </div>
+            <div class="signature-collection__content">
+                <span class="signature-collection__number">6</span>
+                <h2 class="signature-collection__title">Steinbutt</h2>
+                <p class="signature-collection__subtitle">Der König der Plattfische</p>
+                
+                <div class="signature-collection__story">
+                    <p>
+                        Der Steinbutt ist für mich der edelste aller Plattfische. Seine feste, 
+                        weiße Fleischstruktur und der delikate Geschmack machen ihn zu einem 
+                        wahren Juwel der Nordsee. Die Inspiration für dieses Gericht kam während 
+                        einer stürmischen Nacht in einem kleinen Fischerhafen.
+                    </p>
+                    <p>
+                        Die Champagner-Sauce ist eine Hommage an die französische Haute Cuisine, 
+                        während der Kaviar die luxuriöse Note unterstreicht. Die Zubereitung 
+                        erfordert höchste Präzision - der Fisch wird auf der Haut knusprig gebraten 
+                        und im Ofen bei genau 180°C fertig gegart.
+                    </p>
+                </div>
+                
+                <div class="signature-collection__details">
+                    <h4>Die Hauptzutaten</h4>
+                    <div class="signature-collection__ingredients">
+                        <span class="ingredient-tag ingredient-tag--special">Wilder Steinbutt aus der Nordsee</span>
+                        <span class="ingredient-tag ingredient-tag--special">Beluga Kaviar</span>
+                        <span class="ingredient-tag">Dom Pérignon Champagner</span>
+                        <span class="ingredient-tag">Fenchel-Orangen-Salat</span>
+                        <span class="ingredient-tag">Dill-Öl</span>
+                    </div>
+                </div>
+                
+                <div class="signature-collection__wine">
+                    <span class="wine-icon">🍷</span>
+                    <div class="wine-recommendation">
+                        <h5>Weinempfehlung</h5>
+                        <p>Meursault Premier Cru - Ein buttrig-nussiger Burgunder für den perfekten Genuss</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EINHEITLICHER FOOTER -->
+    <footer class="global-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Restaurant Goldener Löffel</h3>
+                    <p>
+                        Exklusive Kulinarik und Event-Catering auf höchstem Niveau. 
+                        Seit 1995 Ihr Partner für unvergessliche Gaumenfreuden.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Kontakt</h4>
+                    <address>
+                        Gourmetstraße 42<br>
+                        12345 Feinschmeckerhausen<br>
+                        Tel: <a href="tel:+4912345678900">0123 456 789 00</a><br>
+                        E-Mail: <a href="mailto:info@goldener-loeffel.de">info@goldener-loeffel.de</a>
+                    </address>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Öffnungszeiten</h4>
+                    <p>
+                        <strong>Dienstag - Samstag:</strong><br>
+                        18:00 - 23:00 Uhr<br><br>
+                        <strong>Sonntag & Montag:</strong><br>
+                        Ruhetag
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Schnelllinks</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="speisekarte.html">Speisekarte</a></li>
+                        <li><a href="signature-kollektionen.html">Signature Gerichte</a></li>
+                        <li><a href="reservierung.html">Tisch reservieren</a></li>
+                        <li><a href="index.html#catering-pakete">Event-Catering</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Restaurant Goldener Löffel. Erstellt von Hans Hahn - Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const headerMenu = document.querySelector('.header-menu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    headerMenu.classList.toggle('active');
+                });
+            }
+            
+            // Schließe Menü beim Klick außerhalb
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.header-nav')) {
+                    mobileMenuBtn?.classList.remove('active');
+                    headerMenu?.classList.remove('active');
+                }
+            });
+            
+            // Smooth Scroll für Anker-Links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

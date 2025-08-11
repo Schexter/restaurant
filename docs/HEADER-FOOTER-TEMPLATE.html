@@ -1,0 +1,100 @@
+<!-- ==============================================
+     EINHEITLICHER HEADER TEMPLATE
+     Erstellt von Hans Hahn - Alle Rechte vorbehalten
+     Für alle Seiten zu verwenden
+     ============================================== -->
+
+<!-- HEADER START -->
+<nav class="main-nav">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <img src="images/restaurant/logo.svg" alt="Restaurant Goldener Löffel" width="50" height="50">
+            <span>Goldener Löffel</span>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Menü öffnen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="[ACTIVE-INDEX]">Start</a></li>
+            <li><a href="speisekarte.html" class="[ACTIVE-MENU]">Speisekarte</a></li>
+            <li><a href="chefkoechin.html" class="[ACTIVE-CHEF]">Chefköchin</a></li>
+            <li><a href="reservierung.html" class="[ACTIVE-RESERVATION]">Reservierung</a></li>
+            <li><a href="rezepte.html" class="[ACTIVE-RECIPES]">Rezepte</a></li>
+        </ul>
+    </div>
+</nav>
+<!-- HEADER END -->
+
+<!-- ==============================================
+     EINHEITLICHER FOOTER TEMPLATE
+     ============================================== -->
+
+<!-- FOOTER START -->
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Restaurant Goldener Löffel</h3>
+            <p>Exklusive Kulinarik und Event-Catering auf höchstem Niveau. 
+            Seit 1995 Ihr Partner für unvergessliche Gaumenfreuden.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Kontakt</h4>
+            <address>
+                Gourmetstraße 42<br>
+                12345 Feinschmeckerhausen<br>
+                Tel: <a href="tel:+4912345678900">0123 456 789 00</a><br>
+                E-Mail: <a href="mailto:info@goldener-loeffel.de">info@goldener-loeffel.de</a>
+            </address>
+        </div>
+        <div class="footer-section">
+            <h4>Öffnungszeiten</h4>
+            <p>
+                <strong>Dienstag - Samstag:</strong><br>
+                18:00 - 23:00 Uhr<br>
+                <strong>Sonntag & Montag:</strong><br>
+                Ruhetag
+            </p>
+        </div>
+        <div class="footer-section">
+            <h4>Folgen Sie uns</h4>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">📘</a>
+                <a href="#" aria-label="Instagram">📷</a>
+                <a href="#" aria-label="Twitter">🐦</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Restaurant Goldener Löffel. Erstellt von Hans Hahn - Alle Rechte vorbehalten.</p>
+    </div>
+</footer>
+<!-- FOOTER END -->
+
+<!-- ==============================================
+     EINHEITLICHES JAVASCRIPT
+     ============================================== -->
+
+<script>
+    // Mobile Menu Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                this.classList.toggle('active');
+            });
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('.main-nav')) {
+                navMenu.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            }
+        });
+    });
+</script>

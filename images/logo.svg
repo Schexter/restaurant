@@ -1,0 +1,48 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Restaurant Logo - Goldener Löffel -->
+  <!-- Erstellt von Hans Hahn - Alle Rechte vorbehalten -->
+  
+  <!-- Hintergrund-Kreis -->
+  <circle cx="100" cy="100" r="95" fill="#2C5530"/>
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#D4AF37" stroke-width="2"/>
+  
+  <!-- Goldener Löffel -->
+  <g transform="translate(100, 100)">
+    <!-- Löffel-Schale -->
+    <ellipse cx="0" cy="-20" rx="25" ry="35" fill="#D4AF37" transform="rotate(15)"/>
+    <ellipse cx="0" cy="-20" rx="20" ry="30" fill="#FFD700" transform="rotate(15)"/>
+    
+    <!-- Löffel-Stiel -->
+    <rect x="-3" y="10" width="6" height="60" fill="#D4AF37" transform="rotate(15)"/>
+    <rect x="-2" y="10" width="4" height="60" fill="#FFD700" transform="rotate(15)"/>
+    
+    <!-- Verzierung am Stielende -->
+    <circle cx="10" cy="70" r="8" fill="#D4AF37" transform="rotate(15)"/>
+    <circle cx="10" cy="70" r="6" fill="#FFD700" transform="rotate(15)"/>
+  </g>
+  
+  <!-- Restaurant Name - Oberer Text -->
+  <path id="upper-curve" d="M 30,100 A 70,70 0 0,1 170,100" fill="none"/>
+  <text font-family="Playfair Display, serif" font-size="18" font-weight="700" fill="#D4AF37">
+    <textPath href="#upper-curve" startOffset="50%" text-anchor="middle">
+      RESTAURANT
+    </textPath>
+  </text>
+  
+  <!-- Restaurant Name - Unterer Text -->
+  <text x="100" y="155" font-family="Playfair Display, serif" font-size="22" font-weight="700" 
+        text-anchor="middle" fill="#D4AF37">Goldener</text>
+  <text x="100" y="175" font-family="Playfair Display, serif" font-size="22" font-weight="700" 
+        text-anchor="middle" fill="#D4AF37">Löffel</text>
+  
+  <!-- Sterne -->
+  <g fill="#D4AF37">
+    <path d="M 40,50 L41,52 L43,52 L41,54 L42,56 L40,54 L38,56 L39,54 L37,52 L39,52 Z"/>
+    <path d="M 160,50 L161,52 L163,52 L161,54 L162,56 L160,54 L158,56 L159,54 L157,52 L159,52 Z"/>
+    <path d="M 100,35 L101,37 L103,37 L101,39 L102,41 L100,39 L98,41 L99,39 L97,37 L99,37 Z"/>
+  </g>
+  
+  <!-- Äußerer Zierrahmen -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#D4AF37" stroke-width="1" 
+          stroke-dasharray="2,4" opacity="0.5"/>
+</svg>

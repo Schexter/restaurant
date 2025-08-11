@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- 
+        Restaurant Website - Tischreservierung
+        Erstellt von Hans Hahn - Alle Rechte vorbehalten
+        Datum: 11.08.2025
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reservieren Sie Ihren Tisch im Zum Goldenen Löffel - Einfach, schnell und unkompliziert online">
+    <meta name="keywords" content="Reservierung, Tisch buchen, Restaurant, Online-Reservierung">
+    <meta name="author" content="Hans Hahn">
+    
+    <title>Tischreservierung | Zum Goldenen Löffel</title>
+    
+    <!-- CSS-Dateien -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header mit Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="header__logo">
+                    <h1 class="header__title">Zum Goldenen Löffel</h1>
+                    <span class="header__subtitle">Exklusive Kulinarik seit 1995</span>
+                </div>
+                
+                <nav class="header__nav" role="navigation" aria-label="Hauptnavigation">
+                    <button class="header__mobile-toggle" aria-label="Menü öffnen">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a href="index.html" class="header__nav-link">Start</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="chefkoechin.html" class="header__nav-link">Unsere Chefköchin</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="speisekarte.html" class="header__nav-link">Speisekarte</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="reservierung.html" class="header__nav-link header__nav-link--active">Reservierung</a>
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="rezepte.html" class="header__nav-link">Rezepte-Blog</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="reservation-hero">
+        <div class="container">
+            <h2 class="section__title">Tischreservierung</h2>
+            <p class="section__subtitle">Sichern Sie sich Ihren Platz für ein unvergessliches kulinarisches Erlebnis</p>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section class="reservation-section">
+        <div class="container">
+            <div class="reservation-grid">
+                <!-- Reservation Form -->
+                <div class="reservation-form-wrapper">
+                    <form class="form reservation-form" id="reservationForm" novalidate>
+                        <h3 class="form__title">Online-Reservierung</h3>
+                        
+                        <!-- Success Message (initially hidden) -->
+                        <div class="alert alert--success" id="successMessage" style="display: none;">
+                            <h4 class="alert__title">Vielen Dank für Ihre Anfrage!</h4>
+                            <p class="alert__text">Wir bestätigen Ihre Reservierung in Kürze per E-Mail.</p>
+                        </div>
+
+                        <!-- Error Message (initially hidden) -->
+                        <div class="alert alert--error" id="errorMessage" style="display: none;">
+                            <h4 class="alert__title">Bitte überprüfen Sie Ihre Eingaben</h4>
+                            <p class="alert__text">Alle Pflichtfelder müssen ausgefüllt werden.</p>
+                        </div>
+                        
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label for="firstName" class="form__label">Vorname *</label>
+                                <input type="text" id="firstName" name="firstName" class="form__input" required placeholder="Max">
+                                <span class="form__error" id="firstNameError"></span>
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="lastName" class="form__label">Nachname *</label>
+                                <input type="text" id="lastName" name="lastName" class="form__input" required placeholder="Mustermann">
+                                <span class="form__error" id="lastNameError"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label for="email" class="form__label">E-Mail *</label>
+                                <input type="email" id="email" name="email" class="form__input" required placeholder="max.mustermann@beispiel.de">
+                                <span class="form__error" id="emailError"></span>
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="phone" class="form__label">Telefonnummer *</label>
+                                <input type="tel" id="phone" name="phone" class="form__input" required placeholder="0123 456789">
+                                <span class="form__error" id="phoneError"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label for="date" class="form__label">Datum *</label>
+                                <input type="date" id="date" name="date" class="form__input" required min="">
+                                <span class="form__error" id="dateError"></span>
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="time" class="form__label">Uhrzeit *</label>
+                                <select id="time" name="time" class="form__select" required>
+                                    <option value="">Bitte wählen</option>
+                                    <option value="12:00">12:00 Uhr</option>
+                                    <option value="12:30">12:30 Uhr</option>
+                                    <option value="13:00">13:00 Uhr</option>
+                                    <option value="13:30">13:30 Uhr</option>
+                                    <option value="14:00">14:00 Uhr</option>
+                                    <option value="18:00">18:00 Uhr</option>
+                                    <option value="18:30">18:30 Uhr</option>
+                                    <option value="19:00">19:00 Uhr</option>
+                                    <option value="19:30">19:30 Uhr</option>
+                                    <option value="20:00">20:00 Uhr</option>
+                                    <option value="20:30">20:30 Uhr</option>
+                                    <option value="21:00">21:00 Uhr</option>
+                                    <option value="21:30">21:30 Uhr</option>
+                                </select>
+                                <span class="form__error" id="timeError"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form__row">
+                            <div class="form__group">
+                                <label for="persons" class="form__label">Anzahl Personen *</label>
+                                <select id="persons" name="persons" class="form__select" required>
+                                    <option value="">Bitte wählen</option>
+                                    <option value="1">1 Person</option>
+                                    <option value="2">2 Personen</option>
+                                    <option value="3">3 Personen</option>
+                                    <option value="4">4 Personen</option>
+                                    <option value="5">5 Personen</option>
+                                    <option value="6">6 Personen</option>
+                                    <option value="7">7 Personen</option>
+                                    <option value="8">8 Personen</option>
+                                    <option value="9+">Mehr als 8 Personen</option>
+                                </select>
+                                <span class="form__error" id="personsError"></span>
+                            </div>
+                            
+                            <div class="form__group">
+                                <label for="occasion" class="form__label">Anlass (optional)</label>
+                                <select id="occasion" name="occasion" class="form__select">
+                                    <option value="">Kein besonderer Anlass</option>
+                                    <option value="birthday">Geburtstag</option>
+                                    <option value="anniversary">Jubiläum</option>
+                                    <option value="business">Geschäftsessen</option>
+                                    <option value="date">Romantisches Dinner</option>
+                                    <option value="celebration">Feier</option>
+                                    <option value="other">Sonstiges</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="specialRequests" class="form__label">Besondere Wünsche</label>
+                            <textarea id="specialRequests" name="specialRequests" class="form__textarea" 
+                                      placeholder="Allergien, Unverträglichkeiten, Kinderstuhl benötigt, etc."></textarea>
+                            <span class="form__help">Teilen Sie uns gerne Ihre speziellen Anforderungen mit</span>
+                        </div>
+                        
+                        <div class="form__group">
+                            <div class="form__checkbox-wrapper">
+                                <input type="checkbox" id="newsletter" name="newsletter" class="form__checkbox">
+                                <label for="newsletter">Ich möchte über Neuigkeiten und Angebote informiert werden</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form__group">
+                            <div class="form__checkbox-wrapper">
+                                <input type="checkbox" id="privacy" name="privacy" class="form__checkbox" required>
+                                <label for="privacy">Ich habe die Datenschutzerklärung gelesen und akzeptiert *</label>
+                            </div>
+                            <span class="form__error" id="privacyError"></span>
+                        </div>
+                        
+                        <div class="form__actions">
+                            <button type="submit" class="btn btn--primary btn--large">Reservierung anfragen</button>
+                            <button type="reset" class="btn btn--outline">Formular zurücksetzen</button>
+                        </div>
+                        
+                        <p class="form__note">* Pflichtfelder</p>
+                    </form>
+                </div>
+                
+                <!-- Information Sidebar -->
+                <div class="reservation-info">
+                    <div class="info-card">
+                        <h3 class="info-card__title">Öffnungszeiten</h3>
+                        <dl class="info-card__list">
+                            <dt>Montag - Freitag</dt>
+                            <dd>12:00 - 14:30 Uhr<br>18:00 - 23:00 Uhr</dd>
+                            <dt>Samstag - Sonntag</dt>
+                            <dd>12:00 - 23:00 Uhr durchgehend</dd>
+                        </dl>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3 class="info-card__title">Kontakt</h3>
+                        <p class="info-card__text">
+                            <strong>Telefonische Reservierung:</strong><br>
+                            <a href="tel:+4912345678900" class="info-card__phone">0123 456 789 00</a>
+                        </p>
+                        <p class="info-card__text">
+                            <strong>E-Mail:</strong><br>
+                            <a href="mailto:reservierung@goldener-loeffel.de">reservierung@goldener-loeffel.de</a>
+                        </p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3 class="info-card__title">Wichtige Hinweise</h3>
+                        <ul class="info-card__bullets">
+                            <li>Reservierungen sind bis zu 3 Monate im Voraus möglich</li>
+                            <li>Für Gruppen ab 9 Personen kontaktieren Sie uns bitte telefonisch</li>
+                            <li>Stornierungen sind bis 24 Stunden vorher kostenfrei möglich</li>
+                            <li>Bei Verspätungen über 15 Minuten verfällt die Reservierung</li>
+                            <li>Dresscode: Smart Casual</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card info-card--special">
+                        <h3 class="info-card__title">Private Events</h3>
+                        <p class="info-card__text">
+                            Planen Sie eine größere Feier oder ein Event? 
+                            Unser Restaurant bietet auch exklusive Vermietungen 
+                            für bis zu 80 Personen.
+                        </p>
+                        <a href="index.html#catering-pakete" class="btn btn--secondary">Event-Catering anfragen</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="location-section">
+        <div class="container">
+            <h2 class="section__title">So finden Sie uns</h2>
+            <div class="location-grid">
+                <div class="location-map">
+                    <!-- Placeholder für Karte -->
+                    <div class="map-placeholder">
+                        <p>🗺️ Interaktive Karte</p>
+                        <p>Gourmetstraße 42<br>12345 Feinschmeckerhausen</p>
+                    </div>
+                </div>
+                <div class="location-info">
+                    <h3>Anfahrt</h3>
+                    <div class="transport-option">
+                        <h4>🚗 Mit dem Auto</h4>
+                        <p>Kostenlose Parkplätze direkt vor dem Restaurant. 
+                           Valet-Parking-Service verfügbar.</p>
+                    </div>
+                    <div class="transport-option">
+                        <h4>🚊 Öffentliche Verkehrsmittel</h4>
+                        <p>U-Bahn: Linie U3, Station "Gourmetplatz" (5 Min. Fußweg)<br>
+                           Bus: Linien 42, 88, Haltestelle "Feinschmecker Allee"</p>
+                    </div>
+                    <div class="transport-option">
+                        <h4>🚕 Taxi</h4>
+                        <p>Gerne arrangieren wir für Sie ein Taxi nach Ihrem Besuch.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">Zum Goldenen Löffel</h3>
+                    <p class="footer__description">
+                        Exklusive Kulinarik und Event-Catering auf höchstem Niveau. 
+                        Seit 1995 Ihr Partner für unvergessliche Gaumenfreuden.
+                    </p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Kontakt</h4>
+                    <address class="footer__address">
+                        Gourmetstraße 42<br>
+                        12345 Feinschmeckerhausen<br>
+                        Tel: <a href="tel:+4912345678900">0123 456 789 00</a><br>
+                        E-Mail: <a href="mailto:info@goldener-loeffel.de">info@goldener-loeffel.de</a>
+                    </address>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Öffnungszeiten</h4>
+                    <dl class="footer__hours">
+                        <dt>Montag - Freitag:</dt>
+                        <dd>12:00 - 14:30 Uhr | 18:00 - 23:00 Uhr</dd>
+                        <dt>Samstag - Sonntag:</dt>
+                        <dd>12:00 - 23:00 Uhr</dd>
+                    </dl>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Folgen Sie uns</h4>
+                    <div class="footer__social">
+                        <a href="#" aria-label="Facebook" class="footer__social-link">Facebook</a>
+                        <a href="#" aria-label="Instagram" class="footer__social-link">Instagram</a>
+                        <a href="#" aria-label="LinkedIn" class="footer__social-link">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2025 Zum Goldenen Löffel. Erstellt von Hans Hahn - Alle Rechte vorbehalten.
+                </p>
+                
+                <div class="footer-column">
+                    <h4>Schnelllinks</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="speisekarte.html">Speisekarte</a></li>
+                        <li><a href="signature-kollektionen.html">Signature Gerichte</a></li>
+                        <li><a href="reservierung.html">Tisch reservieren</a></li>
+                        <li><a href="../index.html#catering-pakete">Event-Catering</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Restaurant Goldener Löffel. Erstellt von Hans Hahn - Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        /* Zusätzliche Styles für die Reservierungsseite */
+        .reservation-hero {
+            background: linear-gradient(135deg, #2C5530 0%, #1a3320 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .reservation-hero .section__title {
+            color: white;
+        }
+
+        .reservation-hero .section__subtitle {
+            color: #D4AF37;
+        }
+
+        .reservation-section {
+            padding: 4rem 0;
+        }
+
+        .reservation-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .reservation-form-wrapper {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .form__title {
+            font-size: 1.75rem;
+            color: #2C5530;
+            margin-bottom: 2rem;
+        }
+
+        .form__actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .form__note {
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        .info-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .info-card--special {
+            background: linear-gradient(135deg, #FFF8E7 0%, #fff 100%);
+            border: 2px solid #D4AF37;
+        }
+
+        .info-card__title {
+            color: #2C5530;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-card__text {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .info-card__phone {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #D4AF37;
+        }
+
+        .info-card__list dt {
+            font-weight: 600;
+            color: #2C5530;
+            margin-top: 0.5rem;
+        }
+
+        .info-card__list dd {
+            margin-left: 0;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .info-card__bullets {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-card__bullets li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .info-card__bullets li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #D4AF37;
+            font-weight: bold;
+        }
+
+        .location-section {
+            background-color: #f9f9f9;
+            padding: 4rem 0;
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .map-placeholder {
+            background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%);
+            height: 400px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: #666;
+            text-align: center;
+        }
+
+        .location-info h3 {
+            color: #2C5530;
+            margin-bottom: 1.5rem;
+        }
+
+        .transport-option {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .transport-option h4 {
+            color: #D4AF37;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .reservation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .form__actions {
+                flex-direction: column;
+            }
+
+            .form__actions button {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const headerMenu = document.querySelector('.header-menu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    headerMenu.classList.toggle('active');
+                });
+            }
+            
+            // Schließe Menü beim Klick außerhalb
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.header-nav')) {
+                    mobileMenuBtn?.classList.remove('active');
+                    headerMenu?.classList.remove('active');
+                }
+            });
+            
+            // Formular-Validierung bleibt bestehen
+        document.addEventListener('DOMContentLoaded', function() {
+            // Setze minimales Datum auf heute
+            const dateInput = document.getElementById('date');
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.min = today;
+            
+            const form = document.getElementById('reservationForm');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Reset error messages
+                errorMessage.style.display = 'none';
+                document.querySelectorAll('.form__error').forEach(error => error.textContent = '');
+                
+                let isValid = true;
+                
+                // Validate required fields
+                const requiredFields = [
+                    { id: 'firstName', error: 'firstNameError', message: 'Bitte geben Sie Ihren Vornamen ein' },
+                    { id: 'lastName', error: 'lastNameError', message: 'Bitte geben Sie Ihren Nachnamen ein' },
+                    { id: 'email', error: 'emailError', message: 'Bitte geben Sie eine gültige E-Mail-Adresse ein' },
+                    { id: 'phone', error: 'phoneError', message: 'Bitte geben Sie Ihre Telefonnummer ein' },
+                    { id: 'date', error: 'dateError', message: 'Bitte wählen Sie ein Datum' },
+                    { id: 'time', error: 'timeError', message: 'Bitte wählen Sie eine Uhrzeit' },
+                    { id: 'persons', error: 'personsError', message: 'Bitte wählen Sie die Anzahl der Personen' }
+                ];
+                
+                requiredFields.forEach(field => {
+                    const input = document.getElementById(field.id);
+                    if (!input.value) {
+                        document.getElementById(field.error).textContent = field.message;
+                        isValid = false;
+                    }
+                });
+                
+                // Validate email format
+                const email = document.getElementById('email');
+                if (email.value && !email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                    document.getElementById('emailError').textContent = 'Bitte geben Sie eine gültige E-Mail-Adresse ein';
+                    isValid = false;
+                }
+                
+                // Validate privacy checkbox
+                if (!document.getElementById('privacy').checked) {
+                    document.getElementById('privacyError').textContent = 'Bitte akzeptieren Sie die Datenschutzerklärung';
+                    isValid = false;
+                }
+                
+                // If valid, show success message
+                if (isValid) {
+                    successMessage.style.display = 'block';
+                    form.reset();
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    errorMessage.style.display = 'block';
+                    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+            
+            // Reset form
+            form.addEventListener('reset', function() {
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'none';
+                document.querySelectorAll('.form__error').forEach(error => error.textContent = '');
+            });
+        });
+    </script>
+</body>
+</html>

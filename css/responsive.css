@@ -1,0 +1,357 @@
+/*
+ * Restaurant Website - Responsive Styles
+ * Erstellt von Hans Hahn - Alle Rechte vorbehalten
+ * Datum: 11.08.2025
+ * Mobile-First Approach
+ */
+
+/* ===========================
+   Mobile Styles (< 768px)
+   =========================== */
+@media screen and (max-width: 767px) {
+    
+    /* Typography Adjustments */
+    html {
+        font-size: 14px;
+    }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.25rem; }
+    
+    /* Header Mobile */
+    .header__wrapper {
+        flex-wrap: wrap;
+    }
+    
+    .header__title {
+        font-size: 1.5rem;
+    }
+    
+    .header__mobile-toggle {
+        display: flex;
+    }
+    
+    .header__nav-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        gap: 0;
+    }
+    
+    .header__nav-list.active {
+        display: flex;
+    }
+    
+    .header__nav-item {
+        width: 100%;
+    }
+    
+    .header__nav-link {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+    }
+    
+    /* Hero Mobile */
+    .hero {
+        min-height: 60vh;
+    }
+    
+    .hero__title {
+        font-size: 2.5rem;
+    }
+    
+    .hero__subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .hero__description {
+        font-size: 1rem;
+    }
+    
+    /* Sections Mobile */
+    section {
+        padding: 2rem 0;
+    }
+    
+    .section__title {
+        font-size: 2rem;
+    }
+    
+    /* Cards Mobile */
+    .catering__grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .card__image {
+        height: 200px;
+    }
+    
+    .card__content {
+        padding: 1.5rem;
+    }
+    
+    /* CTA Mobile */
+    .cta {
+        padding: 3rem 0;
+    }
+    
+    .cta__title {
+        font-size: 2rem;
+    }
+    
+    .cta__buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .btn--large {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Testimonials Mobile */
+    .testimonials__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Footer Mobile */
+    .footer__content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer__social {
+        justify-content: center;
+    }
+    
+    .footer__address {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* ===========================
+   Small Tablet (480px - 767px)
+   =========================== */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .catering__grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .testimonials__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===========================
+   Tablet Styles (768px - 1024px)
+   =========================== */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    
+    /* Container */
+    .container {
+        padding: 0 2rem;
+    }
+    
+    /* Header Tablet */
+    .header__nav-list {
+        gap: 1rem;
+    }
+    
+    .header__nav-link {
+        font-size: 0.9rem;
+    }
+    
+    /* Hero Tablet */
+    .hero__title {
+        font-size: 3rem;
+    }
+    
+    /* Cards Tablet */
+    .catering__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Footer Tablet */
+    .footer__content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===========================
+   Small Desktop (1025px - 1366px)
+   =========================== */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+    .container {
+        max-width: 1100px;
+    }
+    
+    .catering__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ===========================
+   Large Desktop (> 1920px)
+   =========================== */
+@media screen and (min-width: 1921px) {
+    html {
+        font-size: 18px;
+    }
+    
+    .container {
+        max-width: 1400px;
+    }
+    
+    .hero {
+        min-height: 80vh;
+    }
+    
+    .hero__title {
+        font-size: 4rem;
+    }
+    
+    .catering__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ===========================
+   Print Styles
+   =========================== */
+@media print {
+    /* Hide navigation and unnecessary elements */
+    .header__nav,
+    .hero,
+    .cta,
+    .footer__social,
+    .btn {
+        display: none;
+    }
+    
+    /* Adjust colors for print */
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    .header,
+    .footer {
+        background-color: white;
+        color: black;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        color: black;
+    }
+    
+    /* Ensure content breaks properly */
+    .card {
+        page-break-inside: avoid;
+    }
+    
+    section {
+        page-break-after: auto;
+    }
+}
+
+/* ===========================
+   Hover Effects (Desktop Only)
+   =========================== */
+@media (hover: hover) and (pointer: fine) {
+    /* Enhanced hover effects for desktop */
+    .card {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .card:hover {
+        transform: translateY(-10px) scale(1.02);
+    }
+    
+    .btn {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .btn::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+    }
+    
+    .btn:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* ===========================
+   Accessibility & Reduced Motion
+   =========================== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===========================
+   Dark Mode Support
+   =========================== */
+@media (prefers-color-scheme: dark) {
+    /* Optional: Add dark mode styles here if needed */
+    /* Currently keeping light theme as default for restaurant website */
+}
+
+/* ===========================
+   High Contrast Mode
+   =========================== */
+@media (prefers-contrast: high) {
+    .btn {
+        border: 2px solid currentColor;
+    }
+    
+    .card {
+        border: 2px solid #333;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+}
+
+/* ===========================
+   Landscape Mobile
+   =========================== */
+@media screen and (max-width: 767px) and (orientation: landscape) {
+    .hero {
+        min-height: 90vh;
+    }
+    
+    .hero__title {
+        font-size: 2rem;
+    }
+    
+    .header__wrapper {
+        padding: 0.5rem 0;
+    }
+}
+
+/* Erstellt von Hans Hahn - Alle Rechte vorbehalten */

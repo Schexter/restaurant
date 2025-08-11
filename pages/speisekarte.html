@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Erstellt von Hans Hahn - Alle Rechte vorbehalten -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Speisekarte - Restaurant Goldener Löffel">
+    <meta name="keywords" content="Speisekarte, Menü, Restaurant, Fine Dining, Gourmet">
+    <meta name="author" content="Hans Hahn">
+    
+    <title>Speisekarte - Restaurant Goldener Löffel</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/global-layout.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <style>
+        /* Speisekarte-spezifische Styles */
+        .menu-hero {
+            background: linear-gradient(135deg, rgba(44, 85, 48, 0.95), rgba(26, 51, 32, 0.95)),
+                        url('../images/restaurant/hero-bg.svg') center/cover;
+            padding: 120px 20px 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .menu-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .menu-hero p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.2rem;
+            color: #D4AF37;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 20px;
+            background: white;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 85px;
+            z-index: 100;
+        }
+
+        .category-btn {
+            padding: 12px 30px;
+            background: white;
+            border: 2px solid #2C5530;
+            color: #2C5530;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 25px;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: #2C5530;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(44, 85, 48, 0.3);
+        }
+
+        .menu-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .menu-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #2C5530;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #D4AF37;
+        }
+
+        .menu-items {
+            display: grid;
+            gap: 30px;
+        }
+
+        .menu-item {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: #D4AF37;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        }
+
+        .menu-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 10px;
+        }
+
+        .menu-item-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #2C5530;
+            margin: 0;
+        }
+
+        .menu-item-price {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.4rem;
+            color: #D4AF37;
+            font-weight: 700;
+            white-space: nowrap;
+            background: linear-gradient(135deg, #D4AF37, #b8941f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .menu-item-description {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+
+        .menu-item-tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 5px 12px;
+            background: #f0f0f0;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-family: 'Open Sans', sans-serif;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+
+        .tag.vegetarian {
+            background: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #2e7d32;
+        }
+
+        .tag.vegan {
+            background: #f3e5f5;
+            color: #6a1b9a;
+            border: 1px solid #6a1b9a;
+        }
+
+        .tag.gluten-free {
+            background: #fff3e0;
+            color: #e65100;
+            border: 1px solid #e65100;
+        }
+
+        .tag.spicy {
+            background: #ffebee;
+            color: #c62828;
+            border: 1px solid #c62828;
+        }
+
+        .wine-pairing {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed #e0e0e0;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.9rem;
+            color: #8B0000;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .wine-pairing::before {
+            content: '🍷';
+            font-size: 1.2rem;
+        }
+
+        /* Getränkekarte Spezial-Styling */
+        .drinks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .drink-category {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .drink-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        }
+
+        .drink-category h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #2C5530;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #D4AF37;
+        }
+
+        .drink-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dotted #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .drink-item:hover {
+            padding-left: 10px;
+            background: #f9f9f9;
+            margin: 0 -10px;
+            padding-right: 10px;
+        }
+
+        .drink-item:last-child {
+            border-bottom: none;
+        }
+
+        .drink-name {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .drink-price {
+            font-family: 'Open Sans', sans-serif;
+            color: #D4AF37;
+            font-weight: 700;
+        }
+
+        /* Special Highlight */
+        .menu-item--special {
+            background: linear-gradient(135deg, #fff 0%, #fffef5 100%);
+            border-left-color: #D4AF37;
+        }
+
+        .menu-item--special::after {
+            content: 'Empfehlung des Chefs';
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            background: #D4AF37;
+            color: white;
+            padding: 5px 40px;
+            font-size: 0.8rem;
+            transform: rotate(45deg);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .menu-categories {
+                padding: 20px 10px;
+                gap: 10px;
+                top: 75px;
+            }
+
+            .category-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .menu-item {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .menu-item-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .menu-item-price {
+                font-size: 1.2rem;
+            }
+
+            .drinks-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-item--special::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- EINHEITLICHER HEADER -->
+    <header class="global-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo">
+                <img src="../images/logo.svg" alt="Restaurant Goldener Löffel Logo">
+                <div class="header-logo-text">
+                    <span class="header-logo-title">Goldener Löffel</span>
+                    <span class="header-logo-subtitle">Exklusive Kulinarik seit 1995</span>
+                </div>
+            </a>
+            
+            <nav class="header-nav">
+                <button class="mobile-menu-btn" aria-label="Menü öffnen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="header-menu">
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="speisekarte.html" class="active">Speisekarte</a></li>
+                    <li><a href="chefkoechin.html">Chefköchin</a></li>
+                    <li><a href="signature-kollektionen.html">Signature</a></li>
+                    <li><a href="reservierung.html">Reservierung</a></li>
+                    <li><a href="rezepte.html">Rezepte</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="menu-hero">
+        <h1>Unsere Speisekarte</h1>
+        <p>Entdecken Sie die kulinarische Vielfalt unseres Hauses - von klassischen Gerichten bis zu modernen Interpretationen</p>
+    </section>
+
+    <!-- Category Navigation -->
+    <div class="menu-categories">
+        <button class="category-btn active" data-category="vorspeisen">Vorspeisen</button>
+        <button class="category-btn" data-category="hauptgaenge">Hauptgänge</button>
+        <button class="category-btn" data-category="desserts">Desserts</button>
+        <button class="category-btn" data-category="getraenke">Getränke</button>
+    </div>
+
+    <!-- Vorspeisen Section -->
+    <section class="menu-section active" id="vorspeisen">
+        <h2 class="section-title">Vorspeisen</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <div>
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Tatar vom Rind</h3>
+                    </div>
+                    <p class="menu-item-description">
+                        Fein gewürztes Rindertatar mit Wachtelei, serviert mit geröstetem Brioche und eingelegten Cornichons
+                    </p>
+                    <div class="menu-item-tags">
+                        <span class="tag gluten-free">Glutenfrei möglich</span>
+                    </div>
+                    <p class="wine-pairing">Weinempfehlung: Châteauneuf-du-Pape</p>
+                </div>
+                <div class="menu-item-price">18,50 €</div>
+            </div>
+
+            <div class="menu-item menu-item--special">
+                <div>
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Jakobsmuscheln</h3>
+                    </div>
+                    <p class="menu-item-description">
+                        Gebratene Jakobsmuscheln auf Erbsenpüree mit Pancetta-Chip und Zitronenbutter
+                    </p>
+                    <div class="menu-item-tags">
+                        <span class="tag gluten-free">Glutenfrei</span>
+                    </div>
+                    <p class="wine-pairing">Weinempfehlung: Sancerre Blanc</p>
+                </div>
+                <div class="menu-item-price">22,00 €</div>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Burrata di Puglia</h3>
+                    </div>
+                    <p class="menu-item-description">
+                        Cremige Burrata mit marinierten Kirschtomaten, Basilikum-Pesto und gerösteten Pinienkernen
+                    </p>
+                    <div class="menu-item-tags">
+                        <span class="tag vegetarian">Vegetarisch</span>
+                        <span class="tag gluten-free">Glutenfrei möglich</span>
+                    </div>
+                    <p class="wine-pairing">Weinempfehlung: Vermentino di Sardegna</p>
+                </div>
+                <div class="menu-item-price">16,50 €</div>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Französische Zwiebelsuppe</h3>
+                    </div>
+                    <p class="menu-item-description">
+                        Klassisch überbacken mit Gruyère-Käse und Croûtons
+                    </p>
+                    <div class="menu-item-tags">
+                        <span class="tag vegetarian">Vegetarisch</span>
+                    </div>
+                    <p class="wine-pairing">Weinempfehlung: Côtes du Rhône</p>
+                </div>
+                <div class="menu-item-price">14,00 €</div>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Gänseleberpastete</h3>
+                    </div>
+                    <p class="menu-item-description">
+                        Hausgemachte Pastete mit Portweingelee, serviert mit warmem Brioche und Feigensenf
+                    </p>
+                    <p class="wine-pairing">Weinempfehlung: Sauternes</p>
+                </div>
+                <div class="menu-item-price">28,00 €</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hauptgänge Section -->
+    <section class="menu-section" id="hauptgaenge">
+        <h2 class="section-title">Hauptgänge</h2>
+        <div class="menu-items">
+            <div class="menu-item menu-item--special">
+                <div>
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Dry Aged Ribeye</h3>
+                    </div>
+                    <p class="menu-item-description">
+                        300g gereiftes Ribeye-Steak vom Simmentaler Rind, serviert mit Trüffelpommes, 
+                        gegrilltem Gemüse und hausgemachter Béarnaise
+                    </p>
+                    <div class="menu-item-tags">
+                        <span class="tag gluten-free">Glutenfrei</span>
+                    </div>
+                    <p class="wine-pairing">Weinempfehlung: Barolo DOCG</p>
+                </div>
+                <div class="menu-item-price">58,00 €</div>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Bretonischer Hummer</h3>
+                    </div>
+                    <p class="menu-item-description">
+                        Ganzer Hummer gegrillt mit Knoblauchbutter, Safran-Risotto und Microgreens
+                    </p>
+                    <div class="menu-item-tags">
+                        <span class="tag gluten-free">Glutenfrei</span>
+                    </div>
+                    <p class="wine-pairing">Weinempfehlung: Chablis Premier Cru</p>
+                </div>
+                <div class="menu-item-price">72,00 €</div>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Lammkarree</h3>
+                    </div>
+                    <p class="menu-item-description">
+                        Rosa gebratenes Lammkarree mit Kräuterkruste, Ratatouille und Rosmarinjus
+                    </p>
+                    <div class="menu-item-tags">
+                        <span class="tag gluten-free">Glutenfrei möglich</span>
+                    </div>
+                    <p class="wine-pairing">Weinempfehlung: Châteauneuf-du-Pape Rouge</p>
+                </div>
+                <div class="menu-item-price">45,00 €</div>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Steinbutt</h3>
+                    </div>
+                    <p class="menu-item-description">
+                        Gebratener Steinbutt auf Champagner-Sauce mit Beluga-Kaviar und Fenchel-Orangen-Salat
+                    </p>
+                    <div class="menu-item-tags">
+                        <span class="tag gluten-free">Glutenfrei</span>
+                    </div>
+                    <p class="wine-pairing">Weinempfehlung: Meursault</p>
+                </div>
+                <div class="menu-item-price">52,00 €</div>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Risotto alla Milanese</h3>
+                    </div>
+                    <p class="menu-item-description">
+                        Cremiges Safran-Risotto mit Parmigiano Reggiano DOP und frischen Kräutern
+                    </p>
+                    <div class="menu-item-tags">
+                        <span class="tag vegetarian">Vegetarisch</span>
+                        <span class="tag gluten-free">Glutenfrei</span>
+                    </div>
+                    <p class="wine-pairing">Weinempfehlung: Lugana DOC</p>
+                </div>
+                <div class="menu-item-price">32,00 €</div>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Gemüse-Symphony</h3>
+                    </div>
+                    <p class="menu-item-description">
+                        Saisonales Marktgemüse kunstvoll arrangiert mit Quinoa, gerösteten Nüssen und Tahini-Dressing
+                    </p>
+                    <div class="menu-item-tags">
+                        <span class="tag vegan">Vegan</span>
+                        <span class="tag gluten-free">Glutenfrei</span>
+                    </div>
+                    <p class="wine-pairing">Weinempfehlung: Grüner Veltliner</p>
+                </div>
+                <div class="menu-item-price">28,00 €</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desserts Section -->
+    <section class="menu-section" id="desserts">
+        <h2 class="section-title">Desserts</h2>
+        <div class="menu-items">
+            <div class="menu-item menu-item--special">
+                <div>
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Schokoladen-Lava-Kuchen</h3>
+                    </div>
+                    <p class="menu-item-description">
+                        Warmer Schokoladenkuchen mit flüssigem Kern, serviert mit Vanilleeis und frischen Beeren
+                    </p>
+                    <div class="menu-item-tags">
+                        <span class="tag vegetarian">Vegetarisch</span>
+                    </div>
+                </div>
+                <div class="menu-item-price">12,00 €</div>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Crème Brûlée</h3>
+                    </div>
+                    <p class="menu-item-description">
+                        Klassische Vanillecreme mit karamellisierter Zuckerkruste
+                    </p>
+                    <div class="menu-item-tags">
+                        <span class="tag vegetarian">Vegetarisch</span>
+                        <span class="tag gluten-free">Glutenfrei</span>
+                    </div>
+                </div>
+                <div class="menu-item-price">10,00 €</div>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Valrhona Schokolade</h3>
+                    </div>
+                    <p class="menu-item-description">
+                        Dreierlei von der Valrhona-Schokolade mit Passionsfrucht und Blattgold
+                    </p>
+                    <div class="menu-item-tags">
+                        <span class="tag vegetarian">Vegetarisch</span>
+                    </div>
+                </div>
+                <div class="menu-item-price">14,00 €</div>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Käseauswahl</h3>
+                    </div>
+                    <p class="menu-item-description">
+                        Selektion französischer Käse mit Quittenbrot, Nüssen und frischem Obst
+                    </p>
+                    <div class="menu-item-tags">
+                        <span class="tag vegetarian">Vegetarisch</span>
+                        <span class="tag gluten-free">Glutenfrei möglich</span>
+                    </div>
+                </div>
+                <div class="menu-item-price">18,00 €</div>
+            </div>
+
+            <div class="menu-item">
+                <div>
+                    <div class="menu-item-header">
+                        <h3 class="menu-item-name">Sorbet-Variation</h3>
+                    </div>
+                    <p class="menu-item-description">
+                        Hausgemachte Sorbets der Saison (Mango, Himbeere, Zitrone) mit frischer Minze
+                    </p>
+                    <div class="menu-item-tags">
+                        <span class="tag vegan">Vegan</span>
+                        <span class="tag gluten-free">Glutenfrei</span>
+                    </div>
+                </div>
+                <div class="menu-item-price">9,00 €</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getränke Section -->
+    <section class="menu-section" id="getraenke">
+        <h2 class="section-title">Getränke</h2>
+        <div class="drinks-grid">
+            <div class="drink-category">
+                <h3>Aperitifs</h3>
+                <div class="drink-item">
+                    <span class="drink-name">Champagner Ruinart Blanc de Blancs</span>
+                    <span class="drink-price">18,00 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Aperol Spritz</span>
+                    <span class="drink-price">9,50 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Lillet Berry</span>
+                    <span class="drink-price">8,50 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Gin Tonic (Hendrick's)</span>
+                    <span class="drink-price">12,00 €</span>
+                </div>
+            </div>
+
+            <div class="drink-category">
+                <h3>Weißweine (0,2l)</h3>
+                <div class="drink-item">
+                    <span class="drink-name">Grauburgunder, Baden</span>
+                    <span class="drink-price">8,50 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Sancerre, Loire</span>
+                    <span class="drink-price">12,00 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Chablis Premier Cru</span>
+                    <span class="drink-price">14,00 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Riesling Großes Gewächs</span>
+                    <span class="drink-price">16,00 €</span>
+                </div>
+            </div>
+
+            <div class="drink-category">
+                <h3>Rotweine (0,2l)</h3>
+                <div class="drink-item">
+                    <span class="drink-name">Pinot Noir, Baden</span>
+                    <span class="drink-price">9,50 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Châteauneuf-du-Pape</span>
+                    <span class="drink-price">15,00 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Barolo DOCG</span>
+                    <span class="drink-price">18,00 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Brunello di Montalcino</span>
+                    <span class="drink-price">20,00 €</span>
+                </div>
+            </div>
+
+            <div class="drink-category">
+                <h3>Alkoholfreie Getränke</h3>
+                <div class="drink-item">
+                    <span class="drink-name">Hausgemachte Limonade</span>
+                    <span class="drink-price">5,50 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Frisch gepresste Säfte</span>
+                    <span class="drink-price">6,00 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">San Pellegrino 0,75l</span>
+                    <span class="drink-price">7,50 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Acqua Panna 0,75l</span>
+                    <span class="drink-price">7,50 €</span>
+                </div>
+            </div>
+
+            <div class="drink-category">
+                <h3>Heißgetränke</h3>
+                <div class="drink-item">
+                    <span class="drink-name">Espresso</span>
+                    <span class="drink-price">3,50 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Cappuccino</span>
+                    <span class="drink-price">4,50 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Latte Macchiato</span>
+                    <span class="drink-price">5,00 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Tee-Auswahl</span>
+                    <span class="drink-price">4,00 €</span>
+                </div>
+            </div>
+
+            <div class="drink-category">
+                <h3>Digestifs</h3>
+                <div class="drink-item">
+                    <span class="drink-name">Grappa Riserva</span>
+                    <span class="drink-price">8,00 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Cognac Hennessy Paradis</span>
+                    <span class="drink-price">25,00 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Whisky Macallan 18</span>
+                    <span class="drink-price">22,00 €</span>
+                </div>
+                <div class="drink-item">
+                    <span class="drink-name">Limoncello</span>
+                    <span class="drink-price">6,00 €</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EINHEITLICHER FOOTER -->
+    <footer class="global-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Restaurant Goldener Löffel</h3>
+                    <p>
+                        Exklusive Kulinarik und Event-Catering auf höchstem Niveau. 
+                        Seit 1995 Ihr Partner für unvergessliche Gaumenfreuden.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Kontakt</h4>
+                    <address>
+                        Gourmetstraße 42<br>
+                        12345 Feinschmeckerhausen<br>
+                        Tel: <a href="tel:+4912345678900">0123 456 789 00</a><br>
+                        E-Mail: <a href="mailto:info@goldener-loeffel.de">info@goldener-loeffel.de</a>
+                    </address>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Öffnungszeiten</h4>
+                    <p>
+                        <strong>Dienstag - Samstag:</strong><br>
+                        18:00 - 23:00 Uhr<br><br>
+                        <strong>Sonntag & Montag:</strong><br>
+                        Ruhetag
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Schnelllinks</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="speisekarte.html">Speisekarte</a></li>
+                        <li><a href="signature-kollektionen.html">Signature Gerichte</a></li>
+                        <li><a href="reservierung.html">Tisch reservieren</a></li>
+                        <li><a href="index.html#catering-pakete">Event-Catering</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Restaurant Goldener Löffel. Erstellt von Hans Hahn - Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const headerMenu = document.querySelector('.header-menu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    headerMenu.classList.toggle('active');
+                });
+            }
+            
+            // Category Navigation
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const menuSections = document.querySelectorAll('.menu-section');
+
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Hide all sections
+                    menuSections.forEach(section => section.classList.remove('active'));
+                    // Show selected section
+                    const selectedSection = document.getElementById(category);
+                    if (selectedSection) {
+                        selectedSection.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

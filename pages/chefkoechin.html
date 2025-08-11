@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Erstellt von Hans Hahn - Alle Rechte vorbehalten -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lernen Sie unsere Chefköchin Anna Schmidt kennen - Restaurant Goldener Löffel">
+    <meta name="keywords" content="Chefköchin, Anna Schmidt, Restaurant, Fine Dining, Gourmet">
+    <meta name="author" content="Hans Hahn">
+    
+    <title>Unsere Chefköchin - Restaurant Goldener Löffel</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/global-layout.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <style>
+        /* Chefköchin-spezifische Styles */
+        .chef-hero {
+            background: linear-gradient(135deg, rgba(44, 85, 48, 0.95), rgba(26, 51, 32, 0.95)),
+                        url('../images/restaurant/hero-bg.svg') center/cover;
+            padding: 120px 20px 80px;
+            text-align: center;
+            color: white;
+        }
+
+        .chef-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .chef-hero p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.2rem;
+            color: #D4AF37;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .chef-profile {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .chef-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .chef-image-wrapper {
+            position: relative;
+        }
+
+        .chef-image {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .chef-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: #D4AF37;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .chef-bio h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #2C5530;
+            margin-bottom: 20px;
+        }
+
+        .chef-subtitle {
+            color: #D4AF37;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .chef-bio p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .chef-awards {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .chef-awards h3 {
+            color: #2C5530;
+            margin-bottom: 15px;
+        }
+
+        .chef-awards ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .chef-awards li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            align-items: center;
+        }
+
+        .chef-awards li::before {
+            content: '🏆';
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .philosophy-section {
+            background: linear-gradient(135deg, #FFF8E7 0%, #fff 100%);
+            padding: 80px 20px;
+        }
+
+        .philosophy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .philosophy-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #2C5530;
+            font-style: italic;
+            margin: 40px 0;
+            position: relative;
+            padding: 0 40px;
+        }
+
+        .philosophy-quote::before,
+        .philosophy-quote::after {
+            content: '"';
+            font-size: 3rem;
+            color: #D4AF37;
+            position: absolute;
+        }
+
+        .philosophy-quote::before {
+            left: 0;
+            top: -10px;
+        }
+
+        .philosophy-quote::after {
+            right: 0;
+            bottom: -30px;
+        }
+
+        .gallery-section {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 968px) {
+            .chef-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .chef-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .philosophy-quote {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- EINHEITLICHER HEADER -->
+    <header class="global-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo">
+                <img src="../images/logo.svg" alt="Restaurant Goldener Löffel Logo">
+                <div class="header-logo-text">
+                    <span class="header-logo-title">Goldener Löffel</span>
+                    <span class="header-logo-subtitle">Exklusive Kulinarik seit 1995</span>
+                </div>
+            </a>
+            
+            <nav class="header-nav">
+                <button class="mobile-menu-btn" aria-label="Menü öffnen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="header-menu">
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="speisekarte.html">Speisekarte</a></li>
+                    <li><a href="chefkoechin.html" class="active">Chefköchin</a></li>
+                    <li><a href="signature-kollektionen.html">Signature</a></li>
+                    <li><a href="reservierung.html">Reservierung</a></li>
+                    <li><a href="rezepte.html">Rezepte</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="chef-hero">
+        <h1>Unsere Chefköchin</h1>
+        <p>Leidenschaft, Kreativität und Perfektion - lernen Sie Anna Schmidt kennen</p>
+    </section>
+
+    <!-- Chef Profile -->
+    <section class="chef-profile">
+        <div class="chef-grid">
+            <div class="chef-image-wrapper">
+                <img src="../images/chef/anna-schmidt-portrait.jpg" alt="Chefköchin Anna Schmidt" class="chef-image">
+                <span class="chef-badge">Michelin ⭐⭐</span>
+            </div>
+            
+            <div class="chef-bio">
+                <h2>Anna Schmidt</h2>
+                <p class="chef-subtitle">Executive Chef & Culinary Director</p>
+                
+                <p>
+                    Mit über 20 Jahren Erfahrung in der gehobenen Gastronomie hat Anna Schmidt 
+                    das Restaurant Goldener Löffel zu einer der Top-Adressen für Fine Dining entwickelt. 
+                    Ihre kulinarische Reise begann in den renommiertesten Küchen Europas, wo sie 
+                    ihr Handwerk bei Meistern wie Alain Ducasse und Thomas Keller perfektionierte.
+                </p>
+                
+                <p>
+                    Anna's Kochphilosophie verbindet traditionelle Techniken mit innovativen Ansätzen. 
+                    Sie legt besonderen Wert auf regionale, saisonale Zutaten von höchster Qualität 
+                    und arbeitet eng mit lokalen Produzenten zusammen. Ihre Signature-Gerichte 
+                    erzählen Geschichten und schaffen unvergessliche Geschmackserlebnisse.
+                </p>
+                
+                <p>
+                    "Kochen ist für mich mehr als nur die Zubereitung von Speisen. Es ist eine 
+                    Kunstform, bei der jeder Teller eine Leinwand ist und jede Zutat ihre eigene 
+                    Geschichte erzählt. Mein Ziel ist es, unseren Gästen nicht nur ein Essen, 
+                    sondern ein unvergessliches Erlebnis zu bieten."
+                </p>
+                
+                <div class="chef-awards">
+                    <h3>Auszeichnungen & Erfolge</h3>
+                    <ul>
+                        <li>2 Michelin-Sterne (seit 2019)</li>
+                        <li>Köchin des Jahres 2022 - Gault&Millau</li>
+                        <li>19 Punkte im Gault&Millau Guide</li>
+                        <li>Best Female Chef Award 2021</li>
+                        <li>Mitglied der Jeunes Restaurateurs d'Europe</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="philosophy-section">
+        <div class="philosophy-content">
+            <h2 class="section__title">Kulinarische Philosophie</h2>
+            <p class="philosophy-quote">
+                Die beste Küche ist die, die Tradition ehrt, 
+                während sie mutig neue Wege beschreitet
+            </p>
+            <p>
+                Anna Schmidt's Küche ist geprägt von Respekt vor dem Produkt, 
+                handwerklicher Perfektion und kreativer Innovation. Jedes Gericht 
+                wird mit Liebe zum Detail komponiert und präsentiert - ein Fest 
+                für alle Sinne.
+            </p>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 class="section__title">Meisterwerke aus unserer Küche</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../images/chef/dish-1.jpg" alt="Gourmet Kreation 1">
+                    <div class="gallery-caption">
+                        <h4>Jakobsmuscheln Variation</h4>
+                        <p>Mit Kaviar und Champagnerschaum</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../images/chef/dish-2.jpg" alt="Gourmet Kreation 2">
+                    <div class="gallery-caption">
+                        <h4>Wagyu Beef Tataki</h4>
+                        <p>Mit Trüffel und Ponzu-Sauce</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../images/chef/dish-3.jpg" alt="Gourmet Kreation 3">
+                    <div class="gallery-caption">
+                        <h4>Hummer Thermidor</h4>
+                        <p>Klassisch französisch interpretiert</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../images/chef/dish-4.jpg" alt="Gourmet Kreation 4">
+                    <div class="gallery-caption">
+                        <h4>Schokoladen Symphony</h4>
+                        <p>Valrhona Schokolade mit Gold</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../images/chef/dish-5.jpg" alt="Gourmet Kreation 5">
+                    <div class="gallery-caption">
+                        <h4>Foie Gras Terrine</h4>
+                        <p>Mit Brioche und Portweingelee</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../images/chef/dish-6.jpg" alt="Gourmet Kreation 6">
+                    <div class="gallery-caption">
+                        <h4>Kaiserschmarrn Deluxe</h4>
+                        <p>Modern interpretierter Klassiker</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EINHEITLICHER FOOTER -->
+    <footer class="global-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Restaurant Goldener Löffel</h3>
+                    <p>
+                        Exklusive Kulinarik und Event-Catering auf höchstem Niveau. 
+                        Seit 1995 Ihr Partner für unvergessliche Gaumenfreuden.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Kontakt</h4>
+                    <address>
+                        Gourmetstraße 42<br>
+                        12345 Feinschmeckerhausen<br>
+                        Tel: <a href="tel:+4912345678900">0123 456 789 00</a><br>
+                        E-Mail: <a href="mailto:info@goldener-loeffel.de">info@goldener-loeffel.de</a>
+                    </address>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Öffnungszeiten</h4>
+                    <p>
+                        <strong>Dienstag - Samstag:</strong><br>
+                        18:00 - 23:00 Uhr<br><br>
+                        <strong>Sonntag & Montag:</strong><br>
+                        Ruhetag
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Schnelllinks</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="speisekarte.html">Speisekarte</a></li>
+                        <li><a href="signature-kollektionen.html">Signature Gerichte</a></li>
+                        <li><a href="reservierung.html">Tisch reservieren</a></li>
+                        <li><a href="index.html#catering-pakete">Event-Catering</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Restaurant Goldener Löffel. Erstellt von Hans Hahn - Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const headerMenu = document.querySelector('.header-menu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    headerMenu.classList.toggle('active');
+                });
+            }
+            
+            // Schließe Menü beim Klick außerhalb
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.header-nav')) {
+                    mobileMenuBtn?.classList.remove('active');
+                    headerMenu?.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

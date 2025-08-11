@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Erstellt von Hans Hahn - Alle Rechte vorbehalten -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entdecken Sie unsere Lieblingsrezepte zum Nachkochen - Restaurant Goldener Löffel">
+    <meta name="keywords" content="Rezepte, Kochen, Blog, Kulinarik, Gourmet-Rezepte">
+    <meta name="author" content="Hans Hahn">
+    
+    <title>Rezepte-Blog - Restaurant Goldener Löffel</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+    
+    <!-- CSS-Dateien -->
+    <link rel="stylesheet" href="../css/global-layout.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- EINHEITLICHER HEADER -->
+    <header class="global-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo">
+                <img src="../images/logo.svg" alt="Restaurant Goldener Löffel Logo">
+                <div class="header-logo-text">
+                    <span class="header-logo-title">Goldener Löffel</span>
+                    <span class="header-logo-subtitle">Exklusive Kulinarik seit 1995</span>
+                </div>
+            </a>
+            
+            <nav class="header-nav">
+                <button class="mobile-menu-btn" aria-label="Menü öffnen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="header-menu">
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="speisekarte.html">Speisekarte</a></li>
+                    <li><a href="chefkoechin.html">Chefköchin</a></li>
+                    <li><a href="signature-kollektionen.html">Signature</a></li>
+                    <li><a href="reservierung.html">Reservierung</a></li>
+                    <li><a href="rezepte.html" class="active">Rezepte</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h2 class="blog-hero__title">Für unsere Fans</h2>
+            <p class="blog-hero__subtitle">Kleine Klassiker aus unserer Küche zum Nachkochen</p>
+            <p class="blog-hero__description">
+                Chefköchin Anna Schmidt teilt ihre Lieblingsrezepte mit Ihnen. 
+                Holen Sie sich ein Stück "Zum Goldenen Löffel" nach Hause!
+            </p>
+        </div>
+    </section>
+
+    <!-- Rezepte Section -->
+    <section class="recipes-section">
+        <div class="container">
+            
+            <!-- Rezept 1: Französische Zwiebelsuppe -->
+            <article class="recipe-card">
+                <div class="recipe-card__image">
+                    <span class="recipe-card__category">Vorspeise</span>
+                    <div style="font-size: 3rem; color: #ddd;">🍲</div>
+                </div>
+                
+                <div class="recipe-card__content">
+                    <h3 class="recipe-card__title">Französische Zwiebelsuppe</h3>
+                    <p class="recipe-card__intro">
+                        Ein zeitloser Klassiker der französischen Küche. Diese herzhafte Suppe 
+                        wärmt an kalten Tagen und begeistert mit ihrem intensiven Geschmack.
+                    </p>
+                    
+                    <div class="recipe-info">
+                        <div class="recipe-info__item">
+                            <span class="recipe-info__label">⏱️ Zubereitungszeit:</span>
+                            <span class="recipe-info__value">45 Minuten</span>
+                        </div>
+                        <div class="recipe-info__item">
+                            <span class="recipe-info__label">👥 Portionen:</span>
+                            <span class="recipe-info__value">4 Personen</span>
+                        </div>
+                        <div class="recipe-info__item">
+                            <span class="recipe-info__label">📊 Schwierigkeit:</span>
+                            <span class="recipe-info__value">Mittel</span>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-ingredients">
+                        <h4 class="recipe-ingredients__title">Zutaten:</h4>
+                        <ul class="recipe-ingredients__list">
+                            <li>6 große Zwiebeln</li>
+                            <li>50g Butter</li>
+                            <li>2 EL Olivenöl</li>
+                            <li>1 TL Zucker</li>
+                            <li>200ml Weißwein</li>
+                            <li>1,5l Rinderbrühe</li>
+                            <li>2 Lorbeerblätter</li>
+                            <li>Frischer Thymian</li>
+                            <li>Salz und Pfeffer</li>
+                            <li>8 Scheiben Baguette</li>
+                            <li>200g geriebener Gruyère-Käse</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="recipe-instructions">
+                        <h4 class="recipe-instructions__title">Zubereitung:</h4>
+                        <ol class="recipe-instructions__list">
+                            <li>
+                                <strong>Zwiebeln vorbereiten:</strong> Die Zwiebeln schälen und in dünne Ringe schneiden. 
+                                In einem großen Topf Butter und Olivenöl erhitzen.
+                            </li>
+                            <li>
+                                <strong>Karamellisieren:</strong> Die Zwiebelringe bei mittlerer Hitze etwa 20 Minuten 
+                                langsam karamellisieren lassen. Dabei gelegentlich umrühren und nach 10 Minuten 
+                                den Zucker hinzufügen.
+                            </li>
+                            <li>
+                                <strong>Ablöschen:</strong> Mit Weißwein ablöschen und einkochen lassen. 
+                                Die Rinderbrühe zugießen, Lorbeerblätter und Thymian hinzufügen.
+                            </li>
+                            <li>
+                                <strong>Köcheln:</strong> Die Suppe 20 Minuten leise köcheln lassen. 
+                                Mit Salz und Pfeffer abschmecken.
+                            </li>
+                            <li>
+                                <strong>Gratinieren:</strong> Die Suppe in ofenfeste Suppenschalen füllen. 
+                                Je 2 Baguettescheiben darauflegen und mit Käse bestreuen. 
+                                Im vorgeheizten Ofen bei 200°C überbacken, bis der Käse goldbraun ist.
+                            </li>
+                            <li>
+                                <strong>Servieren:</strong> Heiß servieren und den geschmolzenen Käse genießen!
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="recipe-tip">
+                        <h4 class="recipe-tip__title">💡 Tipp von Anna Schmidt:</h4>
+                        <p class="recipe-tip__text">
+                            "Das Geheimnis liegt im geduldigen Karamellisieren der Zwiebeln. 
+                            Nehmen Sie sich Zeit - je dunkler die Zwiebeln, desto intensiver der Geschmack. 
+                            Ein Schuss Cognac vor dem Servieren verleiht der Suppe eine besondere Note!"
+                        </p>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Rezept 2: Risotto alla Milanese -->
+            <article class="recipe-card">
+                <div class="recipe-card__image">
+                    <span class="recipe-card__category">Hauptgang</span>
+                    <div style="font-size: 3rem; color: #ddd;">🍚</div>
+                </div>
+                
+                <div class="recipe-card__content">
+                    <h3 class="recipe-card__title">Risotto alla Milanese</h3>
+                    <p class="recipe-card__intro">
+                        Der cremige Klassiker aus Mailand mit Safran - ein Gedicht in Gold. 
+                        Perfekt als Beilage oder vegetarischer Hauptgang.
+                    </p>
+                    
+                    <div class="recipe-info">
+                        <div class="recipe-info__item">
+                            <span class="recipe-info__label">⏱️ Zubereitungszeit:</span>
+                            <span class="recipe-info__value">30 Minuten</span>
+                        </div>
+                        <div class="recipe-info__item">
+                            <span class="recipe-info__label">👥 Portionen:</span>
+                            <span class="recipe-info__value">4 Personen</span>
+                        </div>
+                        <div class="recipe-info__item">
+                            <span class="recipe-info__label">📊 Schwierigkeit:</span>
+                            <span class="recipe-info__value">Mittel</span>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-ingredients">
+                        <h4 class="recipe-ingredients__title">Zutaten:</h4>
+                        <ul class="recipe-ingredients__list">
+                            <li>320g Arborio-Reis</li>
+                            <li>1 kleine Zwiebel</li>
+                            <li>50g Butter</li>
+                            <li>2 EL Olivenöl</li>
+                            <li>150ml trockener Weißwein</li>
+                            <li>1,2l heiße Gemüsebrühe</li>
+                            <li>0,2g Safranfäden</li>
+                            <li>80g frisch geriebener Parmesan</li>
+                            <li>30g kalte Butter zum Finish</li>
+                            <li>Salz und weißer Pfeffer</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="recipe-instructions">
+                        <h4 class="recipe-instructions__title">Zubereitung:</h4>
+                        <ol class="recipe-instructions__list">
+                            <li>
+                                <strong>Vorbereitung:</strong> Den Safran in 2 EL heißer Brühe auflösen. 
+                                Die Zwiebel sehr fein würfeln. Die Brühe in einem Topf warm halten.
+                            </li>
+                            <li>
+                                <strong>Anschwitzen:</strong> In einem breiten Topf Butter und Olivenöl erhitzen. 
+                                Die Zwiebel glasig dünsten, ohne Farbe nehmen zu lassen.
+                            </li>
+                            <li>
+                                <strong>Reis rösten:</strong> Den Reis zugeben und 2-3 Minuten unter Rühren rösten, 
+                                bis er leicht transparent wird.
+                            </li>
+                            <li>
+                                <strong>Ablöschen:</strong> Mit Weißwein ablöschen und unter ständigem Rühren 
+                                einkochen lassen.
+                            </li>
+                            <li>
+                                <strong>Garen:</strong> Nach und nach die heiße Brühe zugeben - immer nur so viel, 
+                                dass der Reis gerade bedeckt ist. Unter häufigem Rühren 18-20 Minuten garen. 
+                                Nach 10 Minuten den Safran zugeben.
+                            </li>
+                            <li>
+                                <strong>Mantecatura:</strong> Vom Herd nehmen, kalte Butter und Parmesan unterrühren. 
+                                Kräftig schwenken für die cremige Konsistenz. Mit Salz und Pfeffer abschmecken.
+                            </li>
+                            <li>
+                                <strong>Servieren:</strong> Sofort servieren, eventuell mit zusätzlichem Parmesan.
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="recipe-tip">
+                        <h4 class="recipe-tip__title">💡 Tipp von Anna Schmidt:</h4>
+                        <p class="recipe-tip__text">
+                            "Das Rühren ist das A und O! Aber übertreiben Sie es nicht - zu viel Rühren 
+                            macht den Reis klebrig. Der Reis sollte 'all'onda' sein - wellenartig fließen, 
+                            wenn Sie den Teller schwenken."
+                        </p>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Rezept 3: Schokoladen-Lava-Kuchen -->
+            <article class="recipe-card">
+                <div class="recipe-card__image">
+                    <span class="recipe-card__category">Dessert</span>
+                    <div style="font-size: 3rem; color: #ddd;">🍫</div>
+                </div>
+                
+                <div class="recipe-card__content">
+                    <h3 class="recipe-card__title">Schokoladen-Lava-Kuchen</h3>
+                    <p class="recipe-card__intro">
+                        Das ultimative Schokoladen-Erlebnis: außen knusprig, innen flüssig. 
+                        Ein Dessert, das garantiert für Begeisterung sorgt!
+                    </p>
+                    
+                    <div class="recipe-info">
+                        <div class="recipe-info__item">
+                            <span class="recipe-info__label">⏱️ Zubereitungszeit:</span>
+                            <span class="recipe-info__value">20 Minuten</span>
+                        </div>
+                        <div class="recipe-info__item">
+                            <span class="recipe-info__label">👥 Portionen:</span>
+                            <span class="recipe-info__value">4 Personen</span>
+                        </div>
+                        <div class="recipe-info__item">
+                            <span class="recipe-info__label">📊 Schwierigkeit:</span>
+                            <span class="recipe-info__value">Einfach</span>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-ingredients">
+                        <h4 class="recipe-ingredients__title">Zutaten:</h4>
+                        <ul class="recipe-ingredients__list">
+                            <li>100g dunkle Schokolade (70% Kakao)</li>
+                            <li>100g Butter</li>
+                            <li>2 Eier</li>
+                            <li>2 Eigelb</li>
+                            <li>50g Zucker</li>
+                            <li>30g Mehl</li>
+                            <li>1 Prise Salz</li>
+                            <li>1 TL Vanilleextrakt</li>
+                            <li>Butter und Kakao für die Förmchen</li>
+                            <li>Puderzucker zum Bestäuben</li>
+                            <li>Vanilleeis zum Servieren</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="recipe-instructions">
+                        <h4 class="recipe-instructions__title">Zubereitung:</h4>
+                        <ol class="recipe-instructions__list">
+                            <li>
+                                <strong>Vorbereitung:</strong> Den Ofen auf 200°C vorheizen. 
+                                4 Förmchen (à 150ml) buttern und mit Kakao ausstäuben.
+                            </li>
+                            <li>
+                                <strong>Schokolade schmelzen:</strong> Schokolade und Butter im Wasserbad 
+                                oder in der Mikrowelle schmelzen. Gut verrühren und leicht abkühlen lassen.
+                            </li>
+                            <li>
+                                <strong>Eier aufschlagen:</strong> Eier, Eigelb und Zucker mit dem Handrührgerät 
+                                2-3 Minuten schaumig schlagen, bis die Masse hell und cremig ist.
+                            </li>
+                            <li>
+                                <strong>Vermischen:</strong> Die Schokoladenmischung unter die Eiermasse rühren. 
+                                Mehl, Salz und Vanilleextrakt unterheben.
+                            </li>
+                            <li>
+                                <strong>Portionieren:</strong> Den Teig gleichmäßig auf die Förmchen verteilen. 
+                                Die Förmchen können bis zu diesem Punkt vorbereitet und gekühlt werden.
+                            </li>
+                            <li>
+                                <strong>Backen:</strong> 12-14 Minuten backen. Die Ränder sollten fest sein, 
+                                die Mitte noch leicht wackeln.
+                            </li>
+                            <li>
+                                <strong>Stürzen:</strong> 1 Minute ruhen lassen, dann vorsichtig auf Teller stürzen. 
+                                Mit Puderzucker bestäuben und mit Vanilleeis servieren.
+                            </li>
+                        </ol>
+                    </div>
+                    
+                    <div class="recipe-tip">
+                        <h4 class="recipe-tip__title">💡 Tipp von Anna Schmidt:</h4>
+                        <p class="recipe-tip__text">
+                            "Das Timing ist entscheidend! Lieber eine Minute zu kurz als zu lang backen. 
+                            Sie können die Förmchen auch schon am Vortag vorbereiten und im Kühlschrank 
+                            lagern - dann 1-2 Minuten länger backen. Der Kontrast zwischen dem warmen 
+                            Kuchen und kaltem Vanilleeis ist himmlisch!"
+                        </p>
+                    </div>
+                </div>
+            </article>
+            
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter">
+                <h2 class="newsletter__title">Bleiben Sie dran!</h2>
+                <p class="newsletter__text">
+                    Erhalten Sie monatlich neue Rezepte und exklusive Einblicke in unsere Küche.
+                </p>
+                <form class="newsletter__form">
+                    <input type="email" class="newsletter__input" placeholder="Ihre E-Mail-Adresse" required>
+                    <button type="submit" class="btn btn--primary">Anmelden</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- EINHEITLICHER FOOTER -->
+    <footer class="global-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Restaurant Goldener Löffel</h3>
+                    <p>
+                        Exklusive Kulinarik und Event-Catering auf höchstem Niveau. 
+                        Seit 1995 Ihr Partner für unvergessliche Gaumenfreuden.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Kontakt</h4>
+                    <address>
+                        Gourmetstraße 42<br>
+                        12345 Feinschmeckerhausen<br>
+                        Tel: <a href="tel:+4912345678900">0123 456 789 00</a><br>
+                        E-Mail: <a href="mailto:info@goldener-loeffel.de">info@goldener-loeffel.de</a>
+                    </address>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Öffnungszeiten</h4>
+                    <p>
+                        <strong>Dienstag - Samstag:</strong><br>
+                        18:00 - 23:00 Uhr<br><br>
+                        <strong>Sonntag & Montag:</strong><br>
+                        Ruhetag
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Schnelllinks</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="speisekarte.html">Speisekarte</a></li>
+                        <li><a href="signature-kollektionen.html">Signature Gerichte</a></li>
+                        <li><a href="reservierung.html">Tisch reservieren</a></li>
+                        <li><a href="index.html#catering-pakete">Event-Catering</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Restaurant Goldener Löffel. Erstellt von Hans Hahn - Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const headerMenu = document.querySelector('.header-menu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    headerMenu.classList.toggle('active');
+                });
+            }
+            
+            // Schließe Menü beim Klick außerhalb
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.header-nav')) {
+                    mobileMenuBtn?.classList.remove('active');
+                    headerMenu?.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+    <style>
+        /* Zusätzliche Styles für den Rezepte-Blog */
+        .blog-hero {
+            background: linear-gradient(135deg, #2C5530 0%, #1a3320 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .blog-hero__title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .blog-hero__subtitle {
+            font-size: 1.5rem;
+            color: #D4AF37;
+            margin-bottom: 1rem;
+        }
+
+        .blog-hero__description {
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .recipes-section {
+            padding: 4rem 0;
+        }
+
+        .recipe-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 4rem;
+        }
+
+        .recipe-card__image {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+
+        .recipe-card__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .recipe-card__category {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: #D4AF37;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+        }
+
+        .recipe-card__content {
+            padding: 3rem;
+        }
+
+        .recipe-card__title {
+            font-size: 2.5rem;
+            color: #2C5530;
+            margin-bottom: 1rem;
+        }
+
+        .recipe-card__intro {
+            font-size: 1.125rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .recipe-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .recipe-info__item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recipe-info__label {
+            font-weight: 600;
+            color: #2C5530;
+            margin-bottom: 0.25rem;
+        }
+
+        .recipe-info__value {
+            color: #666;
+        }
+
+        .recipe-ingredients,
+        .recipe-instructions {
+            margin-bottom: 2rem;
+        }
+
+        .recipe-ingredients__title,
+        .recipe-instructions__title {
+            font-size: 1.5rem;
+            color: #2C5530;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #D4AF37;
+        }
+
+        .recipe-ingredients__list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .recipe-ingredients__list li {
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .recipe-ingredients__list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #D4AF37;
+            font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .recipe-instructions__list {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+
+        .recipe-instructions__list li {
+            counter-increment: step-counter;
+            margin-bottom: 1.5rem;
+            padding-left: 3rem;
+            position: relative;
+        }
+
+        .recipe-instructions__list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #D4AF37;
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .recipe-instructions__list li strong {
+            color: #2C5530;
+        }
+
+        .recipe-tip {
+            background: linear-gradient(135deg, #FFF8E7 0%, #fff 100%);
+            border-left: 4px solid #D4AF37;
+            padding: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .recipe-tip__title {
+            color: #2C5530;
+            margin-bottom: 0.5rem;
+        }
+
+        .recipe-tip__text {
+            font-style: italic;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .newsletter-section {
+            background-color: #f9f9f9;
+            padding: 4rem 0;
+        }
+
+        .newsletter {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .newsletter__title {
+            font-size: 2rem;
+            color: #2C5530;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter__text {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .newsletter__form {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .newsletter__input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .newsletter__input:focus {
+            outline: none;
+            border-color: #D4AF37;
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero__title {
+                font-size: 2rem;
+            }
+
+            .recipe-card__content {
+                padding: 2rem 1rem;
+            }
+
+            .recipe-card__title {
+                font-size: 1.75rem;
+            }
+
+            .recipe-info {
+                grid-template-columns: 1fr;
+            }
+
+            .recipe-ingredients__list {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter__form {
+                flex-direction: column;
+            }
+
+            .newsletter__input {
+                width: 100%;
+            }
+        }
+    </style>
+</body>
+</html>
