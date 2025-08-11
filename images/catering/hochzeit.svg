@@ -1,0 +1,86 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Romantischer Hintergrund -->
+  <defs>
+    <linearGradient id="romantic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE4E1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFF0F5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="600" fill="url(#romantic)"/>
+  
+  <!-- Hochzeitsbogen -->
+  <path d="M200 500 Q200 200 400 200 Q600 200 600 500" fill="none" stroke="#D4AF37" stroke-width="8"/>
+  <path d="M190 500 Q190 190 400 190 Q610 190 610 500" fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Blumen am Bogen -->
+  <circle cx="250" cy="300" r="15" fill="#FFB6C1"/>
+  <circle cx="280" cy="280" r="15" fill="#FFC0CB"/>
+  <circle cx="320" cy="250" r="15" fill="#FFB6C1"/>
+  <circle cx="360" cy="230" r="15" fill="#FFF"/>
+  <circle cx="400" cy="220" r="15" fill="#FFC0CB"/>
+  <circle cx="440" cy="230" r="15" fill="#FFF"/>
+  <circle cx="480" cy="250" r="15" fill="#FFB6C1"/>
+  <circle cx="520" cy="280" r="15" fill="#FFC0CB"/>
+  <circle cx="550" cy="300" r="15" fill="#FFB6C1"/>
+  
+  <!-- Grüne Blätter -->
+  <ellipse cx="265" cy="295" rx="8" ry="12" fill="#90EE90" transform="rotate(45 265 295)"/>
+  <ellipse cx="335" cy="245" rx="8" ry="12" fill="#90EE90" transform="rotate(-30 335 245)"/>
+  <ellipse cx="465" cy="245" rx="8" ry="12" fill="#90EE90" transform="rotate(30 465 245)"/>
+  <ellipse cx="535" cy="295" rx="8" ry="12" fill="#90EE90" transform="rotate(-45 535 295)"/>
+  
+  <!-- Hochzeitstorte -->
+  <rect x="350" y="450" width="100" height="40" fill="#FFF" stroke="#D4AF37" stroke-width="2"/>
+  <rect x="360" y="410" width="80" height="40" fill="#FFF" stroke="#D4AF37" stroke-width="2"/>
+  <rect x="370" y="370" width="60" height="40" fill="#FFF" stroke="#D4AF37" stroke-width="2"/>
+  
+  <!-- Tortendetails -->
+  <path d="M350 470 Q400 460 450 470" fill="none" stroke="#FFB6C1" stroke-width="2"/>
+  <path d="M360 430 Q400 420 440 430" fill="none" stroke="#FFB6C1" stroke-width="2"/>
+  <path d="M370 390 Q400 380 430 390" fill="none" stroke="#FFB6C1" stroke-width="2"/>
+  
+  <!-- Brautpaar Silhouette auf der Torte -->
+  <ellipse cx="395" cy="355" rx="8" ry="10" fill="#333"/>
+  <ellipse cx="405" cy="355" rx="8" ry="10" fill="#333"/>
+  <rect x="392" y="360" width="6" height="10" fill="#333"/>
+  <path d="M398 360 Q405 365 408 360" fill="#333"/>
+  
+  <!-- Herz über dem Paar -->
+  <path d="M400 340 C395 335, 385 335, 385 345 C385 355, 400 365, 400 365 C400 365, 415 355, 415 345 C415 335, 405 335, 400 340" fill="#ff0000" opacity="0.8"/>
+  
+  <!-- Champagner Gläser -->
+  <ellipse cx="300" cy="420" rx="15" ry="5" fill="#F4E4C1" opacity="0.8"/>
+  <rect x="299" y="420" width="2" height="30" fill="#C0C0C0"/>
+  <ellipse cx="300" cy="450" rx="8" ry="3" fill="#C0C0C0"/>
+  
+  <ellipse cx="500" cy="420" rx="15" ry="5" fill="#F4E4C1" opacity="0.8"/>
+  <rect x="499" y="420" width="2" height="30" fill="#C0C0C0"/>
+  <ellipse cx="500" cy="450" rx="8" ry="3" fill="#C0C0C0"/>
+  
+  <!-- Candy Bar Gläser -->
+  <rect x="150" y="420" width="30" height="40" fill="#FFE4E1" opacity="0.6" stroke="#D4AF37"/>
+  <rect x="150" y="430" width="30" height="10" fill="#FF69B4" opacity="0.8"/>
+  <rect x="150" y="445" width="30" height="10" fill="#FFB6C1" opacity="0.8"/>
+  
+  <rect x="620" y="420" width="30" height="40" fill="#E6E6FA" opacity="0.6" stroke="#D4AF37"/>
+  <rect x="620" y="430" width="30" height="10" fill="#9370DB" opacity="0.8"/>
+  <rect x="620" y="445" width="30" height="10" fill="#DDA0DD" opacity="0.8"/>
+  
+  <!-- Text -->
+  <text x="400" y="80" font-family="Playfair Display, serif" font-size="48" fill="#D4AF37" text-anchor="middle">Hochzeits-Special</text>
+  <text x="400" y="120" font-family="Open Sans, sans-serif" font-size="20" fill="#666" text-anchor="middle">Der schönste Tag Ihres Lebens</text>
+  
+  <!-- Konfetti -->
+  <rect x="200" y="150" width="8" height="15" fill="#FFD700" transform="rotate(45 204 157)"/>
+  <rect x="300" y="180" width="8" height="15" fill="#FF69B4" transform="rotate(-30 304 187)"/>
+  <rect x="500" y="160" width="8" height="15" fill="#87CEEB" transform="rotate(60 504 167)"/>
+  <rect x="600" y="170" width="8" height="15" fill="#98FB98" transform="rotate(-45 604 177)"/>
+  
+  <!-- Tauben -->
+  <path d="M100 100 Q120 90 140 100" fill="none" stroke="#fff" stroke-width="3"/>
+  <path d="M105 95 Q120 85 135 95" fill="none" stroke="#fff" stroke-width="3"/>
+  
+  <path d="M660 100 Q680 90 700 100" fill="none" stroke="#fff" stroke-width="3"/>
+  <path d="M665 95 Q680 85 695 95" fill="none" stroke="#fff" stroke-width="3"/>
+</svg>
