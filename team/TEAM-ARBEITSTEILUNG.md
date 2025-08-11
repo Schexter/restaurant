@@ -204,7 +204,7 @@ main
 | 13.08.2025 | JavaScript-Funktionen | ⏳ Ausstehend |
 | 14.08.2025 | Testing & Debugging | ⏳ Ausstehend |
 | 15.08.2025 | Deployment | ⏳ Ausstehend |
-Ich bin morgen voll dabei
+
 ---
 
 **Letzte Aktualisierung:** 11.08.2025
