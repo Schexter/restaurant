@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <!-- Erstellt von Hans Hahn - Alle Rechte vorbehalten -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurant Goldener Löffel - Detaillierte Informationen zu unseren Catering-Paketen">
+    <meta name="keywords" content="Catering, Event, Hochzeit, Business, Buffet, Gala Dinner">
+    <meta name="author" content="Hans Hahn">
+    
+    <title>Catering-Pakete im Detail - Restaurant Goldener Löffel</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/global-layout.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        /* Spezielle Styles für Catering-Details */
+        .catering-detail {
+            padding: 80px 20px;
+            background: #f9f9f9;
+        }
+
+        .catering-detail__header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .catering-detail__title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #2C5530;
+            margin-bottom: 20px;
+        }
+
+        .catering-detail__subtitle {
+            font-size: 1.3rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .catering-package {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 60px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .catering-package:nth-child(1) { animation-delay: 0.1s; }
+        .catering-package:nth-child(2) { animation-delay: 0.2s; }
+        .catering-package:nth-child(3) { animation-delay: 0.3s; }
+        .catering-package:nth-child(4) { animation-delay: 0.4s; }
+
+        .package-header {
+            background: linear-gradient(135deg, #2C5530, #1a3320);
+            color: white;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .package-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+            color: white !important;
+        }
+
+        .package-header .price {
+            font-size: 1.8rem;
+            color: #D4AF37;
+            position: relative;
+            z-index: 1;
+        }
+
+        .package-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        .package-section {
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .package-section h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2C5530;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #D4AF37;
+        }
+
+        .package-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .package-section li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .package-section li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #D4AF37;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .package-description {
+            grid-column: 1 / -1;
+            padding: 30px;
+            background: linear-gradient(135deg, #f9f9f9, #fff);
+            border-left: 4px solid #D4AF37;
+            margin: 0 40px 40px;
+            font-style: italic;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .package-special {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 30px;
+            background: #2C5530;
+            color: white;
+            margin: 0 40px 40px;
+            border-radius: 8px;
+        }
+
+        .package-special h3 {
+            color: #D4AF37;
+            margin-bottom: 15px;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #2C5530, #1a3320);
+            color: white;
+            margin-top: 60px;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white !important;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .package-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .catering-detail__title {
+                font-size: 2rem;
+            }
+
+            .package-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .package-description,
+            .package-special {
+                margin: 0 20px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- EINHEITLICHER HEADER -->
+    <header class="global-header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo">
+                <img src="../images/logo.svg" alt="Restaurant Goldener Löffel Logo">
+                <div class="header-logo-text">
+                    <span class="header-logo-title">Goldener Löffel</span>
+                    <span class="header-logo-subtitle">Exklusive Kulinarik seit 1995</span>
+                </div>
+            </a>
+            
+            <nav class="header-nav">
+                <button class="mobile-menu-btn" aria-label="Menü öffnen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="header-menu">
+                    <li><a href="index.html">Start</a></li>
+                    <li><a href="speisekarte.html">Speisekarte</a></li>
+                    <li><a href="chefkoechin.html">Chefköchin</a></li>
+                    <li><a href="signature-kollektionen.html">Signature</a></li>
+                    <li><a href="reservierung.html">Reservierung</a></li>
+                    <li><a href="rezepte.html">Rezepte</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" style="padding: 20px; background: #f5f5f5; margin-top: 80px;">
+        <div class="container">
+            <a href="index.html">Start</a> » <span>Catering-Pakete im Detail</span>
+        </div>
+    </div>
+
+    <!-- Catering Details -->
+    <section class="catering-detail">
+        <div class="container">
+            <div class="catering-detail__header">
+                <h1 class="catering-detail__title">Unsere Catering-Pakete im Detail</h1>
+                <p class="catering-detail__subtitle">Entdecken Sie die perfekte kulinarische Lösung für Ihr Event</p>
+            </div>
+
+            <!-- Gala Dinner -->
+            <div id="gala-dinner" class="catering-package">
+                <div class="package-header">
+                    <h2>Gala Dinner</h2>
+                    <p class="price">ab 125€ pro Person</p>
+                </div>
+                
+                <div class="package-description">
+                    Unser Gala Dinner ist die Krönung jeder festlichen Veranstaltung. Mit einem exquisiten 5-Gänge-Menü, 
+                    das von unserer Chefköchin Anna Schmidt persönlich komponiert wird, verwandeln wir Ihr Event in ein 
+                    unvergessliches kulinarisches Erlebnis. Jeder Gang wird perfekt mit erlesenen Weinen abgestimmt und 
+                    von unserem professionellen Service-Team mit höchster Präzision serviert.
+                </div>
+
+                <div class="package-content">
+                    <div class="package-section">
+                        <h3>Menü-Beispiel</h3>
+                        <ul>
+                            <li><strong>Amuse-Bouche:</strong> Gänselebermousse mit Brioche und Portweingelee</li>
+                            <li><strong>Vorspeise:</strong> Jakobsmuscheln auf Erbsenpüree mit Pancetta-Chip</li>
+                            <li><strong>Zwischengang:</strong> Zitronen-Sorbet mit Champagner</li>
+                            <li><strong>Hauptgang:</strong> Rosa gebratenes Rinderfilet mit Trüffeljus, Gratin Dauphinoise und Marktgemüse</li>
+                            <li><strong>Dessert:</strong> Valrhona-Schokoladentarte mit Passionsfrucht und Goldblatt</li>
+                        </ul>
+                    </div>
+
+                    <div class="package-section">
+                        <h3>Inklusivleistungen</h3>
+                        <ul>
+                            <li>Aperitif-Empfang mit Champagner und Canapés</li>
+                            <li>Komplette Weinbegleitung (5 Gläser Premium-Weine)</li>
+                            <li>Mineralwasser und Kaffeespezialitäten</li>
+                            <li>Professionelles Service-Personal (1:10 Verhältnis)</li>
+                            <li>Exklusive Tischdekoration mit frischen Blumen</li>
+                            <li>Hochwertiges Porzellan, Kristallgläser und Silberbesteck</li>
+                            <li>Persönliche Menükarten mit Goldprägung</li>
+                            <li>Petit Fours zum Kaffee</li>
+                        </ul>
+                    </div>
+
+                    <div class="package-special">
+                        <h3>Besondere Optionen</h3>
+                        <p>Live-Cooking-Station • Austern-Bar • Käse-Wagen aus Frankreich • Zigarren-Sommelier • Live-Musik-Arrangement</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flying Buffet -->
+            <div id="flying-buffet" class="catering-package">
+                <div class="package-header">
+                    <h2>Flying Buffet</h2>
+                    <p class="price">ab 65€ pro Person</p>
+                </div>
+                
+                <div class="package-description">
+                    Das Flying Buffet ist die moderne Art des Caterings für Stehempfänge, Vernissagen und Netzwerk-Events. 
+                    Unsere kreativen Fingerfood-Kreationen werden elegant auf Tabletts präsentiert und von unserem 
+                    Service-Personal serviert. Die Gäste können sich frei bewegen, netzwerken und dabei exquisite 
+                    Häppchen genießen - alles ohne formelle Tischordnung.
+                </div>
+
+                <div class="package-content">
+                    <div class="package-section">
+                        <h3>Fingerfood-Auswahl (20+ Variationen)</h3>
+                        <ul>
+                            <li><strong>Mediterran:</strong> Mini-Bruschetta, Antipasti-Spieße, Gazpacho-Shots</li>
+                            <li><strong>Asiatisch:</strong> Sushi-Variationen, Dim Sum, Vietnamese Rolls</li>
+                            <li><strong>Klassisch:</strong> Mini-Quiches, Lachs-Blinis, Beef-Tatar auf Rösti</li>
+                            <li><strong>Vegetarisch:</strong> Caprese-Spieße, Hummus-Törtchen, Grünkohl-Chips</li>
+                            <li><strong>Süß:</strong> Macarons, Mini-Tartelettes, Schokoladen-Trüffel</li>
+                        </ul>
+                    </div>
+
+                    <div class="package-section">
+                        <h3>Service & Ausstattung</h3>
+                        <ul>
+                            <li>Professionelles Flying-Service (durchgehend 4 Stunden)</li>
+                            <li>Live-Cooking-Station (z.B. Sushi, Pasta oder Flammkuchen)</li>
+                            <li>Moderne Präsentations-Displays und Etageren</li>
+                            <li>Hochwertige Servietten und Fingerfood-Geschirr</li>
+                            <li>Stehtische mit Hussen in Ihrer Wunschfarbe</li>
+                            <li>Getränke-Flatrate optional zubuchbar</li>
+                            <li>Barkeeper für Cocktail-Kreationen (optional)</li>
+                            <li>Musikalische Untermalung (DJ oder Live-Musik)</li>
+                        </ul>
+                    </div>
+
+                    <div class="package-special">
+                        <h3>Highlight-Stationen</h3>
+                        <p>Champagner-Bar • Molecular-Cocktails • Käse & Wein Station • Dessert-Buffet • Coffee-Bar mit Barista</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Lunch -->
+            <div id="business-lunch" class="catering-package">
+                <div class="package-header">
+                    <h2>Business Lunch</h2>
+                    <p class="price">ab 45€ pro Person</p>
+                </div>
+                
+                <div class="package-description">
+                    Unser Business Lunch ist speziell auf die Bedürfnisse von Geschäftstreffen, Konferenzen und 
+                    Seminaren zugeschnitten. Wir servieren hochwertige Menüs in angemessener Zeit, damit sich Ihre 
+                    Gäste voll auf die geschäftlichen Inhalte konzentrieren können. Diskreter Service und flexible 
+                    Timing-Optionen garantieren einen reibungslosen Ablauf.
+                </div>
+
+                <div class="package-content">
+                    <div class="package-section">
+                        <h3>Business-Menü Standard</h3>
+                        <ul>
+                            <li><strong>Vorspeise oder Suppe:</strong> Saisonale Auswahl, täglich wechselnd</li>
+                            <li><strong>Hauptgang zur Wahl:</strong> Fleisch-, Fisch- und vegetarische Option</li>
+                            <li><strong>Dessert:</strong> Leichte Süßspeise oder Käseauswahl</li>
+                            <li><strong>Getränke:</strong> Mineralwasser, Säfte, Kaffee & Tee</li>
+                            <li><strong>Meeting-Snacks:</strong> Obstkorb, Nüsse, Energieriegel</li>
+                        </ul>
+                    </div>
+
+                    <div class="package-section">
+                        <h3>Business-Service</h3>
+                        <ul>
+                            <li>Express-Service innerhalb 60 Minuten</li>
+                            <li>Vorbestellung für Gruppen bis 100 Personen</li>
+                            <li>Flexible Essenszeiten nach Agenda</li>
+                            <li>Diskreter, professioneller Service</li>
+                            <li>Allergiker- und Diät-Menüs verfügbar</li>
+                            <li>Tagungsgetränke ganztägig</li>
+                            <li>Kaffeepausen mit Gebäck</li>
+                            <li>Technik-Support für Präsentationen</li>
+                        </ul>
+                    </div>
+
+                    <div class="package-special">
+                        <h3>Zusatzoptionen</h3>
+                        <p>Frühstücksbuffet • Working Lunch Boxes • Afternoon Tea • Networking Dinner • Welcome Reception</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hochzeits-Special -->
+            <div id="hochzeit-special" class="catering-package">
+                <div class="package-header">
+                    <h2>Hochzeits-Special</h2>
+                    <p class="price">ab 145€ pro Person</p>
+                </div>
+                
+                <div class="package-description">
+                    Der schönste Tag im Leben verdient eine außergewöhnliche kulinarische Begleitung. Unser Hochzeits-Special 
+                    ist mehr als nur Catering - es ist eine komplette Event-Inszenierung. Von der Sektempfang bis zum 
+                    Mitternachtssnack, von der individuellen Hochzeitstorte bis zur Candy Bar - wir kümmern uns um jedes 
+                    Detail, damit Sie Ihren großen Tag in vollen Zügen genießen können.
+                </div>
+
+                <div class="package-content">
+                    <div class="package-section">
+                        <h3>Hochzeits-Menü Deluxe</h3>
+                        <ul>
+                            <li><strong>Sektempfang:</strong> Champagner, Prosecco, alkoholfreie Alternativen</li>
+                            <li><strong>Vorspeisen-Variation:</strong> 3 verschiedene Vorspeisen zur Wahl</li>
+                            <li><strong>Suppe:</strong> Hochzeitssuppe oder saisonale Alternative</li>
+                            <li><strong>Hauptgang Duo:</strong> Kombination aus Fleisch und Fisch</li>
+                            <li><strong>Käse-Buffet:</strong> Internationale Käseauswahl</li>
+                            <li><strong>Dessert-Symphonie:</strong> Dessertbuffet plus Hochzeitstorte</li>
+                            <li><strong>Mitternachtssnack:</strong> Herzhaftes Buffet für Nachtschwärmer</li>
+                        </ul>
+                    </div>
+
+                    <div class="package-section">
+                        <h3>Hochzeits-Komplettpaket</h3>
+                        <ul>
+                            <li>Individuelle Menü-Kreation nach Ihren Wünschen</li>
+                            <li>Mehrstöckige Hochzeitstorte (Design nach Wahl)</li>
+                            <li>Candy Bar mit 20+ Süßigkeiten-Sorten</li>
+                            <li>Kinder-Menü und Betreuung</li>
+                            <li>Komplette Tischdekoration und Blumenschmuck</li>
+                            <li>Premium Getränke-Flatrate (inkl. Spirituosen)</li>
+                            <li>Persönlicher Wedding-Planner</li>
+                            <li>Probe-Essen für das Brautpaar (6 Monate vorher)</li>
+                            <li>Service-Personal in festlicher Kleidung</li>
+                            <li>Aufbau- und Abbau-Service</li>
+                        </ul>
+                    </div>
+
+                    <div class="package-special">
+                        <h3>Romantische Extras</h3>
+                        <p>Live-Band oder DJ • Feuerwerk • Photo Booth • Vintage Ice Cream Truck • Zigarren-Lounge • Brunch am Folgetag</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Lassen Sie uns Ihr Event unvergesslich machen!</h2>
+            <p>Kontaktieren Sie uns für ein persönliches Beratungsgespräch und ein maßgeschneidertes Angebot.</p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="reservierung.html" class="btn btn--primary btn--large">Anfrage senden</a>
+                <a href="tel:+4912345678900" class="btn btn--outline btn--large" style="background: white; color: #2C5530;">
+                    📞 0123 456 789 00
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- EINHEITLICHER FOOTER -->
+    <footer class="global-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Restaurant Goldener Löffel</h3>
+                    <p>
+                        Exklusive Kulinarik und Event-Catering auf höchstem Niveau. 
+                        Seit 1995 Ihr Partner für unvergessliche Gaumenfreuden.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Kontakt</h4>
+                    <address>
+                        Gourmetstraße 42<br>
+                        12345 Feinschmeckerhausen<br>
+                        Tel: <a href="tel:+4912345678900">0123 456 789 00</a><br>
+                        E-Mail: <a href="mailto:info@goldener-loeffel.de">info@goldener-loeffel.de</a>
+                    </address>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Öffnungszeiten</h4>
+                    <p>
+                        <strong>Dienstag - Samstag:</strong><br>
+                        18:00 - 23:00 Uhr<br><br>
+                        <strong>Sonntag & Montag:</strong><br>
+                        Ruhetag
+                    </p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Schnelllinks</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="speisekarte.html">Speisekarte</a></li>
+                        <li><a href="signature-kollektionen.html">Signature Gerichte</a></li>
+                        <li><a href="reservierung.html">Tisch reservieren</a></li>
+                        <li><a href="index.html#catering-pakete">Event-Catering</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column footer-legal">
+                    <h4>Rechtliches</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="impressum.html" style="color: #D4AF37;">Impressum</a></li>
+                        <li><a href="agb.html" style="color: #D4AF37;">AGB</a></li>
+                        <li><a href="datenschutz.html" style="color: #D4AF37;">Datenschutz</a></li>
+                        <li><a href="reservierung.html" style="color: #D4AF37;">Reservierung</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-divider"></div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Restaurant Goldener Löffel. Erstellt von Hans Hahn - Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const headerMenu = document.querySelector('.header-menu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    headerMenu.classList.toggle('active');
+                });
+            }
+            
+            // Schließe Menü beim Klick außerhalb
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.header-nav')) {
+                    mobileMenuBtn?.classList.remove('active');
+                    headerMenu?.classList.remove('active');
+                }
+            });
+
+            // Smooth scroll wenn von index.html mit Hash kommend
+            if (window.location.hash) {
+                const element = document.querySelector(window.location.hash);
+                if (element) {
+                    setTimeout(() => {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 100);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

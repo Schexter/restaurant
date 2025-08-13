@@ -1,162 +1,129 @@
-# 📸 BILDER-CHECKLISTE FÜR RESTAURANT WEBSITE
-## Restaurant Goldener Löffel
-**Erstellt von Hans Hahn - Alle Rechte vorbehalten**
-**Stand: 11.08.2025**
+# 📸 BILDER-CHECKLISTE
+**Erstellt von Hans Hahn - Alle Rechte vorbehalten**  
+**Letzte Aktualisierung: 09.01.2025**
+
+## ✅ ERFOLGREICH HOCHGELADENE BILDER
+
+### 🎯 CATERING (100% komplett!)
+**Pfad:** `/images/catering/`
+- ✅ **business-lunch.jpg** - Vorhanden!
+- ✅ **flying-buffet.jpg** - Vorhanden!
+- ✅ **gala-dinner.jpg** - Vorhanden!
+- ✅ **hochzeit.jpg** - Vorhanden!
+- ✅ Alle SVG-Fallbacks auch vorhanden
+
+### 👩‍🍳 CHEF/KÖCHIN (100% komplett!)
+**Pfad:** `/images/chef/`
+- ✅ **anna-schmidt-portrait.jpg** - Vorhanden!
+- ✅ **dish-1.jpg** - Vorhanden!
+- ✅ **dish-2.jpg** - Vorhanden!
+- ✅ **dish-3.jpg** - Vorhanden!
+- ✅ **dish-4.jpg** - Vorhanden!
+- ✅ **dish-5.jpg** - Vorhanden!
+- ✅ **dish-6.jpg** - Vorhanden!
+- ✅ **signature.png** - Vorhanden!
+
+### 🏠 RESTAURANT AMBIENTE (Gut bestückt!)
+**Pfad:** `/images/restaurant/`
+- ✅ **exterior.jpg** - Vorhanden!
+- ✅ **interior-1.jpg** - Vorhanden!
+- ✅ **entrance.jpg** - Vorhanden!
+- ✅ **candle-ambience.jpg** - Vorhanden!
+- ✅ **cutlery-gold.jpg** - Vorhanden!
+- ✅ **fresh-ingredients.jpg** - Vorhanden!
+- ✅ **parking.jpg** - Vorhanden!
+- ✅ **table-setting.jpg** - Vorhanden!
+- ✅ **team-kitchen.jpg** - Vorhanden!
+
+### 🍳 REZEPTE (Gut bestückt!)
+**Pfad:** `/images/rezepte/`
+- ✅ **zwiebelsuppe.jpg** - Vorhanden!
+- ✅ **risotto-milanese.jpg** - Vorhanden!
+- ✅ **lava-cake.jpg** - Vorhanden!
+- ✅ **cooking-process-1.jpg** - Vorhanden!
+- ✅ **cooking-process-2.jpg** - Vorhanden!
+
+### 🖼️ HERO BILDER (Teilweise vorhanden)
+**Pfad:** `/images/hero/`
+- ✅ **hero-restaurant.jpg** - Vorhanden!
+- ❌ **hero-main.jpg** - FEHLT (kann hero-restaurant.jpg verwenden)
+- ❌ **hero-catering.jpg** - FEHLT
+- ❌ **hero-chef.jpg** - FEHLT
+- ❌ **hero-menu.jpg** - FEHLT
+- ❌ **hero-recipes.jpg** - FEHLT
+
+### 🍽️ GERICHTE/SPEISEKARTE (Fast leer)
+**Pfad:** `/images/gerichte/`
+- ✅ **wine-pairing.jpg** - Vorhanden!
+- ❌ Vorspeisen-Bilder - FEHLEN
+- ❌ Hauptgang-Bilder - FEHLEN
+- ❌ Dessert-Bilder - FEHLEN
+
+### 🎉 EVENTS (Leer)
+**Pfad:** `/images/events/`
+- ❌ Noch keine Event-Bilder vorhanden
 
 ---
 
-## ✅ VORHANDENE BILDER
+## 📊 STATISTIK
 
-### Logo
-- [x] **logo.svg** - Restaurant-Logo (200x200px)
-
-### Catering (4 Bilder vorhanden)
-- [x] **gala-dinner.jpg** 
-- [x] **flying-buffet.jpg**
-- [x] **business-lunch.jpg**
-- [x] **hochzeit.jpg**
-
-### Chef/Gerichte (8 Bilder vorhanden)
-- [x] **anna-schmidt-portrait.jpg** - Chefköchin Portrait
-- [x] **dish-1.jpg** - Jakobsmuscheln
-- [x] **dish-2.jpg** - Wagyu Beef
-- [x] **dish-3.jpg** - Hummer
-- [x] **dish-4.jpg** - Schokoladen-Dessert
-- [x] **dish-5.jpg** - Gemüse-Symphony
-- [x] **dish-6.jpg** - Steinbutt
-- [x] **signature.png** (nicht verwendet)
+- **✅ Vorhandene Bilder:** 28 Dateien
+- **❌ Fehlende wichtige Bilder:** ~10-15 Dateien
+- **📁 Gesamtfortschritt:** ~65% komplett
 
 ---
 
-## ❌ FEHLENDE BILDER - NOCH ZU ERSTELLEN
+## 🔄 NÄCHSTE SCHRITTE
 
-### 1. HERO/HINTERGRUND-BILDER
-| Dateiname | Größe | Beschreibung | Verwendung |
-|-----------|-------|--------------|------------|
-| **hero-restaurant.jpg** | 1920x800px | Eleganter Restaurant-Innenraum mit warmem Licht, gedeckte Tische, Kristallgläser | Startseite Hero-Hintergrund |
-| **hero-pattern.svg** | Kachelbar | Dezentes Muster in Gold/Grün für Hintergründe | Alle Hero-Sections optional |
+### PRIORITÄT 1 - Hero-Bilder:
+1. **hero-restaurant.jpg** umbenennen in **hero-main.jpg** ODER
+2. Neue Hero-Bilder für verschiedene Seiten hochladen
 
-### 2. RESTAURANT-AMBIENTE (für Atmosphäre)
-| Dateiname | Größe | Beschreibung | Verwendung |
-|-----------|-------|--------------|------------|
-| **restaurant-interior-1.jpg** | 1200x800px | Hauptraum mit eleganten Tischen, Kronleuchter | Über uns Section |
-| **restaurant-interior-2.jpg** | 1200x800px | Private Dining Bereich, intim beleuchtet | Event-Section |
-| **restaurant-bar.jpg** | 1200x800px | Stilvolle Bar mit Getränkeauswahl | Getränke-Section |
-| **restaurant-terrace.jpg** | 1200x800px | Außenbereich/Terrasse (falls vorhanden) | Sommer-Special |
-| **wine-cellar.jpg** | 800x600px | Weinkeller mit edlen Flaschen | Weinkarte |
+### PRIORITÄT 2 - Speisekarte:
+1. Bilder für Vorspeisen (5 Stück)
+2. Bilder für Hauptgänge (6 Stück)
+3. Bilder für Desserts (5 Stück)
 
-### 3. TEAM-BILDER
-| Dateiname | Größe | Beschreibung | Verwendung |
-|-----------|-------|--------------|------------|
-| **team-kitchen.jpg** | 1200x800px | Küchenteam in Aktion (dynamisch) | Team-Section |
-| **team-service.jpg** | 1200x800px | Service-Team, professionell & freundlich | Service-Section |
-| **sommelier.jpg** | 600x800px | Sommelier bei Weinberatung | Weinkarte |
-
-### 4. FOOD-FOTOGRAFIE (Zusätzliche Gerichte)
-| Dateiname | Größe | Beschreibung | Verwendung |
-|-----------|-------|--------------|------------|
-| **amuse-bouche.jpg** | 800x600px | Eleganter Gruß aus der Küche | Menü-Highlights |
-| **bread-selection.jpg** | 800x600px | Hausgemachtes Brot & Butter | Speisekarte |
-| **cheese-board.jpg** | 800x600px | Käseauswahl mit Trauben & Nüssen | Desserts |
-| **wine-pairing.jpg** | 1200x600px | Weingläser mit verschiedenen Weinen | Weinbegleitung |
-
-### 5. REZEPTE-BLOG BILDER
-| Dateiname | Größe | Beschreibung | Verwendung |
-|-----------|-------|--------------|------------|
-| **zwiebelsuppe.jpg** | 800x600px | Französische Zwiebelsuppe überbacken | Rezept 1 |
-| **risotto-milanese.jpg** | 800x600px | Goldener Safran-Risotto | Rezept 2 |
-| **lava-cake.jpg** | 800x600px | Schokoladen-Lava-Kuchen aufgeschnitten | Rezept 3 |
-| **cooking-process-1.jpg** | 600x400px | Zwiebeln karamellisieren | Rezept-Schritte |
-| **cooking-process-2.jpg** | 600x400px | Risotto rühren | Rezept-Schritte |
-
-### 6. EVENT & CATERING (Ergänzungen)
-| Dateiname | Größe | Beschreibung | Verwendung |
-|-----------|-------|--------------|------------|
-| **wedding-setup.jpg** | 1200x800px | Festlich gedeckte Hochzeitstafel | Hochzeits-Catering |
-| **corporate-event.jpg** | 1200x800px | Business-Event Setup | Corporate Events |
-| **private-party.jpg** | 1200x800px | Private Feier Atmosphäre | Private Events |
-| **catering-buffet.jpg** | 1200x800px | Elegantes Buffet-Arrangement | Catering-Service |
-
-### 7. LOCATION & ANFAHRT
-| Dateiname | Größe | Beschreibung | Verwendung |
-|-----------|-------|--------------|------------|
-| **restaurant-exterior.jpg** | 1200x800px | Außenansicht Restaurant (Abend) | Kontakt/Anfahrt |
-| **entrance.jpg** | 800x600px | Eingangsbereich mit Logo | Footer/Kontakt |
-| **parking.jpg** | 600x400px | Parkplatz-Hinweis | Anfahrt |
-
-### 8. DETAIL-AUFNAHMEN (für Atmosphäre)
-| Dateiname | Größe | Beschreibung | Verwendung |
-|-----------|-------|--------------|------------|
-| **table-setting.jpg** | 800x600px | Perfekt gedeckter Tisch (Close-up) | Reservation |
-| **cutlery-gold.jpg** | 600x400px | Goldenes Besteck Detail | Dekoration |
-| **candle-ambience.jpg** | 600x400px | Kerzen-Atmosphäre | Romantic Dinner |
-| **fresh-ingredients.jpg** | 800x600px | Frische Zutaten auf Holz | Philosophie |
+### PRIORITÄT 3 - Events:
+1. Event-Fotos von vergangenen Veranstaltungen
+2. Detail-Aufnahmen
+3. Team-Fotos
 
 ---
 
-## 📋 TECHNISCHE ANFORDERUNGEN
+## ✨ BEREITS FUNKTIONIERENDE FEATURES
 
-### Dateiformate:
-- **JPG**: Für Fotos (Qualität 85-90%)
-- **PNG**: Für Bilder mit Transparenz
-- **SVG**: Für Icons und Grafiken
-- **WebP**: Optional für bessere Performance
+### Was schon perfekt läuft:
+- ✅ **Startseite:** Alle Catering-Pakete haben Bilder
+- ✅ **Chefköchin-Seite:** Komplett mit allen Bildern
+- ✅ **Rezepte-Seite:** Alle 3 Hauptrezepte haben Bilder
+- ✅ **Restaurant-Ambiente:** Viele atmosphärische Bilder
 
-### Optimierung:
-- Maximale Dateigröße: 500KB pro Bild
-- Retina-Ready: 2x Versionen für wichtige Bilder
-- Lazy Loading für Performance
-- Alt-Texte für SEO und Barrierefreiheit
-
-### Stil-Richtlinien:
-- **Farbpalette**: Warme, einladende Töne
-- **Beleuchtung**: Warm, atmosphärisch
-- **Stil**: Hochwertig, elegant, appetitanregend
-- **Konsistenz**: Einheitlicher Look über alle Bilder
-
----
-
-## 🎨 BILDBEARBEITUNGS-TIPPS
-
-1. **Farbkorrektur**: Warme Töne betonen (Gold/Amber)
-2. **Kontrast**: Leicht erhöhen für mehr Tiefe
-3. **Schärfe**: Dezent für Food-Details
-4. **Vignettierung**: Leicht für Fokus
-5. **Sättigung**: Natürlich, nicht übertrieben
-
----
-
-## 📦 PRIORITÄTEN
-
-### HOCH (Sofort benötigt):
-1. hero-restaurant.jpg
-2. restaurant-interior-1.jpg
-3. zwiebelsuppe.jpg
-4. risotto-milanese.jpg
-5. lava-cake.jpg
-
-### MITTEL (Wichtig für Vollständigkeit):
-1. team-kitchen.jpg
-2. restaurant-exterior.jpg
-3. wine-pairing.jpg
-4. table-setting.jpg
-
-### NIEDRIG (Nice-to-have):
-1. Detail-Aufnahmen
-2. Zusätzliche Ambiente-Bilder
-3. Prozess-Fotos
+### Was noch Platzhalter nutzt:
+- ⚠️ Hero-Bereiche auf einigen Seiten
+- ⚠️ Speisekarte (nutzt noch Text-Beschreibungen)
+- ⚠️ Event-Galerie (falls geplant)
 
 ---
 
 ## 📝 NOTIZEN
 
-- Alle Bilder sollten die Exklusivität und Qualität des Restaurants widerspiegeln
-- Bilder können Stock-Fotos sein, sollten aber zum Stil passen
-- Alternativ: KI-generierte Bilder mit Tools wie Midjourney/DALL-E
-- Wichtig: Konsistenter visueller Stil über alle Bilder
-
-**Gesamtanzahl benötigter neuer Bilder: ~35-40 Stück**
+- **wine-pairing.jpg** könnte auf der Speisekarte-Seite eingebaut werden
+- **team-kitchen.jpg** wäre perfekt für eine "Über uns" Section
+- **fresh-ingredients.jpg** passt gut zur Philosophie-Seite
+- Die vorhandenen Bilder sind von guter Qualität!
 
 ---
 
-**Erstellt von Hans Hahn - Alle Rechte vorbehalten**
+## 🎯 EMPFEHLUNG
+
+Die Website ist bereits zu **65% mit echten Bildern** bestückt und voll funktionsfähig! 
+
+**Prioritäre Ergänzungen:**
+1. Hero-Bild für Startseite (oder hero-restaurant.jpg umbenennen)
+2. Ein paar Speisekarten-Bilder für visuelle Highlights
+
+Die restlichen Bilder können nach und nach ergänzt werden.
+
+---
+**Status: Website ist bereits gut bebildert und einsatzbereit!** 🎉
