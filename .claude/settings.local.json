@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(for:*)",
+      "Bash(do sed -i 's/<div class=\"\"footer-column\"\">\\n.*<h4>Rechtliches<\\/h4>/<div class=\"\"footer-column footer-legal\"\">\\n                    <h4>Rechtliches<\\/h4>/g' \"$file\")",
+      "Bash(done)",
+      "Bash(grep:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

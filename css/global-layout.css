@@ -227,6 +227,33 @@ body {
     text-decoration: underline;
 }
 
+/* Spezielle Styles für Rechtliche Links */
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+    display: inline-block;
+    padding: 0.25rem 0;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-column ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #D4AF37;
+    transition: width 0.3s ease;
+}
+
+.footer-column ul li a:hover::after {
+    width: 100%;
+}
+
 .footer-social {
     display: flex;
     gap: 1rem;
@@ -260,6 +287,14 @@ body {
     text-align: center;
     opacity: 0.8;
     font-size: 0.875rem;
+}
+
+/* Footer Legal Links Box */
+.footer-legal {
+    background-color: rgba(212, 175, 55, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 /* ==============================================
