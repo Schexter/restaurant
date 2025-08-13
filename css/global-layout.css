@@ -217,14 +217,16 @@ body {
 }
 
 .footer-column a {
-    color: #D4AF37;
+    color: white;
     text-decoration: none;
     transition: color 0.3s ease;
+    opacity: 0.9;
 }
 
 .footer-column a:hover {
-    color: white;
+    color: #D4AF37;
     text-decoration: underline;
+    opacity: 1;
 }
 
 /* Spezielle Styles für Rechtliche Links */
@@ -289,13 +291,7 @@ body {
     font-size: 0.875rem;
 }
 
-/* Footer Legal Links Box */
-.footer-legal {
-    background-color: rgba(212, 175, 55, 0.05);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
-}
+/* Footer Legal Links Box - entfernt für einheitliches Design */
 
 /* ==============================================
    RESPONSIVE DESIGN

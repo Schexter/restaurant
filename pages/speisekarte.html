@@ -131,6 +131,9 @@
         .menu-items {
             display: grid;
             gap: 30px;
+            /* Overflow hidden hier, damit Ribbons nicht über den Container hinausragen */
+            overflow-x: hidden;
+            padding-right: 10px;
         }
 
         .menu-item {
@@ -321,25 +324,97 @@
             font-weight: 700;
         }
 
-        /* Special Highlight */
+        /* Special Highlight - Gütesiegel Style */
         .menu-item--special {
-            background: linear-gradient(135deg, #fff 0%, #fffef5 100%);
-            border-left-color: #D4AF37;
+            background: linear-gradient(135deg, #fffef5 0%, #fff 100%);
+            border-left: 4px solid #D4AF37;
+            position: relative;
         }
 
         .menu-item--special::after {
-            content: 'Empfehlung des Chefs';
+            content: '★\A CHEF\'S\A TIPP';
             position: absolute;
-            top: 10px;
-            right: -30px;
-            background: #D4AF37;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #D4AF37, #c49c2f);
             color: white;
-            padding: 5px 40px;
-            font-size: 0.8rem;
-            transform: rotate(45deg);
-            font-weight: 600;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 
+                0 3px 10px rgba(0,0,0,0.2),
+                inset 0 -2px 5px rgba(0,0,0,0.1),
+                inset 0 2px 5px rgba(255,255,255,0.3);
+            white-space: pre-line;
+            line-height: 1.2;
+            border: 3px solid #fff;
+            z-index: 1;
+            transform: rotate(-15deg);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-item--special:hover::after {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        /* Alternative: Eckiges Siegel */
+        .menu-item--seal-square::after {
+            content: 'EMPFOHLEN';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 8px 15px;
+            background: linear-gradient(135deg, #D4AF37, #c49c2f);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transform: rotate(-5deg);
+        }
+
+        /* Alternative: Top Corner Ribbon */
+        .menu-item--ribbon-top {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-item--ribbon-top::after {
+            content: 'NEU';
+            position: absolute;
+            top: 8px;
+            right: -25px;
+            background: #D4AF37;
+            color: white;
+            padding: 5px 30px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            transform: rotate(45deg);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        }
+
+        /* Subtle animation for special items */
+        @keyframes subtle-glow {
+            0%, 100% { 
+                box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            }
+            50% { 
+                box-shadow: 0 3px 20px rgba(212, 175, 55, 0.2);
+            }
+        }
+
+        .menu-item--special {
+            animation: subtle-glow 3s infinite;
         }
 
         /* Responsive Design */
@@ -378,7 +453,13 @@
             }
 
             .menu-item--special::after {
-                display: none;
+                /* Für Mobile: Kleineres Siegel */
+                width: 60px;
+                height: 60px;
+                font-size: 0.6rem;
+                bottom: 15px;
+                right: 15px;
+                border-width: 2px;
             }
         }
     </style>
@@ -873,13 +954,13 @@
                     </ul>
                 </div>
                 
-                <div class="footer-column footer-legal">
+                <div class="footer-column">
                     <h4>Rechtliches</h4>
                     <ul style="list-style: none; padding: 0;">
-                        <li><a href="impressum.html" style="color: #D4AF37;">Impressum</a></li>
-                        <li><a href="agb.html" style="color: #D4AF37;">AGB</a></li>
-                        <li><a href="datenschutz.html" style="color: #D4AF37;">Datenschutz</a></li>
-                        <li><a href="reservierung.html" style="color: #D4AF37;">Reservierung</a></li>
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="agb.html">AGB</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="reservierung.html">Reservierung</a></li>
                     </ul>
                 </div>
             </div>
