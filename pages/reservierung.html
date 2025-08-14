@@ -197,6 +197,119 @@
                         <p class="form__note">* Pflichtfelder</p>
                     </form>
                 </div>
+
+                <!-- Checkout Confirmation Section (MOVED OUTSIDE FORM WRAPPER) -->
+                <div class="checkout-section" id="checkoutSection" style="display: none;">
+                    <div class="checkout-header">
+                        <div class="checkout-icon">✨</div>
+                        <h2 class="checkout-title">Vielen Dank für Ihre Reservierung!</h2>
+                        <div class="checkout-personal-message">
+                            <p class="checkout-greeting" id="checkoutGreeting" style="font-size: 1.1rem; color: #333; margin-bottom: 10px;">Hallo [Vorname] [Nachname], vielen Dank für Ihre Reservierung!</p>
+                            <p class="checkout-confirmation" id="checkoutConfirmation" style="font-size: 1rem; color: #555; margin-bottom: 10px;">Wir freuen uns sehr diese bestätigen zu können und Sie bei uns am [Datum] um [Uhrzeit] begrüßen zu können!</p>
+                            <p class="checkout-table-info" id="checkoutTableInfo" style="font-size: 1rem; color: #555; margin-bottom: 10px;">Wir haben Ihnen den Tisch [Nummer] für [Personen] zugewiesen.</p>
+                            <p class="checkout-closing" id="checkoutClosing" style="font-size: 1rem; color: #555; margin-bottom: 10px;">Wir wünschen Ihnen einen angenehmen Aufenthalt bei uns und freuen uns Sie kulinarisch verwöhnen zu können.</p>
+                        </div>
+                    </div>
+
+                    <div class="checkout-content">
+                        <div class="checkout-grid">
+                            <div class="checkout-summary">
+                                <h3 class="checkout-section-title">📋 Ihre Reservierung im Überblick</h3>
+                                <div class="summary-card">
+                                    <div class="summary-row">
+                                        <span class="summary-label">👤 Name:</span>
+                                        <span class="summary-value" id="summaryName"></span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="summary-label">📧 E-Mail:</span>
+                                        <span class="summary-value" id="summaryEmail"></span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="summary-label">📞 Telefon:</span>
+                                        <span class="summary-value" id="summaryPhone"></span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="summary-label">📅 Datum:</span>
+                                        <span class="summary-value" id="summaryDate"></span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="summary-label">🕐 Uhrzeit:</span>
+                                        <span class="summary-value" id="summaryTime"></span>
+                                    </div>
+                                    <div class="summary-row">
+                                        <span class="summary-label">👥 Personen:</span>
+                                        <span class="summary-value" id="summaryPersons"></span>
+                                    </div>
+                                    <div class="summary-row" id="summaryOccasionRow" style="display: none;">
+                                        <span class="summary-label">🎉 Anlass:</span>
+                                        <span class="summary-value" id="summaryOccasion"></span>
+                                    </div>
+                                    <div class="summary-row" id="summaryRequestsRow" style="display: none;">
+                                        <span class="summary-label">💭 Besondere Wünsche:</span>
+                                        <span class="summary-value" id="summaryRequests"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="checkout-table">
+                                <h3 class="checkout-section-title">🍽️ Ihr reservierter Tisch</h3>
+                                <div class="table-card">
+                                    <div class="table-visual">
+                                        <div class="table-number" id="tableNumber">Tisch 10</div>
+                                        <div class="table-location" id="tableLocation">am Fenster</div>
+                                    </div>
+                                    <div class="table-features">
+                                        <h4>Besonderheiten Ihres Tisches:</h4>
+                                        <ul id="tableFeatures">
+                                            <li>Wunderschöner Ausblick in den Garten</li>
+                                            <li>Ruhige Atmosphäre</li>
+                                            <li>Perfekt für romantische Abende</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="checkout-next-steps">
+                            <h3 class="checkout-section-title">📧 Wie geht es weiter?</h3>
+                            <div class="steps-grid">
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>Bestätigung per E-Mail</h4>
+                                        <p>Sie erhalten in wenigen Minuten eine detaillierte Bestätigung an <strong id="confirmEmail">ihre E-Mail</strong></p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>Vorbereitung</h4>
+                                        <p>Unser Küchenchef bereitet bereits Ihre kulinarischen Köstlichkeiten vor</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>Ihr Besuch</h4>
+                                        <p>Bitte seien Sie 10 Minuten vor Ihrer Reservierung da - wir freuen uns auf Sie!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="checkout-actions">
+                            <button type="button" class="btn btn--primary btn--large" onclick="window.print()">
+                                📄 Bestätigung drucken
+                            </button>
+                            <button type="button" class="btn btn--outline" id="newReservationBtn">
+                                ➕ Neue Reservierung
+                            </button>
+                            <a href="../index.html" class="btn btn--secondary">
+                                🏠 Zur Startseite
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- Information Sidebar -->
                 <div class="reservation-info">
@@ -346,301 +459,8 @@
         </div>
     </footer>
 
-    <style>
-        /* Zusätzliche Styles für die Reservierungsseite */
-        .reservation-hero {
-            background: linear-gradient(135deg, rgba(44, 85, 48, 0.95), rgba(26, 51, 32, 0.95));
-            color: white;
-            padding: 120px 20px 80px;
-            text-align: center;
-            margin-top: -1px;
-        }
-
-        .reservation-hero .section__title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            color: white;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .reservation-hero .section__subtitle {
-            font-size: 1.2rem;
-            color: #D4AF37;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .reservation-section {
-            padding: 4rem 0;
-        }
-
-        .reservation-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .reservation-form-wrapper {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .form__title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.75rem;
-            color: #2C5530;
-            margin-bottom: 2rem;
-        }
-
-        .form__row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .form__group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form__label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #2C5530;
-            font-weight: 600;
-        }
-
-        .form__input,
-        .form__select,
-        .form__textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid #e0e0e0;
-            border-radius: 4px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form__input:focus,
-        .form__select:focus,
-        .form__textarea:focus {
-            outline: none;
-            border-color: #D4AF37;
-        }
-
-        .form__textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .form__checkbox-wrapper {
-            display: flex;
-            align-items: start;
-            gap: 0.5rem;
-        }
-
-        .form__checkbox {
-            margin-top: 0.25rem;
-        }
-
-        .form__error {
-            color: #d32f2f;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-            display: block;
-        }
-
-        .form__help {
-            color: #666;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-            display: block;
-        }
-
-        .form__actions {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .form__note {
-            margin-top: 1rem;
-            font-size: 0.875rem;
-            color: #666;
-        }
-
-        .alert {
-            padding: 1rem;
-            border-radius: 4px;
-            margin-bottom: 1.5rem;
-        }
-
-        .alert--success {
-            background-color: #e8f5e9;
-            border: 1px solid #4caf50;
-            color: #2e7d32;
-        }
-
-        .alert--error {
-            background-color: #ffebee;
-            border: 1px solid #f44336;
-            color: #c62828;
-        }
-
-        .info-card {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-        }
-
-        .info-card--special {
-            background: linear-gradient(135deg, #FFF8E7 0%, #fff 100%);
-            border: 2px solid #D4AF37;
-        }
-
-        .info-card__title {
-            color: #2C5530;
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .info-card__text {
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-
-        .info-card__phone {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #D4AF37;
-        }
-
-        .info-card__list dt {
-            font-weight: 600;
-            color: #2C5530;
-            margin-top: 0.5rem;
-        }
-
-        .info-card__list dd {
-            margin-left: 0;
-            margin-bottom: 1rem;
-            color: #666;
-        }
-
-        .info-card__bullets {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .info-card__bullets li {
-            padding-left: 1.5rem;
-            margin-bottom: 0.5rem;
-            position: relative;
-        }
-
-        .info-card__bullets li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #D4AF37;
-            font-weight: bold;
-        }
-
-        .location-section {
-            background-color: #f9f9f9;
-            padding: 4rem 0;
-        }
-
-        .location-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 3rem;
-            max-width: 1200px;
-            margin: 3rem auto 0;
-        }
-
-        .map-placeholder {
-            background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%);
-            height: 400px;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            color: #666;
-            text-align: center;
-        }
-
-        .location-info h3 {
-            color: #2C5530;
-            margin-bottom: 1.5rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .transport-option {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .transport-option h4 {
-            color: #D4AF37;
-            margin-bottom: 0.5rem;
-        }
-
-        .btn--secondary {
-            background: #2C5530;
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .btn--secondary:hover {
-            background: #1a3320;
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 1024px) {
-            .reservation-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .location-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .form__row {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .form__actions {
-                flex-direction: column;
-            }
-
-            .form__actions button {
-                width: 100%;
-            }
-        }
-    </style>
-
     <script>
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle & Reservation System mit verbessertem Checkout
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const headerMenu = document.querySelector('.header-menu');
@@ -650,6 +470,19 @@
                     this.classList.toggle('active');
                     headerMenu.classList.toggle('active');
                 });
+            }
+            
+            // Show/hide form based on checkout state
+            function showReservationForm() {
+                const formWrapper = document.querySelector('.reservation-form-wrapper');
+                const checkoutSection = document.getElementById('checkoutSection');
+                
+                if (formWrapper) {
+                    formWrapper.style.display = 'block';
+                }
+                if (checkoutSection) {
+                    checkoutSection.style.display = 'none';
+                }
             }
             
             // Schließe Menü beim Klick außerhalb
@@ -711,13 +544,9 @@
                     isValid = false;
                 }
                 
-                // If valid, show success message
+                // If valid, show checkout confirmation
                 if (isValid) {
-                    successMessage.style.display = 'block';
-                    form.reset();
-                    dateInput.min = today; // Reset min date
-                    // Scroll to success message
-                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    showCheckoutConfirmation();
                 } else {
                     errorMessage.style.display = 'block';
                     errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -728,8 +557,244 @@
             form.addEventListener('reset', function() {
                 successMessage.style.display = 'none';
                 errorMessage.style.display = 'none';
+                document.getElementById('checkoutSection').style.display = 'none';
                 document.querySelectorAll('.form__error').forEach(error => error.textContent = '');
             });
+
+            // New reservation button
+            document.getElementById('newReservationBtn').addEventListener('click', function() {
+                showReservationForm();
+                form.reset();
+                dateInput.min = today;
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+
+            // Function to show checkout confirmation
+            function showCheckoutConfirmation() {
+                console.log('Checkout function called'); // Debug
+                
+                // Hide the entire form wrapper
+                const formWrapper = document.querySelector('.reservation-form-wrapper');
+                if (formWrapper) {
+                    formWrapper.style.display = 'none';
+                    console.log('Form wrapper hidden'); // Debug
+                }
+                
+                // Show checkout section
+                const checkoutSection = document.getElementById('checkoutSection');
+                if (checkoutSection) {
+                    checkoutSection.style.display = 'block';
+                    console.log('Checkout section shown'); // Debug
+                }
+
+                // Get form data
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const date = document.getElementById('date').value;
+                const time = document.getElementById('time').value;
+                const persons = document.getElementById('persons').value;
+                const occasion = document.getElementById('occasion').value;
+                const specialRequests = document.getElementById('specialRequests').value;
+
+                console.log('Form data:', { firstName, lastName, email, phone, date, time, persons, occasion }); // Debug
+
+                // Generate random table number (1-20)
+                const tableNumber = Math.floor(Math.random() * 20) + 1;
+                const formattedDate = formatDate(date);
+                const personsText = persons === '9+' ? 'mehr als 8 Personen' : persons + (persons === '1' ? ' Person' : ' Personen');
+
+                // Create personalized messages EXACTLY as requested
+                const greeting = `Hallo ${firstName} ${lastName}, vielen Dank für Ihre Reservierung!`;
+                const confirmation = `Wir freuen uns sehr diese bestätigen zu können und Sie bei uns am ${formattedDate} um ${time} Uhr begrüßen zu können!`;
+                const tableInfo = `Wir haben Ihnen den Tisch ${tableNumber} für ${personsText} zugewiesen.`;
+                
+                console.log('Generated messages:', { greeting, confirmation, tableInfo }); // Debug
+                
+                // Create closing message based on occasion
+                let closingMessage;
+                if (occasion && occasion !== '') {
+                    const occasionText = getOccasionText(occasion);
+                    closingMessage = `Wir wünschen viel Vergnügen bei Ihrem ${occasionText} und freuen uns sehr Sie bei uns kulinarisch verwöhnen zu dürfen und Ihrem besonderen Anlass zu einem besonderen Erlebnis machen zu dürfen!`;
+                } else {
+                    closingMessage = `Wir wünschen Ihnen einen angenehmen Aufenthalt bei uns und freuen uns Sie kulinarisch verwöhnen zu können.`;
+                }
+
+                console.log('Closing message:', closingMessage); // Debug
+
+                // Update personalized messages - CHECK IF ELEMENTS EXIST
+                const greetingEl = document.getElementById('checkoutGreeting');
+                const confirmationEl = document.getElementById('checkoutConfirmation');
+                const tableInfoEl = document.getElementById('checkoutTableInfo');
+                const closingEl = document.getElementById('checkoutClosing');
+                
+                console.log('Elements found:', {
+                    greeting: !!greetingEl,
+                    confirmation: !!confirmationEl,
+                    tableInfo: !!tableInfoEl,
+                    closing: !!closingEl
+                }); // Debug
+                
+                if (greetingEl) greetingEl.textContent = greeting;
+                if (confirmationEl) confirmationEl.textContent = confirmation;
+                if (tableInfoEl) tableInfoEl.textContent = tableInfo;
+                if (closingEl) closingEl.textContent = closingMessage;
+
+                // Update summary (keeping existing functionality)
+                const summaryElements = {
+                    name: document.getElementById('summaryName'),
+                    email: document.getElementById('summaryEmail'),
+                    phone: document.getElementById('summaryPhone'),
+                    date: document.getElementById('summaryDate'),
+                    time: document.getElementById('summaryTime'),
+                    persons: document.getElementById('summaryPersons')
+                };
+                
+                console.log('Summary elements found:', Object.keys(summaryElements).map(key => ({ [key]: !!summaryElements[key] }))); // Debug
+                
+                if (summaryElements.name) summaryElements.name.textContent = `${firstName} ${lastName}`;
+                if (summaryElements.email) summaryElements.email.textContent = email;
+                if (summaryElements.phone) summaryElements.phone.textContent = phone;
+                if (summaryElements.date) summaryElements.date.textContent = formattedDate;
+                if (summaryElements.time) summaryElements.time.textContent = time + ' Uhr';
+                if (summaryElements.persons) summaryElements.persons.textContent = persons === '9+' ? 'Mehr als 8 Personen' : persons + (persons === '1' ? ' Person' : ' Personen');
+
+                // Update optional fields
+                const occasionRow = document.getElementById('summaryOccasionRow');
+                const occasionValue = document.getElementById('summaryOccasion');
+                if (occasion && occasionRow && occasionValue) {
+                    occasionRow.style.display = 'flex';
+                    occasionValue.textContent = getOccasionText(occasion);
+                } else if (occasionRow) {
+                    occasionRow.style.display = 'none';
+                }
+                
+                const requestsRow = document.getElementById('summaryRequestsRow');
+                const requestsValue = document.getElementById('summaryRequests');
+                if (specialRequests && requestsRow && requestsValue) {
+                    requestsRow.style.display = 'flex';
+                    requestsValue.textContent = specialRequests;
+                } else if (requestsRow) {
+                    requestsRow.style.display = 'none';
+                }
+
+                // Generate table assignment for display card
+                const tableAssignment = generateTableAssignment(parseInt(persons), tableNumber);
+                const tableNumberEl = document.getElementById('tableNumber');
+                const tableLocationEl = document.getElementById('tableLocation');
+                
+                if (tableNumberEl) tableNumberEl.textContent = tableAssignment.number;
+                if (tableLocationEl) tableLocationEl.textContent = tableAssignment.location;
+                
+                // Update table features
+                const featuresList = document.getElementById('tableFeatures');
+                if (featuresList) {
+                    featuresList.innerHTML = '';
+                    tableAssignment.features.forEach(feature => {
+                        const li = document.createElement('li');
+                        li.textContent = feature;
+                        featuresList.appendChild(li);
+                    });
+                }
+
+                // Update confirmation email
+                const confirmEmailEl = document.getElementById('confirmEmail');
+                if (confirmEmailEl) confirmEmailEl.textContent = email;
+
+                // Scroll to checkout
+                document.getElementById('checkoutSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                console.log('Checkout setup complete'); // Debug
+            }
+
+            // Function to generate table assignment
+            function generateTableAssignment(personCount, tableNumber) {
+                const occasion = document.getElementById('occasion').value;
+                
+                // Special tables based on group size and occasion
+                if (personCount >= 8) {
+                    return {
+                        number: `Tisch ${tableNumber}`,
+                        location: 'im privaten Salon',
+                        features: [
+                            'Exklusiver Privatbereich für Ihre Gruppe',
+                            'Eigener Service-Mitarbeiter',
+                            'Maßgeschneiderte Menü-Optionen',
+                            'Separate Garderobe und Bar'
+                        ]
+                    };
+                } else if (personCount >= 6) {
+                    return {
+                        number: `Tisch ${tableNumber}`,
+                        location: 'im Familiensalon',
+                        features: [
+                            'Großzügiger runder Tisch',
+                            'Gemütliche Familienatmosphäre',
+                            'Kinderstühle verfügbar',
+                            'Ruhige Ecke des Restaurants'
+                        ]
+                    };
+                }
+                
+                // Table features based on table number ranges
+                let tableFeatures = [];
+                let tableLocation = '';
+                
+                if (tableNumber >= 1 && tableNumber <= 5) {
+                    tableLocation = 'am Fenster';
+                    tableFeatures = ['Wunderschöner Straßenblick', 'Natürliches Licht', 'People-Watching'];
+                } else if (tableNumber >= 6 && tableNumber <= 10) {
+                    tableLocation = 'mit Gartenblick';
+                    tableFeatures = ['Direkter Blick in den grünen Innenhof', 'Entspannte Atmosphäre', 'Vogelgezwitscher'];
+                } else if (tableNumber >= 11 && tableNumber <= 15) {
+                    tableLocation = 'am Kamin';
+                    tableFeatures = ['Romantische Kamin-Atmosphäre', 'Gedämpftes Kerzenlicht', 'Gemütliche Wärme'];
+                } else {
+                    tableLocation = 'zentral gelegen';
+                    tableFeatures = ['Mittendrin im Geschehen', 'Lebendige Atmosphäre', 'Klassisches Restaurant-Feeling'];
+                }
+                
+                // Add special features based on occasion
+                if (occasion === 'date' || occasion === 'anniversary') {
+                    tableFeatures.push('Besonders romantische Dekoration');
+                    tableFeatures.push('Champagner-Service verfügbar');
+                } else if (occasion === 'business') {
+                    tableFeatures.push('Ruhiger Bereich für Gespräche');
+                    tableFeatures.push('Diskrete Atmosphäre');
+                } else if (occasion === 'birthday') {
+                    tableFeatures.push('Geburtstags-Dekoration möglich');
+                    tableFeatures.push('Besondere Dessert-Überraschung');
+                }
+                
+                return {
+                    number: `Tisch ${tableNumber}`,
+                    location: tableLocation,
+                    features: tableFeatures
+                };
+            }
+
+            // Function to format date
+            function formatDate(dateString) {
+                const date = new Date(dateString);
+                const weekdays = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+                const months = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+                
+                return `${weekdays[date.getDay()]}, ${date.getDate()}. ${months[date.getMonth()]} ${date.getFullYear()}`;
+            }
+
+            // Function to get occasion text
+            function getOccasionText(occasion) {
+                const occasions = {
+                    'birthday': 'Geburtstag',
+                    'anniversary': 'Jubiläum',
+                    'business': 'Geschäftsessen',
+                    'date': 'Romantisches Dinner',
+                    'celebration': 'Feier',
+                    'other': 'Sonstiges'
+                };
+                return occasions[occasion] || occasion;
+            }
         });
     </script>
 </body>
