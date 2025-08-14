@@ -148,7 +148,29 @@
             margin: 0;
         }
 
-        /* Auszeichnungen Section */
+        /* TIMELINE CSS - HIGHEST PRIORITY */
+        .timeline {
+            position: relative !important;
+            padding-left: 30px !important;
+        }
+
+        .timeline-item::after {
+            content: '' !important;
+            position: absolute !important;
+            left: 44px !important;
+            top: 30px !important;
+            bottom: -40px !important;
+            width: 3px !important;
+            background: linear-gradient(to bottom, #D4AF37, #c49c2f) !important;
+            border-radius: 2px !important;
+            z-index: 1 !important;
+        }
+
+        .timeline-item:last-child::after {
+            display: none !important;
+        }
+
+        /* Timeline Section */
         .awards-section {
             margin-top: 60px;
         }
@@ -158,29 +180,6 @@
             font-size: 2.2rem;
             color: #2C5530;
             margin-bottom: 40px;
-        }
-
-        .awards-grid {
-            display: grid;
-            gap: 25px;
-        }
-
-        .award-item {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 15px 0;
-            border-bottom: 1px solid #e8e8e8;
-        }
-
-        .award-icon {
-            font-size: 1.8rem;
-        }
-
-        .award-text {
-            flex: 1;
-            color: #333;
-            font-size: 1.1rem;
         }
 
         /* Philosophy Section */
@@ -417,10 +416,6 @@
             .team-grid {
                 grid-template-columns: 1fr;
             }
-
-            .awards-grid {
-                font-size: 0.95rem;
-            }
         }
     </style>
 </head>
@@ -498,29 +493,88 @@
                     </p>
                 </div>
                 
-                <!-- Auszeichnungen -->
+                <!-- Auszeichnungen Timeline -->
                 <div class="awards-section">
-                    <h3 class="awards-title">Auszeichnungen & Erfolge</h3>
-                    <div class="awards-grid">
-                        <div class="award-item">
-                            <span class="award-icon">🏆</span>
-                            <span class="award-text">2 Michelin-Sterne (seit 2019)</span>
+                    <h3 class="awards-title">Auszeichnungen & Werdegang</h3>
+                    <div class="timeline">
+                        <div class="timeline-item" data-year="2022">
+                            <div class="timeline-seal">
+                                <div class="seal-inner">
+                                    <div class="seal-icon">👑</div>
+                                    <div class="seal-text">G&M</div>
+                                </div>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Köchin des Jahres 2022</h4>
+                                <p>Gault&Millau Auszeichnung für herausragende kulinarische Innovation</p>
+                                <div class="timeline-description">
+                                    Für ihre revolutionäre Interpretation klassischer französischer Küche mit regionalen Einflüssen wurde Anna Schmidt als beste Köchin des Jahres geehrt.
+                                </div>
+                            </div>
                         </div>
-                        <div class="award-item">
-                            <span class="award-icon">🏆</span>
-                            <span class="award-text">Köchin des Jahres 2022 - Gault&Millau</span>
+                        
+                        <div class="timeline-item" data-year="2021">
+                            <div class="timeline-seal">
+                                <div class="seal-inner">
+                                    <div class="seal-icon">♀</div>
+                                    <div class="seal-text">CHEF</div>
+                                </div>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Best Female Chef Award</h4>
+                                <p>Internationale Anerkennung für Führungsqualitäten in der Spitzengastronomie</p>
+                                <div class="timeline-description">
+                                    Diese Auszeichnung würdigt nicht nur ihre kulinarischen Fähigkeiten, sondern auch ihr Engagement für die Förderung von Frauen in der Küche.
+                                </div>
+                            </div>
                         </div>
-                        <div class="award-item">
-                            <span class="award-icon">🏆</span>
-                            <span class="award-text">19 Punkte im Gault&Millau Guide</span>
+                        
+                        <div class="timeline-item" data-year="2020">
+                            <div class="timeline-seal">
+                                <div class="seal-inner">
+                                    <div class="seal-icon">19</div>
+                                    <div class="seal-text">G&M</div>
+                                </div>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>19 Punkte Gault&Millau</h4>
+                                <p>Höchste Bewertung für außergewöhnliche Kochkunst</p>
+                                <div class="timeline-description">
+                                    Mit 19 von 20 möglichen Punkten gehört das Restaurant zu den Top-Adressen der deutschen Gourmetküche.
+                                </div>
+                            </div>
                         </div>
-                        <div class="award-item">
-                            <span class="award-icon">🏆</span>
-                            <span class="award-text">Best Female Chef Award 2021</span>
+                        
+                        <div class="timeline-item" data-year="2019">
+                            <div class="timeline-seal michelin-seal">
+                                <div class="seal-inner">
+                                    <div class="seal-icon">⭐⭐</div>
+                                    <div class="seal-text">MICHELIN</div>
+                                </div>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>2 Michelin-Sterne</h4>
+                                <p>Höchste internationale Anerkennung für exzellente Küche</p>
+                                <div class="timeline-description">
+                                    Nach nur 3 Jahren als Chefköchin erhielt Anna Schmidt die begehrten zwei Michelin-Sterne - ein außergewöhnlicher Erfolg.
+                                </div>
+                            </div>
                         </div>
-                        <div class="award-item">
-                            <span class="award-icon">🏆</span>
-                            <span class="award-text">Mitglied der Jeunes Restaurateurs d'Europe</span>
+                        
+                        <div class="timeline-item" data-year="2018">
+                            <div class="timeline-seal">
+                                <div class="seal-inner">
+                                    <div class="seal-icon">🇪🇺</div>
+                                    <div class="seal-text">JRE</div>
+                                </div>
+                            </div>
+                            <div class="timeline-content">
+                                <h4>Jeunes Restaurateurs d'Europe</h4>
+                                <p>Mitgliedschaft in der prestigeträchtigen Vereinigung junger Spitzenköche</p>
+                                <div class="timeline-description">
+                                    Aufnahme in das exklusive Netzwerk der besten jungen Köche Europas, das für Innovation und Qualität steht.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
